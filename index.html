@@ -1,0 +1,1805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NL Digital Solutions | Complete Digital & Design Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #ec4899; /* Pink */
+            --primary-dark: #db2777;
+            --secondary: #8b5cf6; /* Purple */
+            --secondary-dark: #7c3aed;
+            --accent: #f472b6;
+            --light: #fdf2f8;
+            --dark: #1f2937;
+            --gray: #6b7280;
+            --gray-light: #f3f4f6;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: white;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(139, 92, 246, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo img {
+            height: 70px; /* Increased logo size */
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 1.6rem; /* Reduced from 1.8rem */
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            left: 0;
+            bottom: 0;
+            transition: width 0.3s;
+            border-radius: 2px;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem; /* Reduced from 3rem */
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #f3f4f6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            z-index: 100;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Section Styles */
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--light);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.2rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: var(--gray);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .founders-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .founder-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .founder-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .founder-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary);
+        }
+
+        .founder-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+
+        .founder-title {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .founder-desc {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Packages Section */
+        .packages {
+            background-color: white;
+        }
+
+        .package-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tab-btn {
+            padding: 12px 25px;
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-weight: 600;
+            color: var(--gray);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .tab-btn:hover {
+            border-color: var(--accent);
+            color: var(--primary);
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            border-color: transparent;
+        }
+
+        .package-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .package-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 5px solid transparent;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .package-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .package-card.basic {
+            border-top-color: #9ca3af;
+        }
+
+        .package-card.standard {
+            border-top-color: var(--secondary);
+            transform: scale(1.05);
+            border: 2px solid var(--secondary);
+        }
+
+        .package-card.premium {
+            border-top-color: #f59e0b;
+        }
+
+        .package-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 8px 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            border-bottom-left-radius: 8px;
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: 15px;
+            left: -35px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 5px 40px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            transform: rotate(-45deg);
+            width: 150px;
+            text-align: center;
+        }
+
+        .package-header {
+            margin-bottom: 20px;
+        }
+
+        .package-name {
+            font-size: 1.6rem;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .package-price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .package-price span {
+            font-size: 0.9rem;
+            color: var(--gray);
+            font-weight: normal;
+        }
+
+        .package-desc {
+            color: var(--gray);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .package-features {
+            list-style: none;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .package-features li {
+            padding: 7px 0;
+            color: var(--dark);
+            display: flex;
+            align-items: flex-start;
+            font-size: 0.9rem;
+        }
+
+        .package-features li i {
+            color: var(--primary);
+            margin-right: 10px;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .package-timeline {
+            background-color: #f8fafc;
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border-left: 4px solid var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .package-timeline p {
+            color: var(--gray);
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            margin: 0;
+        }
+
+        .package-timeline i {
+            color: var(--secondary);
+            margin-right: 8px;
+        }
+
+        .package-footer {
+            margin-top: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .package-button {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 12px 0;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            text-align: center;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+            width: 100%;
+        }
+
+        .package-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+            border: 1px solid #f3f4f6;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.1);
+        }
+
+        .service-icon {
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .service-icon i {
+            font-size: 1.5rem;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+
+        .service-price-range {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-top: 12px;
+        }
+
+        .service-features li {
+            padding: 4px 0;
+            color: var(--gray);
+            display: flex;
+            align-items: center;
+            font-size: 0.85rem;
+        }
+
+        .service-features li i {
+            color: var(--primary);
+            margin-right: 8px;
+            font-size: 0.7rem;
+        }
+
+        /* Contact Form Section */
+        .contact {
+            background-color: var(--light);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info h2 {
+            font-size: 2.2rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            color: var(--gray);
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+        }
+
+        .contact-details p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+        }
+
+        .contact-details i {
+            color: var(--primary);
+            margin-right: 12px;
+            width: 20px;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            background-color: white;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .portfolio-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .portfolio-img {
+            height: 180px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .portfolio-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .portfolio-item:hover .portfolio-img img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-info {
+            padding: 20px;
+        }
+
+        .portfolio-info h3 {
+            font-size: 1.2rem;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .portfolio-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-link {
+            display: inline-block;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .portfolio-link i {
+            margin-left: 5px;
+            transition: transform 0.3s;
+        }
+
+        .portfolio-link:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Costs Note */
+        .costs-note {
+            background-color: #f8fafc;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .costs-note h3 {
+            color: var(--dark);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+
+        .costs-note h3 i {
+            color: var(--secondary);
+            margin-right: 10px;
+        }
+
+        .costs-note p {
+            color: var(--gray);
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .costs-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .costs-list li {
+            color: var(--gray);
+            font-size: 0.85rem;
+            padding: 3px 0;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .footer-about p {
+            color: #d1d5db;
+            margin-bottom: 15px;
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+
+        .footer-links h3, .footer-services h3, .footer-contact h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: white;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .footer-links h3::after, .footer-services h3::after, .footer-contact h3::after {
+            content: '';
+            position: absolute;
+            width: 35px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            bottom: 0;
+            left: 0;
+            border-radius: 2px;
+        }
+
+        .footer-links ul, .footer-services ul {
+            list-style: none;
+        }
+
+        .footer-links li, .footer-services li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a, .footer-services a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover, .footer-services a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            color: #d1d5db;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--primary);
+            width: 16px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: #374151;
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #374151;
+            color: #9ca3af;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive Styles - MOBILE FIRST APPROACH */
+        @media (max-width: 1200px) {
+            .container {
+                width: 95%;
+            }
+        }
+
+        @media (max-width: 1100px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .about-content, .contact-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .founders-section {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+            
+            .package-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            
+            .package-card.standard {
+                transform: scale(1);
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .founder-card {
+                padding: 25px;
+            }
+            
+            .logo-text {
+                font-size: 1.4rem;
+            }
+            
+            .logo img {
+                height: 60px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Mobile Navigation */
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+                text-align: center;
+                z-index: 999;
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            /* Hero Section */
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            /* About Section */
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .founders-section {
+                grid-template-columns: 1fr;
+                margin-top: 30px;
+            }
+            
+            /* Services */
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            /* Contact Form */
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .contact-form {
+                padding: 25px;
+            }
+            
+            /* Packages */
+            .package-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .tab-btn {
+                width: 100%;
+                max-width: 280px;
+                margin-bottom: 5px;
+            }
+            
+            /* Portfolio */
+            .portfolio-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            /* WhatsApp Button */
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.7rem;
+            }
+            
+            .logo-text {
+                font-size: 1.3rem;
+            }
+            
+            .logo img {
+                height: 55px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 60px 0;
+            }
+            
+            section {
+                padding: 50px 0;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .cta-button, .package-button {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title p {
+                font-size: 0.95rem;
+            }
+            
+            /* Cards */
+            .service-card, .portfolio-item, .contact-form, .founder-card {
+                padding: 20px;
+            }
+            
+            /* Packages */
+            .package-card {
+                padding: 25px;
+            }
+            
+            .package-name {
+                font-size: 1.4rem;
+            }
+            
+            .package-price {
+                font-size: 1.8rem;
+            }
+            
+            /* Footer */
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-links h3::after, 
+            .footer-services h3::after, 
+            .footer-contact h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .footer-contact p {
+                justify-content: center;
+            }
+            
+            .social-icons {
+                justify-content: center;
+            }
+            
+            /* Costs List */
+            .costs-list {
+                grid-template-columns: 1fr;
+            }
+            
+            /* Form */
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 10px 12px;
+            }
+            
+            /* Founder Cards */
+            .founder-img {
+                width: 100px;
+                height: 100px;
+                font-size: 2.5rem;
+            }
+            
+            .founder-name {
+                font-size: 1.2rem;
+            }
+            
+            .logo-text {
+                font-size: 1.2rem;
+            }
+            
+            .logo img {
+                height: 50px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .logo-text {
+                font-size: 1.1rem;
+            }
+            
+            .logo img {
+                height: 45px;
+            }
+            
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            
+            .package-card {
+                padding: 20px 15px;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .whatsapp-float {
+                bottom: 15px;
+                right: 15px;
+                width: 45px;
+                height: 45px;
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/27817218350" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="logo.png" alt="NL Digital Solutions Logo">
+                <div class="logo-text">NL Digital Solutions</div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#packages">Packages</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Our Work</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Complete Digital Solutions <span>From R1,500</span></h1>
+                <p>Professional websites, mobile apps, business services, and branding solutions tailored to your needs. We transform your vision into a powerful digital presence with transparent pricing and clear timelines.</p>
+                <a href="#contact" class="cta-button">Start Your Project Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About NL Digital Solutions</h2>
+                    <p>At NL Digital Solutions, we combine technical expertise with creative vision to deliver exceptional digital solutions for businesses of all sizes. Our passion for innovation and commitment to quality ensures every project receives the attention it deserves to thrive in today's competitive market.</p>
+                    <p>We empower entrepreneurs and businesses with professional digital tools that drive growth and enhance online presence. Through transparent pricing, clear communication, and results that exceed expectations, we build lasting partnerships that transform visions into powerful digital realities.</p>
+                </div>
+                
+                <div class="founders-section">
+                    <div class="founder-card">
+                        <div class="founder-img">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h3 class="founder-name">Nhlanhla Msomi</h3>
+                        <p class="founder-title">Co-Founder & Creative Director</p>
+                        <p class="founder-desc">Nhlanhla brings the creative vision to our projects. With a background in design and user experience, she ensures every website and app we create is not only functional but visually stunning and user-friendly.</p>
+                    </div>
+                    
+                    <div class="founder-card">
+                        <div class="founder-img">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="founder-name">Lerato Nama</h3>
+                        <p class="founder-title">Co-Founder & Business Strategist</p>
+                        <p class="founder-desc">Lerato focuses on the business strategy and technical architecture of our solutions. Her expertise ensures that every project is built on solid foundations that support business growth and scalability.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="packages" id="packages">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Packages</h2>
+                <p>Choose the perfect package for your business with clear pricing and timelines</p>
+            </div>
+            
+            <div class="package-tabs">
+                <button class="tab-btn active" data-tab="website">Website Packages</button>
+                <button class="tab-btn" data-tab="app">App Packages</button>
+            </div>
+            
+            <div class="package-grid" id="website-packages">
+                <!-- Basic Website Package -->
+                <div class="package-card basic">
+                    <div class="package-header">
+                        <h3 class="package-name">Basic Website</h3>
+                        <div class="package-price">R1,500 <span>once off</span></div>
+                        <p class="package-desc">Perfect for businesses that need a simple but professional online presence.</p>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> Single-page website with scrolling sections</li>
+                        <li><i class="fas fa-check"></i> Sections: Home, About, Services, Contact</li>
+                        <li><i class="fas fa-check"></i> Clean modern design</li>
+                        <li><i class="fas fa-check"></i> Mobile-friendly responsive layout</li>
+                        <li><i class="fas fa-check"></i> WhatsApp contact button</li>
+                        <li><i class="fas fa-check"></i> Basic SEO structure</li>
+                        <li><i class="fas fa-check"></i> 1 revision cycle</li>
+                    </ul>
+                    <div class="package-timeline">
+                        <p><i class="fas fa-clock"></i> 5-7 working days after approval</p>
+                    </div>
+                    <div class="package-footer">
+                        <a href="#contact" class="package-button">Choose This Package</a>
+                    </div>
+                </div>
+                
+                <!-- Standard Website Package -->
+                <div class="package-card standard">
+                    <div class="popular-badge">MOST WANTED</div>
+                    <div class="package-badge">Best Value</div>
+                    <div class="package-header">
+                        <h3 class="package-name">Standard Website</h3>
+                        <div class="package-price">R3,500 <span>once off</span></div>
+                        <p class="package-desc">Ideal for businesses that need a complete, multi-page website with added credibility features.</p>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> <strong>Everything in Basic PLUS:</strong></li>
+                        <li><i class="fas fa-check"></i> Multi-page website (5+ pages)</li>
+                        <li><i class="fas fa-check"></i> Testimonials & FAQ pages</li>
+                        <li><i class="fas fa-check"></i> Image & video gallery</li>
+                        <li><i class="fas fa-check"></i> Improved design + visual branding</li>
+                        <li><i class="fas fa-check"></i> Upgraded SEO setup</li>
+                        <li><i class="fas fa-check"></i> 3 revision cycles</li>
+                        <li><i class="fas fa-check"></i> Optional Blog/Resources Page</li>
+                    </ul>
+                    <div class="package-timeline">
+                        <p><i class="fas fa-clock"></i> 7-10 working days after approval</p>
+                    </div>
+                    <div class="package-footer">
+                        <a href="#contact" class="package-button">Choose This Package</a>
+                    </div>
+                </div>
+                
+                <!-- Premium Website Package -->
+                <div class="package-card premium">
+                    <div class="package-header">
+                        <h3 class="package-name">Premium Website</h3>
+                        <div class="package-price">R5,500 <span>once off</span></div>
+                        <p class="package-desc">Designed for businesses that want automation and advanced client features.</p>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> <strong>Everything in Standard PLUS:</strong></li>
+                        <li><i class="fas fa-check"></i> Online booking system</li>
+                        <li><i class="fas fa-check"></i> Payment integration (PayFast, Yoco, etc.)</li>
+                        <li><i class="fas fa-check"></i> Basic customer dashboard</li>
+                        <li><i class="fas fa-check"></i> Custom icons & visual branding</li>
+                        <li><i class="fas fa-check"></i> Advanced SEO</li>
+                        <li><i class="fas fa-check"></i> 5 revision cycles</li>
+                        <li><i class="fas fa-check"></i> Priority support during development</li>
+                    </ul>
+                    <div class="package-timeline">
+                        <p><i class="fas fa-clock"></i> 10-15 working days after approval</p>
+                    </div>
+                    <div class="package-footer">
+                        <a href="#contact" class="package-button">Choose This Package</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- App Packages (Hidden by default) -->
+            <div class="package-grid" id="app-packages" style="display: none;">
+                <!-- Starter App Package -->
+                <div class="package-card basic">
+                    <div class="package-header">
+                        <h3 class="package-name">Starter App</h3>
+                        <div class="package-price">R6,500 <span>once off</span></div>
+                        <p class="package-desc">Perfect for small businesses needing a simple, functional mobile app.</p>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> Basic 3–4 screen app</li>
+                        <li><i class="fas fa-check"></i> Clean modern UI</li>
+                        <li><i class="fas fa-check"></i> Business info + images</li>
+                        <li><i class="fas fa-check"></i> WhatsApp or call button</li>
+                        <li><i class="fas fa-check"></i> Push notification setup</li>
+                        <li><i class="fas fa-check"></i> Mobile-friendly layout</li>
+                        <li><i class="fas fa-check"></i> 1 revision cycle</li>
+                    </ul>
+                    <div class="package-timeline">
+                        <p><i class="fas fa-clock"></i> Development timeline: 2-3 weeks</p>
+                    </div>
+                    <div class="package-footer">
+                        <a href="#contact" class="package-button">Choose This Package</a>
+                    </div>
+                </div>
+                
+                <!-- Standard App Package -->
+                <div class="package-card standard">
+                    <div class="package-badge">Most Popular</div>
+                    <div class="package-header">
+                        <h3 class="package-name">Standard App</h3>
+                        <div class="package-price">R12,500 <span>once off</span></div>
+                        <p class="package-desc">Ideal for businesses that want more interactivity and customer engagement.</p>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> <strong>Everything in Starter PLUS:</strong></li>
+                        <li><i class="fas fa-check"></i> 5–8 screens with custom UI</li>
+                        <li><i class="fas fa-check"></i> User login (email or Google)</li>
+                        <li><i class="fas fa-check"></i> Booking system (appointments, classes)</li>
+                        <li><i class="fas fa-check"></i> Basic admin panel</li>
+                        <li><i class="fas fa-check"></i> Push notifications</li>
+                        <li><i class="fas fa-check"></i> App store publishing (Google Play)</li>
+                        <li><i class="fas fa-check"></i> 3 revision cycles</li>
+                    </ul>
+                    <div class="package-timeline">
+                        <p><i class="fas fa-clock"></i> Development timeline: 3-4 weeks</p>
+                    </div>
+                    <div class="package-footer">
+                        <a href="#contact" class="package-button">Choose This Package</a>
+                    </div>
+                </div>
+                
+                <!-- Premium App Package -->
+                <div class="package-card premium">
+                    <div class="package-header">
+                        <h3 class="package-name">Premium App</h3>
+                        <div class="package-price">R20,000 <span>once off</span></div>
+                        <p class="package-desc">For businesses that need automation, payments, and advanced functionality.</p>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> <strong>Everything in Standard PLUS:</strong></li>
+                        <li><i class="fas fa-check"></i> Full online booking with availability</li>
+                        <li><i class="fas fa-check"></i> Payment integration (PayFast, Yoco, Stripe)</li>
+                        <li><i class="fas fa-check"></i> Advanced admin dashboard</li>
+                        <li><i class="fas fa-check"></i> Customer profiles</li>
+                        <li><i class="fas fa-check"></i> Live chat integration</li>
+                        <li><i class="fas fa-check"></i> Loyalty points or rewards system</li>
+                        <li><i class="fas fa-check"></i> Publishing on Google Play & Apple App Store</li>
+                        <li><i class="fas fa-check"></i> 5 revision cycles + Priority support</li>
+                    </ul>
+                    <div class="package-timeline">
+                        <p><i class="fas fa-clock"></i> Development timeline: 4-6 weeks</p>
+                    </div>
+                    <div class="package-footer">
+                        <a href="#contact" class="package-button">Choose This Package</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional Costs Note -->
+            <div class="costs-note">
+                <h3><i class="fas fa-info-circle"></i> Costs Not Included In Packages</h3>
+                <p>(Paid directly to external providers)</p>
+                <ul class="costs-list">
+                    <li>• Domain name (.co.za or .com)</li>
+                    <li>• Website hosting (monthly/yearly)</li>
+                    <li>• Business email setup</li>
+                    <li>• Payment gateway transaction fees</li>
+                    <li>• Premium plugins or third-party software</li>
+                    <li>• Apple Developer Account ($99/year)</li>
+                    <li>• Google Play Developer Account ($25)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Other Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Additional Services</h2>
+                <p>Comprehensive business, design, and branding solutions</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Business Services -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3>Business Services</h3>
+                    <span class="service-price-range">R50 - R1,500</span>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Business Plans — R300 to R1,200</li>
+                        <li><i class="fas fa-check"></i> Resumes (CVs) — R80 to R250</li>
+                        <li><i class="fas fa-check"></i> Cover Letters — R50 to R120</li>
+                        <li><i class="fas fa-check"></i> Invoices (Templates) — R60 to R150</li>
+                        <li><i class="fas fa-check"></i> Company Profiles — R300 to R1,500</li>
+                    </ul>
+                </div>
+                
+                <!-- Graphic Design -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>Graphic Design</h3>
+                    <span class="service-price-range">R50 - R1,000+</span>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Business Cards — R50 to R150</li>
+                        <li><i class="fas fa-check"></i> Flyers — R80 to R200</li>
+                        <li><i class="fas fa-check"></i> Brochures — R150 to R400</li>
+                        <li><i class="fas fa-check"></i> Menus — R150 to R350</li>
+                        <li><i class="fas fa-check"></i> Catalogs — R300 to R1,000+</li>
+                    </ul>
+                </div>
+                
+                <!-- Branding Services -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Branding Services</h3>
+                    <span class="service-price-range">R150 - R1,000</span>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Logos — R150 to R500</li>
+                        <li><i class="fas fa-check"></i> Brand Kits — R300 to R1,000</li>
+                        <li><i class="fas fa-check"></i> Brand Guidelines</li>
+                        <li><i class="fas fa-check"></i> Visual Identity Systems</li>
+                    </ul>
+                </div>
+                
+                <!-- Additional Services -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-plus-circle"></i>
+                    </div>
+                    <h3>Additional Services</h3>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Website Maintenance — R250/month</li>
+                        <li><i class="fas fa-check"></i> Content Writing — R200 per page</li>
+                        <li><i class="fas fa-check"></i> App Maintenance — R350/month</li>
+                        <li><i class="fas fa-check"></i> Custom UI/UX Design — R1,500+</li>
+                        <li><i class="fas fa-check"></i> Push Notifications — R200/campaign</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Previous Work</h2>
+                <p>Browse through some of our recently completed projects</p>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <img src="vuwa.png" alt="Vuwa Driving School Website">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Vuwa Driving School</h3>
+                        <p>Professional driving school website with booking system.</p>
+                        <a href="https://vuwa-driving-schooldemo-u4yo.vercel.app/" target="_blank" class="portfolio-link">View Live Site <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <img src="znn.png" alt="ZZN Consulting Website">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>ZZN Consulting</h3>
+                        <p>Consulting business one-page website.</p>
+                        <a href="https://zznconsulting.co.za/" target="_blank" class="portfolio-link">View Live Site <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <img src="house.png" alt="House Renomasters Website">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>House Renomasters</h3>
+                        <p>Renovation company website with portfolio gallery.</p>
+                        <a href="https://www.houserenomasters.co.za/" target="_blank" class="portfolio-link">View Live Site <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <img src="silunama.png" alt="Silunama Website">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Silunama Spa</h3>
+                        <p>Wellness and spa services website.</p>
+                        <a href="https://www.silunama.co.za/#home" target="_blank" class="portfolio-link">View Live Site <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <img src="patmax.png" alt="Patmax Valet Website">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Patmax Valet</h3>
+                        <p>Car valet service booking website.</p>
+                        <a href="https://www.patmaxvalet.co.za/" target="_blank" class="portfolio-link">View Live Site <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <img src="lifespring.png" alt="Life Springs Website">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Life Springs Church</h3>
+                        <p>Church community website with events.</p>
+                        <a href="https://life-springs-demo-xr23.vercel.app/" target="_blank" class="portfolio-link">View Live Site <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch to start your project or request a custom quote</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Let's Create Something Amazing Together</h2>
+                    <p>Ready to transform your business with professional digital solutions? Contact us today for a free consultation. We'll discuss your project needs and provide a detailed quote.</p>
+                    
+                    <div class="contact-details">
+                        <p><i class="fas fa-envelope"></i> info@nldigitalsolutions.co.za</p>
+                        <p><i class="fas fa-phone"></i> 081 721 8350</p>
+                        <p><i class="fas fa-phone"></i> 063 221 2342</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 8am-5pm | Sat: 9am-1pm</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Serving clients across South Africa</p>
+                    </div>
+                    
+                    <div class="social-icons">
+                        <a href="https://wa.me/27817218350" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Select Service *</label>
+                            <select id="service" name="service" required>
+                                <option value="">Choose a service</option>
+                                <option value="website">Website Development</option>
+                                <option value="application">Mobile Application</option>
+                                <option value="business">Business Services</option>
+                                <option value="design">Graphic Design</option>
+                                <option value="branding">Branding</option>
+                                <option value="other">Other Services</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Project Details *</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your project, budget, and timeline..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="cta-button" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">NL Digital Solutions</div>
+                    <p>Your complete digital partner for websites, mobile apps, business services, and branding. We provide transparent pricing, clear timelines, and professional results.</p>
+                    <div class="social-icons">
+                        <a href="https://wa.me/27817218350" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#packages">Packages</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Our Work</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-services">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="#packages">Website Development</a></li>
+                        <li><a href="#packages">App Development</a></li>
+                        <li><a href="#services">Business Services</a></li>
+                        <li><a href="#services">Graphic Design</a></li>
+                        <li><a href="#services">Branding</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> info@nldigitalsolutions.co.za</p>
+                    <p><i class="fas fa-phone"></i> 081 721 8350</p>
+                    <p><i class="fas fa-phone"></i> 063 221 2342</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 8am-5pm | Sat: 9am-1pm</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; <span id="currentYear"></span> NL Digital Solutions. All rights reserved. | Founded by Nhlanhla Msomi & Lerato Nama</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Package tabs functionality
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const websitePackages = document.getElementById('website-packages');
+        const appPackages = document.getElementById('app-packages');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                tabBtns.forEach(b => b.classList.remove('active'));
+                
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                // Show corresponding packages
+                const tabType = btn.getAttribute('data-tab');
+                if (tabType === 'website') {
+                    websitePackages.style.display = 'grid';
+                    appPackages.style.display = 'none';
+                } else {
+                    websitePackages.style.display = 'none';
+                    appPackages.style.display = 'grid';
+                }
+            });
+        });
+        
+        // Update current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if(this.getAttribute('href') === '#') return;
+                
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                service: document.getElementById('service').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Here you would typically send this data to a server
+            // For now, we'll just show an alert and reset the form
+            alert('Thank you for your message! We will contact you within 24 hours.');
+            this.reset();
+        });
+        
+        // Handle window resize for better mobile experience
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+    </script>
+</body>
+</html>
