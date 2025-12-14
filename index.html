@@ -52,7 +52,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
+            padding: 10px 0; /* Reduced header height */
         }
 
         .logo {
@@ -62,12 +62,12 @@
         }
 
         .logo img {
-            height: 70px; /* Increased logo size */
+            height: 70px; /* Adjusted logo size */
             width: auto;
         }
 
         .logo-text {
-            font-size: 1.6rem; /* Reduced from 1.8rem */
+            font-size: 1.4rem; /* Made title smaller */
             font-weight: 800;
             background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
             -webkit-background-clip: text;
@@ -131,7 +131,7 @@
         }
 
         .hero h1 {
-            font-size: 2.8rem; /* Reduced from 3rem */
+            font-size: 2.8rem;
             margin-bottom: 20px;
             line-height: 1.2;
         }
@@ -712,6 +712,7 @@
             color: var(--gray);
             font-size: 0.9rem;
             margin-bottom: 10px;
+            line-height: 1.4;
         }
 
         .portfolio-link {
@@ -731,45 +732,116 @@
             transform: translateX(5px);
         }
 
-        /* Costs Note */
+        /* Costs Note - REDESIGNED */
         .costs-note {
-            background-color: #f8fafc;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 30px;
-            border-left: 4px solid var(--secondary);
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 40px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
         }
 
-        .costs-note h3 {
-            color: var(--dark);
-            margin-bottom: 10px;
+        .costs-note::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary) 0%, var(--secondary) 100%);
+        }
+
+        .costs-header {
             display: flex;
             align-items: center;
-            font-size: 1.1rem;
+            margin-bottom: 20px;
         }
 
-        .costs-note h3 i {
-            color: var(--secondary);
-            margin-right: 10px;
+        .costs-icon {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: white;
+            font-size: 1.3rem;
         }
 
-        .costs-note p {
+        .costs-title {
+            font-size: 1.4rem;
+            color: var(--dark);
+            margin: 0;
+        }
+
+        .costs-subtitle {
             color: var(--gray);
-            margin-bottom: 10px;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+            padding-left: 65px;
         }
 
-        .costs-list {
+        .costs-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 10px;
-            margin-top: 10px;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
         }
 
-        .costs-list li {
+        .cost-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s;
+        }
+
+        .cost-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-color: var(--accent);
+        }
+
+        .cost-icon {
+            background-color: #fdf2f8;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--primary);
+            font-size: 1rem;
+        }
+
+        .cost-details h4 {
+            font-size: 0.95rem;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+
+        .cost-details p {
+            font-size: 0.8rem;
+            color: var(--gray);
+            margin: 0;
+        }
+
+        .cost-note-footer {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
             color: var(--gray);
             font-size: 0.85rem;
-            padding: 3px 0;
+            text-align: center;
+            font-style: italic;
         }
 
         /* Footer */
@@ -936,11 +1008,11 @@
             }
             
             .logo-text {
-                font-size: 1.4rem;
+                font-size: 1.3rem;
             }
             
             .logo img {
-                height: 60px;
+                height: 65px;
             }
         }
 
@@ -1024,6 +1096,26 @@
                 grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             }
             
+            /* Costs Note */
+            .costs-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .costs-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .costs-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .costs-subtitle {
+                padding-left: 0;
+                text-align: center;
+            }
+            
             /* WhatsApp Button */
             .whatsapp-float {
                 bottom: 20px;
@@ -1034,11 +1126,11 @@
             }
             
             .logo-text {
-                font-size: 1.3rem;
+                font-size: 1.2rem;
             }
             
             .logo img {
-                height: 55px;
+                height: 60px;
             }
         }
 
@@ -1086,6 +1178,15 @@
                 font-size: 1.8rem;
             }
             
+            /* Costs Note */
+            .costs-note {
+                padding: 20px;
+            }
+            
+            .costs-title {
+                font-size: 1.2rem;
+            }
+            
             /* Footer */
             .footer-content {
                 grid-template-columns: 1fr;
@@ -1107,11 +1208,6 @@
                 justify-content: center;
             }
             
-            /* Costs List */
-            .costs-list {
-                grid-template-columns: 1fr;
-            }
-            
             /* Form */
             .form-group input,
             .form-group select,
@@ -1131,21 +1227,21 @@
             }
             
             .logo-text {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
             
             .logo img {
-                height: 50px;
+                height: 55px;
             }
         }
 
         @media (max-width: 400px) {
             .logo-text {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
             
             .logo img {
-                height: 45px;
+                height: 50px;
             }
             
             .hero h1 {
@@ -1158,6 +1254,14 @@
             
             .portfolio-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .costs-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cost-item {
+                padding: 12px;
             }
             
             .whatsapp-float {
@@ -1415,19 +1519,92 @@
                 </div>
             </div>
             
-            <!-- Additional Costs Note -->
+            <!-- Additional Costs Note - REDESIGNED -->
             <div class="costs-note">
-                <h3><i class="fas fa-info-circle"></i> Costs Not Included In Packages</h3>
-                <p>(Paid directly to external providers)</p>
-                <ul class="costs-list">
-                    <li>• Domain name (.co.za or .com)</li>
-                    <li>• Website hosting (monthly/yearly)</li>
-                    <li>• Business email setup</li>
-                    <li>• Payment gateway transaction fees</li>
-                    <li>• Premium plugins or third-party software</li>
-                    <li>• Apple Developer Account ($99/year)</li>
-                    <li>• Google Play Developer Account ($25)</li>
-                </ul>
+                <div class="costs-header">
+                    <div class="costs-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <h3 class="costs-title">Additional Costs Not Included In Packages</h3>
+                </div>
+                
+                <p class="costs-subtitle">(Paid directly to external providers)</p>
+                
+                <div class="costs-grid">
+                    <div class="cost-item">
+                        <div class="cost-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="cost-details">
+                            <h4>Domain Name</h4>
+                            <p>.co.za or .com domains (annual fee)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="cost-item">
+                        <div class="cost-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <div class="cost-details">
+                            <h4>Website Hosting</h4>
+                            <p>Monthly or yearly hosting fees</p>
+                        </div>
+                    </div>
+                    
+                    <div class="cost-item">
+                        <div class="cost-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="cost-details">
+                            <h4>Business Email Setup</h4>
+                            <p>Professional email accounts</p>
+                        </div>
+                    </div>
+                    
+                    <div class="cost-item">
+                        <div class="cost-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <div class="cost-details">
+                            <h4>Payment Gateway Fees</h4>
+                            <p>Transaction fees for payment processing</p>
+                        </div>
+                    </div>
+                    
+                    <div class="cost-item">
+                        <div class="cost-icon">
+                            <i class="fas fa-plug"></i>
+                        </div>
+                        <div class="cost-details">
+                            <h4>Premium Plugins</h4>
+                            <p>Third-party software or plugins</p>
+                        </div>
+                    </div>
+                    
+                    <div class="cost-item">
+                        <div class="cost-icon">
+                            <i class="fab fa-apple"></i>
+                        </div>
+                        <div class="cost-details">
+                            <h4>Apple Developer Account</h4>
+                            <p>$99/year for App Store publishing</p>
+                        </div>
+                    </div>
+                    
+                    <div class="cost-item">
+                        <div class="cost-icon">
+                            <i class="fab fa-google-play"></i>
+                        </div>
+                        <div class="cost-details">
+                            <h4>Google Play Account</h4>
+                            <p>$25 one-time fee for Google Play</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cost-note-footer">
+                    Note: These costs vary by provider and are paid directly to the service providers, not to NL Digital Solutions.
+                </div>
             </div>
         </div>
     </section>
@@ -1521,7 +1698,7 @@
                     </div>
                     <div class="portfolio-info">
                         <h3>Vuwa Driving School</h3>
-                        <p>Professional driving school website with booking system.</p>
+                        <p>Professional driving school website with contact information.</p>
                         <a href="https://vuwa-driving-schooldemo-u4yo.vercel.app/" target="_blank" class="portfolio-link">View Live Site <i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
@@ -1532,7 +1709,7 @@
                     </div>
                     <div class="portfolio-info">
                         <h3>ZZN Consulting</h3>
-                        <p>Consulting business one-page website.</p>
+                        <p>Specialist food safety and quality consultancy company.</p>
                         <a href="https://zznconsulting.co.za/" target="_blank" class="portfolio-link">View Live Site <i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
@@ -1543,7 +1720,7 @@
                     </div>
                     <div class="portfolio-info">
                         <h3>House Renomasters</h3>
-                        <p>Renovation company website with portfolio gallery.</p>
+                        <p>Expert renovation and painting services company.</p>
                         <a href="https://www.houserenomasters.co.za/" target="_blank" class="portfolio-link">View Live Site <i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
@@ -1553,8 +1730,8 @@
                         <img src="silunama.png" alt="Silunama Website">
                     </div>
                     <div class="portfolio-info">
-                        <h3>Silunama Spa</h3>
-                        <p>Wellness and spa services website.</p>
+                        <h3>Silunama Civils</h3>
+                        <p>Civil engineering and construction services company.</p>
                         <a href="https://www.silunama.co.za/#home" target="_blank" class="portfolio-link">View Live Site <i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
@@ -1565,7 +1742,7 @@
                     </div>
                     <div class="portfolio-info">
                         <h3>Patmax Valet</h3>
-                        <p>Car valet service booking website.</p>
+                        <p>Professional car valet and detailing service.</p>
                         <a href="https://www.patmaxvalet.co.za/" target="_blank" class="portfolio-link">View Live Site <i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
@@ -1575,8 +1752,8 @@
                         <img src="lifespring.png" alt="Life Springs Website">
                     </div>
                     <div class="portfolio-info">
-                        <h3>Life Springs Church</h3>
-                        <p>Church community website with events.</p>
+                        <h3>Life Springs Spa</h3>
+                        <p>Wellness and spa services for relaxation and rejuvenation.</p>
                         <a href="https://life-springs-demo-xr23.vercel.app/" target="_blank" class="portfolio-link">View Live Site <i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
