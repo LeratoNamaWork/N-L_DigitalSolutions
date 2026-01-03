@@ -1,0 +1,16 @@
+[
+  {
+    "id": "NL69830943",
+    "timestamp": "2026-01-03T19:50:41.602Z",
+    "name": "Lerato",
+    "email": "leratonama8@gmail.com",
+    "phone": "0632212342",
+    "service": "Business Services",
+    "message": "no",
+    "status": "sent",
+    "emails": {
+      "support": "<40fdff1d-6cb6-28b5-5e08-785cf69bcdb1@nldigitalsolutions.co.za>",
+      "autoReply": "<54d05cad-4a8c-c79f-069a-61a55fbce025@nldigitalsolutions.co.za>"
+    }
+  }
+]

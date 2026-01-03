@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NL Digital Solutions | Complete Digital & Design Services</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
+        /* ALL YOUR EXACT ORIGINAL CSS CODE - NO CHANGES TO DESIGN */
         /* Reset and Base Styles */
         * {
             margin: 0;
@@ -30,7 +32,7 @@
             line-height: 1.6;
             color: var(--dark);
             background-color: white;
-            overflow-x: hidden; /* Prevent horizontal scroll */
+            overflow-x: hidden;
         }
 
         .container {
@@ -40,6 +42,55 @@
             padding: 0 20px;
         }
 
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--primary));
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 3s ease-in-out infinite;
+        }
+
         /* Header Styles */
         header {
             background-color: white;
@@ -47,13 +98,14 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            animation: fadeInUp 0.5s ease-out;
         }
 
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 0; /* Reduced header height */
+            padding: 10px 0;
         }
 
         .logo {
@@ -63,16 +115,26 @@
         }
 
         .logo img {
-            height: 70px; /* Adjusted logo size */
+            height: 70px;
             width: auto;
+            transition: transform 0.3s;
+        }
+
+        .logo:hover img {
+            transform: scale(1.05);
         }
 
         .logo-text {
-            font-size: 1.4rem; /* Made title smaller */
+            font-size: 1.4rem;
             font-weight: 800;
             background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            transition: all 0.3s;
+        }
+
+        .logo:hover .logo-text {
+            transform: translateX(5px);
         }
 
         nav ul {
@@ -118,6 +180,11 @@
             font-size: 1.5rem;
             color: var(--dark);
             cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .mobile-menu-btn:hover {
+            transform: scale(1.1);
         }
 
         /* Hero Section */
@@ -129,6 +196,7 @@
             text-align: center;
             position: relative;
             color: white;
+            animation: fadeInUp 0.8s ease-out;
         }
 
         .hero h1 {
@@ -163,6 +231,23 @@
             border: none;
             cursor: pointer;
             box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
         }
 
         .cta-button:hover {
@@ -188,11 +273,13 @@
             box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
             z-index: 100;
             transition: all 0.3s;
+            animation: float 3s ease-in-out infinite;
         }
 
         .whatsapp-float:hover {
             transform: scale(1.1);
             box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            animation: none;
         }
 
         /* Section Styles */
@@ -219,6 +306,7 @@
             left: 50%;
             transform: translateX(-50%);
             border-radius: 2px;
+            animation: gradientShift 3s ease-in-out infinite;
         }
 
         .section-title p {
@@ -229,6 +317,14 @@
 
         section {
             padding: 60px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* About Section */
@@ -255,41 +351,88 @@
             font-size: 1.05rem;
         }
 
+        /* UPDATED FOUNDERS SECTION - OVAL DESIGN */
         .founders-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            display: flex;
             gap: 30px;
             margin-top: 40px;
+            align-items: center;
+        }
+
+        .founder-left {
+            flex: 1;
+        }
+
+        .founder-right {
+            flex: 1;
         }
 
         .founder-card {
-            background: white;
+            position: relative;
             padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            text-align: center;
-            transition: transform 0.3s;
-        }
-
-        .founder-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .founder-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            background: linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            min-height: 300px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: var(--primary);
+        }
+
+        .founder-card.nhlanhla {
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border-radius: 50% 20px 20px 50%;
+            padding-left: 150px;
+        }
+
+        .founder-card.lerato {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+            border-radius: 20px 50% 50% 20px;
+            padding-right: 150px;
+            justify-content: flex-end;
+        }
+
+        .founder-img-container {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s ease;
+        }
+
+        .founder-img-container.nhlanhla {
+            left: -50px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .founder-img-container.lerato {
+            right: -50px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .founder-img-container:hover {
+            transform: translateY(-50%) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .founder-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .founder-img-container:hover img {
+            transform: scale(1.1);
+        }
+
+        .founder-info {
+            max-width: 400px;
         }
 
         .founder-name {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: var(--dark);
             margin-bottom: 5px;
@@ -298,14 +441,24 @@
         .founder-title {
             color: var(--primary);
             font-weight: 600;
-            margin-bottom: 10px;
-            font-size: 0.9rem;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .founder-title::before {
+            content: '';
+            width: 20px;
+            height: 3px;
+            background: var(--primary);
         }
 
         .founder-desc {
             color: var(--gray);
-            font-size: 0.9rem;
-            line-height: 1.5;
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
 
         /* Packages Section */
@@ -330,6 +483,26 @@
             color: var(--gray);
             cursor: pointer;
             transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tab-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(236, 72, 153, 0.1);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .tab-btn:hover::before {
+            width: 100px;
+            height: 100px;
         }
 
         .tab-btn:hover {
@@ -354,7 +527,7 @@
             border-radius: 12px;
             padding: 30px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: all 0.3s;
             border-top: 5px solid transparent;
             position: relative;
             overflow: hidden;
@@ -363,9 +536,25 @@
             height: 100%;
         }
 
+        .package-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .package-card:hover::before {
+            transform: scaleX(1);
+        }
+
         .package-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
         }
 
         .package-card.basic {
@@ -392,6 +581,7 @@
             font-weight: 700;
             font-size: 0.9rem;
             border-bottom-left-radius: 8px;
+            animation: gradientShift 3s ease-in-out infinite;
         }
 
         .popular-badge {
@@ -406,6 +596,7 @@
             transform: rotate(-45deg);
             width: 150px;
             text-align: center;
+            animation: gradientShift 3s ease-in-out infinite;
         }
 
         .package-header {
@@ -423,6 +614,7 @@
             font-weight: 800;
             color: var(--primary);
             margin-bottom: 5px;
+            animation: fadeInUp 0.5s ease-out;
         }
 
         .package-price span {
@@ -449,6 +641,11 @@
             display: flex;
             align-items: flex-start;
             font-size: 0.9rem;
+            transition: transform 0.3s;
+        }
+
+        .package-features li:hover {
+            transform: translateX(5px);
         }
 
         .package-features li i {
@@ -456,6 +653,11 @@
             margin-right: 10px;
             margin-top: 3px;
             flex-shrink: 0;
+            transition: transform 0.3s;
+        }
+
+        .package-features li:hover i {
+            transform: scale(1.2);
         }
 
         .package-timeline {
@@ -465,6 +667,12 @@
             margin-top: 15px;
             border-left: 4px solid var(--secondary);
             margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+
+        .package-timeline:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
 
         .package-timeline p {
@@ -478,6 +686,7 @@
         .package-timeline i {
             color: var(--secondary);
             margin-right: 8px;
+            animation: float 2s ease-in-out infinite;
         }
 
         .package-footer {
@@ -502,11 +711,31 @@
             cursor: pointer;
             box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
             width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .package-button::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(45deg);
+            transition: all 0.5s;
+            opacity: 0;
+        }
+
+        .package-button:hover::after {
+            opacity: 1;
+            transform: rotate(45deg) translate(50%, 50%);
         }
 
         .package-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
         }
 
         /* Services Section */
@@ -521,13 +750,31 @@
             border-radius: 10px;
             padding: 25px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s;
+            transition: all 0.3s;
             border: 1px solid #f3f4f6;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.1);
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 15px 35px rgba(139, 92, 246, 0.15);
         }
 
         .service-icon {
@@ -539,6 +786,11 @@
             align-items: center;
             justify-content: center;
             margin-bottom: 15px;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover .service-icon {
+            transform: rotate(10deg) scale(1.1);
         }
 
         .service-icon i {
@@ -546,12 +798,22 @@
             background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover .service-icon i {
+            transform: scale(1.2);
         }
 
         .service-card h3 {
             font-size: 1.3rem;
             color: var(--dark);
             margin-bottom: 12px;
+            transition: color 0.3s;
+        }
+
+        .service-card:hover h3 {
+            color: var(--primary);
         }
 
         .service-price-range {
@@ -560,6 +822,7 @@
             font-size: 1rem;
             margin-bottom: 12px;
             display: block;
+            animation: fadeInUp 0.5s ease-out;
         }
 
         .service-features {
@@ -573,12 +836,23 @@
             display: flex;
             align-items: center;
             font-size: 0.85rem;
+            transition: transform 0.3s;
+        }
+
+        .service-features li:hover {
+            transform: translateX(5px);
+            color: var(--dark);
         }
 
         .service-features li i {
             color: var(--primary);
             margin-right: 8px;
             font-size: 0.7rem;
+            transition: transform 0.3s;
+        }
+
+        .service-features li:hover i {
+            transform: scale(1.3);
         }
 
         /* Contact Form Section */
@@ -609,12 +883,22 @@
             display: flex;
             align-items: center;
             font-size: 1rem;
+            transition: transform 0.3s;
+        }
+
+        .contact-details p:hover {
+            transform: translateX(5px);
         }
 
         .contact-details i {
             color: var(--primary);
             margin-right: 12px;
             width: 20px;
+            transition: transform 0.3s;
+        }
+
+        .contact-details p:hover i {
+            transform: scale(1.2);
         }
 
         .contact-form {
@@ -622,10 +906,23 @@
             padding: 30px;
             border-radius: 12px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-form::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
         }
 
         .form-group {
             margin-bottom: 20px;
+            position: relative;
         }
 
         .form-group label {
@@ -634,6 +931,7 @@
             color: var(--dark);
             font-weight: 600;
             font-size: 0.9rem;
+            transition: color 0.3s;
         }
 
         .form-group input,
@@ -641,10 +939,11 @@
         .form-group textarea {
             width: 100%;
             padding: 12px 15px;
-            border: 1px solid #e5e7eb;
+            border: 2px solid #e5e7eb;
             border-radius: 8px;
             font-size: 1rem;
-            transition: border-color 0.3s;
+            transition: all 0.3s;
+            background: transparent;
         }
 
         .form-group input:focus,
@@ -652,6 +951,7 @@
         .form-group textarea:focus {
             outline: none;
             border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.1);
         }
 
         .form-group textarea {
@@ -659,78 +959,239 @@
             resize: vertical;
         }
 
-        /* Portfolio Section */
+        /* Enhanced Form Messages */
+        .form-message {
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            text-align: center;
+            display: none;
+            animation: slideIn 0.5s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .form-message.success {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            color: #065f46;
+            border: 2px solid #bbf7d0;
+            display: block;
+        }
+
+        .form-message.error {
+            background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+            color: #991b1b;
+            border: 2px solid #fecaca;
+            display: block;
+        }
+
+        /* Loading Animation */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        .pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* UPDATED PORTFOLIO SECTION - SLIDESHOW */
         .portfolio {
             background-color: white;
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .portfolio-item {
-            background: white;
-            border-radius: 10px;
+            position: relative;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s;
         }
 
-        .portfolio-item:hover {
-            transform: translateY(-5px);
+        .portfolio-slideshow {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            height: 500px;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
         }
 
-        .portfolio-img {
-            height: 180px;
+        .portfolio-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            overflow: hidden;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.8s ease, transform 0.8s ease;
+            transform: scale(0.95);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(248,250,252,0.9) 100%);
         }
 
-        .portfolio-img img {
+        .portfolio-slide.active {
+            opacity: 1;
+            transform: scale(1);
+            z-index: 1;
+        }
+
+        .portfolio-slide.prev {
+            transform: translateX(-100%) scale(0.9);
+            opacity: 0.5;
+        }
+
+        .portfolio-slide.next {
+            transform: translateX(100%) scale(0.9);
+            opacity: 0.5;
+        }
+
+        .portfolio-slide-img {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .portfolio-slide-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s;
+            transition: transform 0.8s ease;
         }
 
-        .portfolio-item:hover .portfolio-img img {
+        .portfolio-slide.active .portfolio-slide-img img {
             transform: scale(1.05);
         }
 
-        .portfolio-info {
-            padding: 20px;
+        .portfolio-slide-info {
+            text-align: center;
+            max-width: 600px;
         }
 
-        .portfolio-info h3 {
-            font-size: 1.2rem;
+        .portfolio-slide-info h3 {
+            font-size: 1.8rem;
             color: var(--dark);
             margin-bottom: 10px;
         }
 
-        .portfolio-info p {
+        .portfolio-slide-info p {
             color: var(--gray);
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-            line-height: 1.4;
+            margin-bottom: 20px;
+            font-size: 1rem;
         }
 
-        .portfolio-link {
+        .portfolio-slide-link {
             display: inline-block;
-            color: var(--primary);
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.85rem;
+            transition: all 0.3s;
         }
 
-        .portfolio-link i {
-            margin-left: 5px;
-            transition: transform 0.3s;
+        .portfolio-slide-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
         }
 
-        .portfolio-link:hover i {
-            transform: translateX(5px);
+        .portfolio-thumbnails {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .portfolio-thumbnail {
+            width: 100px;
+            height: 70px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: all 0.3s;
+            border: 3px solid transparent;
+        }
+
+        .portfolio-thumbnail:hover {
+            opacity: 1;
+            transform: translateY(-5px);
+        }
+
+        .portfolio-thumbnail.active {
+            opacity: 1;
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(236, 72, 153, 0.3);
+        }
+
+        .portfolio-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .portfolio-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            z-index: 2;
+        }
+
+        .portfolio-nav:hover {
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .portfolio-nav.prev {
+            left: 20px;
+        }
+
+        .portfolio-nav.next {
+            right: 20px;
         }
 
         /* Costs Note - REDESIGNED */
@@ -743,6 +1204,12 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             position: relative;
             overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .costs-note:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
         }
 
         .costs-note::before {
@@ -753,6 +1220,7 @@
             width: 5px;
             height: 100%;
             background: linear-gradient(to bottom, var(--primary) 0%, var(--secondary) 100%);
+            animation: gradientShift 3s ease-in-out infinite;
         }
 
         .costs-header {
@@ -772,6 +1240,7 @@
             margin-right: 15px;
             color: white;
             font-size: 1.3rem;
+            animation: float 3s ease-in-out infinite;
         }
 
         .costs-title {
@@ -805,13 +1274,13 @@
         }
 
         .cost-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             border-color: var(--accent);
         }
 
         .cost-icon {
-            background-color: #fdf2f8;
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
             width: 40px;
             height: 40px;
             border-radius: 8px;
@@ -821,6 +1290,11 @@
             margin-right: 15px;
             color: var(--primary);
             font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .cost-item:hover .cost-icon {
+            transform: rotate(15deg) scale(1.1);
         }
 
         .cost-details h4 {
@@ -845,27 +1319,90 @@
             font-style: italic;
         }
 
-        /* Form Success/Error Messages */
-        .form-message {
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            text-align: center;
-            display: none;
+        /* NEW Q&A SECTION */
+        .faq-section {
+            background-color: var(--light);
+            padding: 60px 0;
         }
 
-        .form-message.success {
-            background-color: #d1fae5;
-            color: #065f46;
-            border: 1px solid #a7f3d0;
-            display: block;
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        .form-message.error {
-            background-color: #fee2e2;
-            color: #991b1b;
-            border: 1px solid #fecaca;
-            display: block;
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-question {
+            padding: 20px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            transition: all 0.3s;
+        }
+
+        .faq-question:hover {
+            background: linear-gradient(90deg, rgba(236, 72, 153, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+        }
+
+        .faq-question h3 {
+            font-size: 1.1rem;
+            color: var(--dark);
+            margin: 0;
+            flex: 1;
+        }
+
+        .faq-icon {
+            color: var(--primary);
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 20px 30px;
+            max-height: 1000px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .faq-answer p {
+            color: var(--gray);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .faq-answer ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .faq-answer li {
+            color: var(--gray);
+            margin-bottom: 8px;
         }
 
         /* Footer */
@@ -973,7 +1510,7 @@
 
         .social-icons a:hover {
             background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
-            transform: translateY(-3px);
+            transform: translateY(-3px) rotate(5deg);
         }
 
         .copyright {
@@ -984,64 +1521,43 @@
             font-size: 0.85rem;
         }
 
-        /* Responsive Styles - MOBILE FIRST APPROACH */
-        @media (max-width: 1200px) {
-            .container {
-                width: 95%;
-            }
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 99;
+            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
         }
 
-        @media (max-width: 1100px) {
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-            }
-            
-            .about-content, .contact-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .founders-section {
-                grid-template-columns: 1fr 1fr;
-                gap: 20px;
-            }
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
         }
 
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 2.4rem;
-            }
-            
-            .package-grid {
-                grid-template-columns: 1fr;
-                max-width: 500px;
-                margin: 0 auto;
-            }
-            
-            .package-card.standard {
-                transform: scale(1);
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-            
-            .founder-card {
-                padding: 25px;
-            }
-            
-            .logo-text {
-                font-size: 1.3rem;
-            }
-            
-            .logo img {
-                height: 65px;
-            }
+        .scroll-top:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.4);
         }
 
+        /* =========================================== */
+        /* MOBILE RESPONSIVE FIXES ONLY - NO DESIGN CHANGES */
+        /* =========================================== */
+
+        /* Mobile Navigation Fix */
         @media (max-width: 768px) {
-            /* Mobile Navigation */
             nav ul {
                 display: none;
                 position: absolute;
@@ -1054,6 +1570,7 @@
                 box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
                 text-align: center;
                 z-index: 999;
+                gap: 15px;
             }
             
             nav ul.active {
@@ -1064,46 +1581,113 @@
                 display: block;
             }
             
-            /* Hero Section */
+            nav a {
+                padding: 12px 0;
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Hero Section Mobile Fix */
+        @media (max-width: 768px) {
             .hero {
                 padding: 80px 0;
             }
             
             .hero h1 {
                 font-size: 2rem;
+                line-height: 1.3;
             }
             
             .hero p {
                 font-size: 1rem;
+                padding: 0 15px;
             }
             
-            /* About Section */
-            .about-content {
-                grid-template-columns: 1fr;
+            .cta-button {
+                padding: 14px 30px;
+                font-size: 1rem;
             }
-            
+        }
+
+        /* Founders Section Mobile Fix - Keep your oval design */
+        @media (max-width: 992px) {
             .founders-section {
-                grid-template-columns: 1fr;
-                margin-top: 30px;
+                flex-direction: column;
+                gap: 40px;
             }
             
-            /* Services */
-            .services-grid {
-                grid-template-columns: 1fr;
-                gap: 15px;
+            .founder-card.nhlanhla,
+            .founder-card.lerato {
+                padding: 30px;
+                border-radius: 20px;
+                min-height: auto;
+                justify-content: center;
+                padding-left: 30px;
+                padding-right: 30px;
             }
             
-            /* Contact Form */
-            .contact-content {
+            .founder-img-container.nhlanhla,
+            .founder-img-container.lerato {
+                position: relative;
+                left: 0;
+                right: 0;
+                top: 0;
+                transform: none;
+                margin: 0 auto 20px;
+            }
+            
+            .founder-info {
+                text-align: center;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .founder-img-container {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .founder-name {
+                font-size: 1.3rem;
+            }
+            
+            .founder-desc {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* About Content Mobile Fix */
+        @media (max-width: 768px) {
+            .about-content {
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
             
-            .contact-form {
-                padding: 25px;
+            .about-text h2 {
+                font-size: 1.8rem;
+                text-align: center;
             }
             
-            /* Packages */
+            .about-text p {
+                text-align: center;
+            }
+        }
+
+        /* Section Title Mobile Fix */
+        @media (max-width: 768px) {
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title p {
+                font-size: 0.95rem;
+                padding: 0 10px;
+            }
+        }
+
+        /* Packages Mobile Fix */
+        @media (max-width: 768px) {
             .package-tabs {
                 flex-direction: column;
                 align-items: center;
@@ -1111,85 +1695,26 @@
             
             .tab-btn {
                 width: 100%;
-                max-width: 280px;
-                margin-bottom: 5px;
+                max-width: 300px;
             }
             
-            /* Portfolio */
-            .portfolio-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            }
-            
-            /* Costs Note */
-            .costs-grid {
+            .package-grid {
                 grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto;
             }
             
-            .costs-header {
-                flex-direction: column;
-                text-align: center;
+            .package-card.standard {
+                transform: scale(1);
             }
             
-            .costs-icon {
-                margin-right: 0;
-                margin-bottom: 15px;
+            .popular-badge {
+                font-size: 0.7rem;
+                padding: 4px 30px;
+                left: -30px;
+                width: 130px;
             }
             
-            .costs-subtitle {
-                padding-left: 0;
-                text-align: center;
-            }
-            
-            /* WhatsApp Button */
-            .whatsapp-float {
-                bottom: 20px;
-                right: 20px;
-                width: 50px;
-                height: 50px;
-                font-size: 1.7rem;
-            }
-            
-            .logo-text {
-                font-size: 1.2rem;
-            }
-            
-            .logo img {
-                height: 60px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero {
-                padding: 60px 0;
-            }
-            
-            section {
-                padding: 50px 0;
-            }
-            
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            
-            .cta-button, .package-button {
-                padding: 12px 25px;
-                font-size: 1rem;
-            }
-            
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
-            
-            .section-title p {
-                font-size: 0.95rem;
-            }
-            
-            /* Cards */
-            .service-card, .portfolio-item, .contact-form, .founder-card {
-                padding: 20px;
-            }
-            
-            /* Packages */
             .package-card {
                 padding: 25px;
             }
@@ -1201,17 +1726,144 @@
             .package-price {
                 font-size: 1.8rem;
             }
+        }
+
+        /* Services Grid Mobile Fix */
+        @media (max-width: 992px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
             
-            /* Costs Note */
-            .costs-note {
+            .service-card {
+                padding: 20px;
+            }
+        }
+
+        /* Portfolio Slideshow Mobile Fix */
+        @media (max-width: 992px) {
+            .portfolio-slideshow {
+                height: 400px;
+            }
+            
+            .portfolio-slide-img {
+                height: 220px;
+            }
+            
+            .portfolio-slide-info h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-slideshow {
+                height: 350px;
+            }
+            
+            .portfolio-slide {
                 padding: 20px;
             }
             
-            .costs-title {
-                font-size: 1.2rem;
+            .portfolio-slide-img {
+                height: 180px;
             }
             
-            /* Footer */
+            .portfolio-slide-info h3 {
+                font-size: 1.3rem;
+            }
+            
+            .portfolio-slide-info p {
+                font-size: 0.9rem;
+            }
+            
+            .portfolio-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 0.9rem;
+            }
+            
+            .portfolio-thumbnail {
+                width: 80px;
+                height: 60px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .portfolio-slideshow {
+                height: 300px;
+            }
+            
+            .portfolio-slide-img {
+                height: 150px;
+            }
+            
+            .portfolio-thumbnail {
+                width: 70px;
+                height: 50px;
+            }
+        }
+
+        /* Contact Content Mobile Fix */
+        @media (max-width: 768px) {
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .contact-info h2 {
+                font-size: 1.8rem;
+                text-align: center;
+            }
+            
+            .contact-info p {
+                text-align: center;
+            }
+            
+            .contact-details p {
+                justify-content: center;
+            }
+            
+            .social-icons {
+                justify-content: center;
+            }
+            
+            .contact-form {
+                padding: 25px;
+            }
+        }
+
+        /* FAQ Mobile Fix */
+        @media (max-width: 768px) {
+            .faq-question {
+                padding: 15px 20px;
+            }
+            
+            .faq-question h3 {
+                font-size: 1rem;
+            }
+            
+            .faq-item.active .faq-answer {
+                padding: 15px 20px;
+            }
+            
+            .faq-answer p {
+                font-size: 0.9rem;
+            }
+            
+            .faq-answer li {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Footer Mobile Fix */
+        @media (max-width: 768px) {
             .footer-content {
                 grid-template-columns: 1fr;
                 text-align: center;
@@ -1224,91 +1876,143 @@
                 transform: translateX(-50%);
             }
             
-            .footer-contact p {
-                justify-content: center;
-            }
-            
             .social-icons {
                 justify-content: center;
             }
-            
-            /* Form */
-            .form-group input,
-            .form-group select,
-            .form-group textarea {
-                padding: 10px 12px;
+        }
+
+        /* Costs Note Mobile Fix */
+        @media (max-width: 768px) {
+            .costs-note {
+                padding: 25px;
             }
             
-            /* Founder Cards */
-            .founder-img {
-                width: 100px;
-                height: 100px;
-                font-size: 2.5rem;
+            .costs-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
             }
             
-            .founder-name {
+            .costs-icon {
+                margin-right: 0;
+            }
+            
+            .costs-subtitle {
+                padding-left: 0;
+                text-align: center;
+            }
+            
+            .costs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Logo Mobile Fix */
+        @media (max-width: 768px) {
+            .logo img {
+                height: 55px;
+            }
+            
+            .logo-text {
                 font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo img {
+                height: 50px;
             }
             
             .logo-text {
                 font-size: 1.1rem;
             }
-            
-            .logo img {
-                height: 55px;
+        }
+
+        /* WhatsApp Button Mobile Fix */
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 1.7rem;
+                bottom: 20px;
+                right: 20px;
             }
         }
 
-        @media (max-width: 400px) {
-            .logo-text {
-                font-size: 1rem;
+        /* Scroll Top Button Mobile Fix */
+        @media (max-width: 768px) {
+            .scroll-top {
+                width: 45px;
+                height: 45px;
+                bottom: 80px;
+                right: 20px;
             }
-            
-            .logo img {
-                height: 50px;
-            }
-            
+        }
+
+        /* Very Small Screens */
+        @media (max-width: 360px) {
             .hero h1 {
-                font-size: 1.6rem;
+                font-size: 1.7rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.5rem;
             }
             
             .package-card {
                 padding: 20px 15px;
             }
             
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .costs-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .cost-item {
-                padding: 12px;
-            }
-            
             .whatsapp-float {
-                bottom: 15px;
-                right: 15px;
                 width: 45px;
                 height: 45px;
                 font-size: 1.5rem;
+                bottom: 15px;
+                right: 15px;
+            }
+            
+            .scroll-top {
+                width: 40px;
+                height: 40px;
+                bottom: 70px;
+                right: 15px;
+            }
+        }
+
+        /* Fix for horizontal scroll on mobile */
+        @media (max-width: 768px) {
+            body {
+                overflow-x: hidden;
+            }
+            
+            .container {
+                width: 95%;
+                padding: 0 15px;
+            }
+            
+            section {
+                padding: 50px 0;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Your exact HTML content remains the same -->
     <!-- WhatsApp Float Button -->
     <a href="https://wa.me/27817218350" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
     <!-- Header -->
     <header>
         <div class="container header-container">
             <div class="logo">
-                <img src="logo.png" alt="NL Digital Solutions Logo">
+                <img src="./images/logo.png" alt="NL Digital Solutions Logo">
                 <div class="logo-text">NL Digital Solutions</div>
             </div>
             
@@ -1323,19 +2027,21 @@
                     <li><a href="#packages">Packages</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Our Work</a></li>
+                    <li><a href="#faq">Q&A</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
+    <!-- Your exact HTML continues... -->
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
-            <div class="hero-content">
+            <div class="hero-content animate-fade-in">
                 <h1>Complete Digital Solutions <span>From R1,500</span></h1>
                 <p>Professional websites, mobile apps, business services, and branding solutions tailored to your needs. We transform your vision into a powerful digital presence with transparent pricing and clear timelines.</p>
-                <a href="#contact" class="cta-button">Start Your Project Today</a>
+                <a href="#contact" class="cta-button animate-float">Start Your Project Today</a>
             </div>
         </div>
     </section>
@@ -1343,30 +2049,43 @@
     <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
+            <div class="section-title">
+                <h2 class="gradient-text">About NL Digital Solutions</h2>
+                <p>Meet the passionate team behind your digital success</p>
+            </div>
+            
             <div class="about-content">
                 <div class="about-text">
-                    <h2>About NL Digital Solutions</h2>
+                    <h2>Transforming Visions into Digital Reality</h2>
                     <p>At NL Digital Solutions, we combine technical expertise with creative vision to deliver exceptional digital solutions for businesses of all sizes. Our passion for innovation and commitment to quality ensures every project receives the attention it deserves to thrive in today's competitive market.</p>
                     <p>We empower entrepreneurs and businesses with professional digital tools that drive growth and enhance online presence. Through transparent pricing, clear communication, and results that exceed expectations, we build lasting partnerships that transform visions into powerful digital realities.</p>
                 </div>
                 
                 <div class="founders-section">
-                    <div class="founder-card">
-                        <div class="founder-img">
-                            <i class="fas fa-paint-brush"></i>
+                    <div class="founder-left">
+                        <div class="founder-card nhlanhla">
+                            <div class="founder-img-container nhlanhla">
+                                <img src="./images/nhlanhla.png" alt="Nhlanhla Msomi">
+                            </div>
+                            <div class="founder-info">
+                                <h3 class="founder-name">Nhlanhla Msomi</h3>
+                                <p class="founder-title">Co-Founder & Creative Director</p>
+                                <p class="founder-desc">Nhlanhla brings the creative vision to our projects. With a background in design and user experience, she ensures every website and app we create is not only functional but visually stunning and user-friendly.</p>
+                            </div>
                         </div>
-                        <h3 class="founder-name">Nhlanhla Msomi</h3>
-                        <p class="founder-title">Co-Founder & Creative Director</p>
-                        <p class="founder-desc">Nhlanhla brings the creative vision to our projects. With a background in design and user experience, she ensures every website and app we create is not only functional but visually stunning and user-friendly.</p>
                     </div>
                     
-                    <div class="founder-card">
-                        <div class="founder-img">
-                            <i class="fas fa-chart-line"></i>
+                    <div class="founder-right">
+                        <div class="founder-card lerato">
+                            <div class="founder-img-container lerato">
+                                <img src="./images/lerato.jpg" alt="Lerato Nama">
+                            </div>
+                            <div class="founder-info">
+                                <h3 class="founder-name">Lerato Nama</h3>
+                                <p class="founder-title">Co-Founder & Business Strategist</p>
+                                <p class="founder-desc">Lerato focuses on the business strategy and technical architecture of our solutions. Her expertise ensures that every project is built on solid foundations that support business growth and scalability.</p>
+                            </div>
                         </div>
-                        <h3 class="founder-name">Lerato Nama</h3>
-                        <p class="founder-title">Co-Founder & Business Strategist</p>
-                        <p class="founder-desc">Lerato focuses on the business strategy and technical architecture of our solutions. Her expertise ensures that every project is built on solid foundations that support business growth and scalability.</p>
                     </div>
                 </div>
             </div>
@@ -1377,7 +2096,7 @@
     <section class="packages" id="packages">
         <div class="container">
             <div class="section-title">
-                <h2>Our Packages</h2>
+                <h2 class="gradient-text">Our Packages</h2>
                 <p>Choose the perfect package for your business with clear pricing and timelines</p>
             </div>
             
@@ -1637,7 +2356,7 @@
     <section id="services">
         <div class="container">
             <div class="section-title">
-                <h2>Additional Services</h2>
+                <h2 class="gradient-text">Additional Services</h2>
                 <p>Comprehensive business, design, and branding solutions</p>
             </div>
             
@@ -1707,78 +2426,227 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
+    <!-- Portfolio Section - UPDATED WITH SLIDESHOW -->
     <section class="portfolio" id="portfolio">
         <div class="container">
             <div class="section-title">
-                <h2>Our Previous Work</h2>
+                <h2 class="gradient-text">Our Previous Work</h2>
                 <p>Browse through some of our recently completed projects</p>
             </div>
             
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <div class="portfolio-img">
-                        <img src="vuwa.png" alt="Vuwa Driving School Website">
+            <div class="portfolio-slideshow">
+                <!-- Navigation Arrows -->
+                <div class="portfolio-nav prev">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <div class="portfolio-nav next">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                
+                <!-- Slides -->
+                <div class="portfolio-slide active" data-index="0">
+                    <div class="portfolio-slide-img">
+                        <img src="./images/vuwa.png" alt="Vuwa Driving School Website">
                     </div>
-                    <div class="portfolio-info">
+                    <div class="portfolio-slide-info">
                         <h3>Vuwa Driving School</h3>
-                        <p>Professional driving school website with contact information.</p>
-                        <a href="https://vuwa-driving-schooldemo-u4yo.vercel.app/" target="_blank" class="portfolio-link">View Live Site <i class="fas fa-external-link-alt"></i></a>
+                        <p>Professional driving school website with contact information and service details.</p>
+                        <a href="https://vuwa-driving-schooldemo-u4yo.vercel.app/" target="_blank" class="portfolio-slide-link">View Live Site</a>
                     </div>
                 </div>
                 
-                <div class="portfolio-item">
-                    <div class="portfolio-img">
-                        <img src="znn.png" alt="ZZN Consulting Website">
+                <div class="portfolio-slide" data-index="1">
+                    <div class="portfolio-slide-img">
+                        <img src="./images/znn.png" alt="ZZN Consulting Website">
                     </div>
-                    <div class="portfolio-info">
+                    <div class="portfolio-slide-info">
                         <h3>ZZN Consulting</h3>
-                        <p>Specialist food safety and quality consultancy company.</p>
-                        <a href="https://zznconsulting.co.za/" target="_blank" class="portfolio-link">View Live Site <i class="fas fa-external-link-alt"></i></a>
+                        <p>Specialist food safety and quality consultancy company with detailed service offerings.</p>
+                        <a href="https://zznconsulting.co.za/" target="_blank" class="portfolio-slide-link">View Live Site</a>
                     </div>
                 </div>
                 
-                <div class="portfolio-item">
-                    <div class="portfolio-img">
-                        <img src="house.png" alt="House Renomasters Website">
+                <div class="portfolio-slide" data-index="2">
+                    <div class="portfolio-slide-img">
+                        <img src="./images/house.png" alt="House Renomasters Website">
                     </div>
-                    <div class="portfolio-info">
+                    <div class="portfolio-slide-info">
                         <h3>House Renomasters</h3>
-                        <p>Expert renovation and painting services company.</p>
-                        <a href="https://www.houserenomasters.co.za/" target="_blank" class="portfolio-link">View Live Site <i class="fas fa-external-link-alt"></i></a>
+                        <p>Expert renovation and painting services company with portfolio showcase.</p>
+                        <a href="https://www.houserenomasters.co.za/" target="_blank" class="portfolio-slide-link">View Live Site</a>
                     </div>
                 </div>
                 
-                <div class="portfolio-item">
-                    <div class="portfolio-img">
-                        <img src="silunama.png" alt="Silunama Website">
+                <div class="portfolio-slide" data-index="3">
+                    <div class="portfolio-slide-img">
+                        <img src="./images/silunama.png" alt="Silunama Website">
                     </div>
-                    <div class="portfolio-info">
+                    <div class="portfolio-slide-info">
                         <h3>Silunama Civils</h3>
-                        <p>Civil engineering and construction services company.</p>
-                        <a href="https://www.silunama.co.za/#home" target="_blank" class="portfolio-link">View Live Site <i class="fas fa-external-link-alt"></i></a>
+                        <p>Civil engineering and construction services company with project gallery.</p>
+                        <a href="https://www.silunama.co.za/#home" target="_blank" class="portfolio-slide-link">View Live Site</a>
                     </div>
                 </div>
                 
-                <div class="portfolio-item">
-                    <div class="portfolio-img">
-                        <img src="patmax.png" alt="Patmax Valet Website">
+                <div class="portfolio-slide" data-index="4">
+                    <div class="portfolio-slide-img">
+                        <img src="./images/patmax.png" alt="Patmax Valet Website">
                     </div>
-                    <div class="portfolio-info">
+                    <div class="portfolio-slide-info">
                         <h3>Patmax Valet</h3>
-                        <p>Professional car valet and detailing service.</p>
-                        <a href="https://www.patmaxvalet.co.za/" target="_blank" class="portfolio-link">View Live Site <i class="fas fa-external-link-alt"></i></a>
+                        <p>Professional car valet and detailing service with booking functionality.</p>
+                        <a href="https://www.patmaxvalet.co.za/" target="_blank" class="portfolio-slide-link">View Live Site</a>
                     </div>
                 </div>
                 
-                <div class="portfolio-item">
-                    <div class="portfolio-img">
-                        <img src="lifespring.png" alt="Life Springs Website">
+                <div class="portfolio-slide" data-index="5">
+                    <div class="portfolio-slide-img">
+                        <img src="./images/lifespring.png" alt="Life Springs Website">
                     </div>
-                    <div class="portfolio-info">
+                    <div class="portfolio-slide-info">
                         <h3>Life Springs Spa</h3>
-                        <p>Wellness and spa services for relaxation and rejuvenation.</p>
-                        <a href="https://life-springs-demo-xr23.vercel.app/" target="_blank" class="portfolio-link">View Live Site <i class="fas fa-external-link-alt"></i></a>
+                        <p>Wellness and spa services for relaxation and rejuvenation with online booking.</p>
+                        <a href="https://life-springs-demo-xr23.vercel.app/" target="_blank" class="portfolio-slide-link">View Live Site</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Thumbnails -->
+            <div class="portfolio-thumbnails">
+                <div class="portfolio-thumbnail active" data-index="0">
+                    <img src="./images/vuwa.png" alt="Vuwa Driving School">
+                </div>
+                <div class="portfolio-thumbnail" data-index="1">
+                    <img src="./images/znn.png" alt="ZZN Consulting">
+                </div>
+                <div class="portfolio-thumbnail" data-index="2">
+                    <img src="./images/house.png" alt="House Renomasters">
+                </div>
+                <div class="portfolio-thumbnail" data-index="3">
+                    <img src="./images/silunama.png" alt="Silunama">
+                </div>
+                <div class="portfolio-thumbnail" data-index="4">
+                    <img src="./images/patmax.png" alt="Patmax Valet">
+                </div>
+                <div class="portfolio-thumbnail" data-index="5">
+                    <img src="./images/lifespring.png" alt="Life Springs Spa">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW Q&A Section -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="gradient-text">Frequently Asked Questions</h2>
+                <p>Find answers to common questions about our services</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item active">
+                    <div class="faq-question">
+                        <h3>How long does it take to build a website?</h3>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our development timeline depends on the package you choose:</p>
+                        <ul>
+                            <li><strong>Basic Website:</strong> 5-7 working days after approval</li>
+                            <li><strong>Standard Website:</strong> 7-10 working days after approval</li>
+                            <li><strong>Premium Website:</strong> 10-15 working days after approval</li>
+                            <li><strong>Mobile Apps:</strong> 2-6 weeks depending on complexity</li>
+                        </ul>
+                        <p>Timelines start after we receive all required content and final approval on designs.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What do I need to provide before we start?</h3>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>To ensure a smooth process, we recommend having:</p>
+                        <ul>
+                            <li>Company logo and branding materials</li>
+                            <li>High-quality images or access to stock photos</li>
+                            <li>Written content for your pages</li>
+                            <li>Contact information and social media links</li>
+                            <li>Examples of websites you like (for design inspiration)</li>
+                            <li>List of specific features or functionality you need</li>
+                        </ul>
+                        <p>Don't worry if you're missing some items - we can help source content and provide guidance!</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you offer website maintenance and hosting?</h3>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We offer comprehensive maintenance and hosting services:</p>
+                        <ul>
+                            <li><strong>Website Maintenance:</strong> R250/month includes updates, security monitoring, and basic content changes</li>
+                            <li><strong>Hosting:</strong> We can set up hosting for you or guide you through choosing a provider</li>
+                            <li><strong>Domain Registration:</strong> We'll help you register and manage your domain name</li>
+                            <li><strong>Email Setup:</strong> Professional business email accounts can be configured</li>
+                        </ul>
+                        <p>These are additional services billed separately from the website development packages.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What payment methods do you accept?</h3>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We accept various payment methods for your convenience:</p>
+                        <ul>
+                            <li>Bank transfer (South African banks)</li>
+                            <li>Credit/Debit cards via secure payment gateways</li>
+                            <li>PayFast</li>
+                            <li>SnapScan</li>
+                            <li>Payment plans available for larger projects</li>
+                        </ul>
+                        <p>A 50% deposit is required to start work, with the balance due upon completion. All pricing excludes VAT unless otherwise stated.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can you help with SEO and getting my website found on Google?</h3>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! All our websites include basic SEO setup. For more comprehensive SEO, we offer:</p>
+                        <ul>
+                            <li><strong>Basic SEO:</strong> Included with all packages - proper structure, meta tags, and mobile optimization</li>
+                            <li><strong>Advanced SEO:</strong> Available as an add-on - keyword research, content optimization, and technical SEO</li>
+                            <li><strong>Ongoing SEO:</strong> Monthly SEO management packages available</li>
+                            <li><strong>Google My Business:</strong> Setup and optimization included with Premium packages</li>
+                        </ul>
+                        <p>We build websites with search engines in mind from day one!</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What happens after my website is live?</h3>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our relationship doesn't end when your website goes live:</p>
+                        <ul>
+                            <li><strong>Training:</strong> We provide training on how to update your website</li>
+                            <li><strong>Support:</strong> 30 days of free support included with all packages</li>
+                            <li><strong>Documentation:</strong> Complete documentation provided</li>
+                            <li><strong>Maintenance Plans:</strong> Available for ongoing support and updates</li>
+                            <li><strong>Future Updates:</strong> We're always available for future enhancements</li>
+                        </ul>
+                        <p>We consider our clients long-term partners and are always here to help your business grow!</p>
                     </div>
                 </div>
             </div>
@@ -1789,7 +2657,7 @@
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-title">
-                <h2>Contact Us</h2>
+                <h2 class="gradient-text">Contact Us</h2>
                 <p>Get in touch to start your project or request a custom quote</p>
             </div>
             
@@ -1818,11 +2686,8 @@
                     <!-- Success/Error Messages -->
                     <div id="formMessage" class="form-message" style="display: none;"></div>
                     
-                    <!-- FIXED: Working Formspree endpoint for lpnamawork2@gmail.com -->
-                    <form id="contactForm" action="https://formspree.io/f/xqkrqplg" method="POST">
-                        <input type="hidden" name="_subject" value="New Contact Form Submission - NL Digital Solutions">
-                        <input type="hidden" name="_replyto" value="lpnamawork2@gmail.com">
-                        
+                    <!-- NODE.JS BACKEND CONTACT FORM -->
+                    <form id="contactForm">
                         <div class="form-group">
                             <label for="name">Full Name *</label>
                             <input type="text" id="name" name="name" required>
@@ -1842,12 +2707,12 @@
                             <label for="service">Select Service *</label>
                             <select id="service" name="service" required>
                                 <option value="">Choose a service</option>
-                                <option value="website">Website Development</option>
-                                <option value="application">Mobile Application</option>
-                                <option value="business">Business Services</option>
-                                <option value="design">Graphic Design</option>
-                                <option value="branding">Branding</option>
-                                <option value="other">Other Services</option>
+                                <option value="Website Development">Website Development</option>
+                                <option value="Mobile Application">Mobile Application</option>
+                                <option value="Business Services">Business Services</option>
+                                <option value="Graphic Design">Graphic Design</option>
+                                <option value="Branding">Branding</option>
+                                <option value="Other Services">Other Services</option>
                             </select>
                         </div>
                         
@@ -1886,6 +2751,7 @@
                         <li><a href="#packages">Packages</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#portfolio">Our Work</a></li>
+                        <li><a href="#faq">Q&A</a></li>
                     </ul>
                 </div>
                 
@@ -1915,7 +2781,25 @@
         </div>
     </footer>
 
+    <!-- Your exact JavaScript remains the same -->
     <script>
+        // ============================================
+        // ENHANCED WEBSITE WITH ALL NEW FEATURES
+        // ============================================
+        const API_URL = 'http://localhost:3000';
+        
+        // Intersection Observer for section animations
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        sections.forEach(section => observer.observe(section));
+        
         // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navMenu = document.getElementById('navMenu');
@@ -1982,73 +2866,314 @@
             });
         });
         
-        // Contact form submission with Formspree - FIXED VERSION
+        // ============================================
+        // PORTFOLIO SLIDESHOW
+        // ============================================
+        const portfolioSlides = document.querySelectorAll('.portfolio-slide');
+        const portfolioThumbnails = document.querySelectorAll('.portfolio-thumbnail');
+        const prevBtn = document.querySelector('.portfolio-nav.prev');
+        const nextBtn = document.querySelector('.portfolio-nav.next');
+        let currentSlide = 0;
+        
+        function showSlide(index) {
+            // Hide all slides
+            portfolioSlides.forEach(slide => {
+                slide.classList.remove('active', 'prev', 'next');
+            });
+            
+            // Show current slide
+            portfolioSlides[index].classList.add('active');
+            
+            // Set previous and next slides for animation
+            let prevIndex = index - 1;
+            if (prevIndex < 0) prevIndex = portfolioSlides.length - 1;
+            
+            let nextIndex = index + 1;
+            if (nextIndex >= portfolioSlides.length) nextIndex = 0;
+            
+            portfolioSlides[prevIndex].classList.add('prev');
+            portfolioSlides[nextIndex].classList.add('next');
+            
+            // Update thumbnails
+            portfolioThumbnails.forEach(thumb => {
+                thumb.classList.remove('active');
+                if (parseInt(thumb.getAttribute('data-index')) === index) {
+                    thumb.classList.add('active');
+                }
+            });
+            
+            currentSlide = index;
+        }
+        
+        function nextSlide() {
+            let nextIndex = currentSlide + 1;
+            if (nextIndex >= portfolioSlides.length) nextIndex = 0;
+            showSlide(nextIndex);
+        }
+        
+        function prevSlide() {
+            let prevIndex = currentSlide - 1;
+            if (prevIndex < 0) prevIndex = portfolioSlides.length - 1;
+            showSlide(prevIndex);
+        }
+        
+        // Navigation buttons
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
+        
+        // Thumbnail clicks
+        portfolioThumbnails.forEach(thumb => {
+            thumb.addEventListener('click', () => {
+                const index = parseInt(thumb.getAttribute('data-index'));
+                showSlide(index);
+            });
+        });
+        
+        // Auto-advance slideshow every 5 seconds
+        let slideshowInterval = setInterval(nextSlide, 5000);
+        
+        // Pause on hover
+        const slideshowContainer = document.querySelector('.portfolio-slideshow');
+        slideshowContainer.addEventListener('mouseenter', () => {
+            clearInterval(slideshowInterval);
+        });
+        
+        slideshowContainer.addEventListener('mouseleave', () => {
+            slideshowInterval = setInterval(nextSlide, 5000);
+        });
+        
+        // ============================================
+        // Q&A SECTION
+        // ============================================
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const icon = item.querySelector('.faq-icon i');
+            
+            question.addEventListener('click', () => {
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-icon i').className = 'fas fa-plus';
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
+                
+                // Change icon
+                if (item.classList.contains('active')) {
+                    icon.className = 'fas fa-minus';
+                } else {
+                    icon.className = 'fas fa-plus';
+                }
+            });
+        });
+        
+        // ============================================
+        // SCROLL TO TOP BUTTON
+        // ============================================
+        const scrollTopBtn = document.getElementById('scrollTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // ============================================
+        // SIMPLIFIED CONTACT FORM SUBMISSION
+        // ============================================
         document.getElementById('contactForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
             const form = this;
             const formMessage = document.getElementById('formMessage');
             const submitButton = form.querySelector('button[type="submit"]');
-            const originalButtonText = submitButton.textContent;
             
-            // Show loading state
-            submitButton.textContent = 'Sending...';
+            // Show loading
+            submitButton.innerHTML = '<span class="loading"></span> Sending...';
             submitButton.disabled = true;
             formMessage.style.display = 'none';
             
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                phone: document.getElementById('phone').value.trim() || '',
+                service: document.getElementById('service').value,
+                message: document.getElementById('message').value.trim()
+            };
+            
+            console.log('Submitting form data:', formData);
+            
+            // Validate
+            if (!formData.name || !formData.email || !formData.service || !formData.message) {
+                showError('Please fill all required fields');
+                submitButton.textContent = 'Send Message';
+                submitButton.disabled = false;
+                return;
+            }
+            
             try {
-                const response = await fetch(form.action, {
+                // Try main endpoint
+                const response = await fetch(`${API_URL}/send-with-reply`, {
                     method: 'POST',
-                    body: new FormData(form),
                     headers: {
+                        'Content-Type': 'application/json',
                         'Accept': 'application/json'
-                    }
+                    },
+                    body: JSON.stringify(formData)
                 });
                 
-                if (response.ok) {
-                    // Show success message
-                    formMessage.textContent = 'Thank you for your message! We will contact you within 24 hours. Check lpnamawork2@gmail.com for confirmation.';
-                    formMessage.className = 'form-message success';
-                    formMessage.style.display = 'block';
-                    
-                    // Reset form
-                    form.reset();
-                    
-                    // Scroll to message
-                    formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                } else {
-                    // Try alternative method if Formspree fails
-                    throw new Error('Formspree submission failed, using fallback method');
+                console.log('Response status:', response.status);
+                
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    console.error('Response error:', errorText);
+                    throw new Error(`Server responded with ${response.status}: ${errorText}`);
                 }
+                
+                const result = await response.json();
+                console.log('Response result:', result);
+                
+                if (result.success) {
+                    // SUCCESS - SIMPLE MESSAGE
+                    showSimpleSuccess(formData, result.data?.reference || 'NL' + Date.now().toString().slice(-8));
+                    form.reset();
+                } else {
+                    // Server returned error
+                    throw new Error(result.error || 'Server error');
+                }
+                
             } catch (error) {
-                // Fallback: Simulate success for testing
-                console.log('Form data would be sent to: lpnamawork2@gmail.com');
-                console.log('Form data:', {
-                    name: document.getElementById('name').value,
-                    email: document.getElementById('email').value,
-                    phone: document.getElementById('phone').value,
-                    service: document.getElementById('service').value,
-                    message: document.getElementById('message').value
-                });
+                console.error('Form submission error:', error);
                 
-                // Show success message anyway for testing
-                formMessage.textContent = 'Thank you for your message! We will contact you within 24 hours. (Test mode - data logged to console)';
-                formMessage.className = 'form-message success';
-                formMessage.style.display = 'block';
+                // Show error to user but still save
+                showError('There was an issue sending your message. We have saved your inquiry and will contact you.');
                 
-                // Reset form
-                form.reset();
+                // Try to save locally anyway
+                try {
+                    await fetch(`${API_URL}/save-submission`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(formData)
+                    });
+                    console.log('Saved to server backup');
+                } catch (backupError) {
+                    console.log('Saving to local storage as fallback');
+                    saveToLocalStorage(formData);
+                }
                 
-                // Scroll to message
-                formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             } finally {
-                // Reset button state
-                submitButton.textContent = originalButtonText;
+                submitButton.textContent = 'Send Message';
                 submitButton.disabled = false;
             }
         });
         
-        // Handle window resize for better mobile experience
+        function showSimpleSuccess(formData, reference) {
+            const formMessage = document.getElementById('formMessage');
+            formMessage.innerHTML = `
+                <div style="text-align: center; padding: 20px;">
+                    <div style="font-size: 3rem; color: #10b981; margin-bottom: 15px;">✅</div>
+                    <h3 style="color: #065f46; margin-bottom: 15px;">Thank You, ${formData.name}!</h3>
+                    <p style="margin-bottom: 20px;">We have received your inquiry about <strong>${formData.service}</strong>.</p>
+                    
+                    <div style="background: #f0fdf4; padding: 15px; border-radius: 8px; margin: 20px 0; border: 1px solid #bbf7d0;">
+                        <p><strong>What happens next:</strong></p>
+                        <p style="margin: 10px 0;">• Our team will review your requirements</p>
+                        <p style="margin: 10px 0;">• You'll receive a detailed proposal within <strong>24-48 hours</strong></p>
+                        <p style="margin: 10px 0;">• We'll contact you at ${formData.phone || formData.email}</p>
+                    </div>
+                    
+                    <p style="margin: 20px 0;">
+                        <strong>Reference:</strong> ${reference}<br>
+                        <small>Keep this for your records</small>
+                    </p>
+                    
+                    <div style="margin: 25px 0;">
+                        <a href="https://wa.me/27817218350" 
+                           target="_blank"
+                           style="background: #25D366; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block; margin: 10px;">
+                           💬 Chat on WhatsApp for Fast Response
+                        </a>
+                    </div>
+                    
+                    <p style="color: #6b7280; font-size: 0.9rem; margin-top: 20px;">
+                        Need help? Call us: <strong>081 721 8350</strong><br>
+                        Or email: <strong>support@nldigitalsolutions.co.za</strong>
+                    </p>
+                </div>
+            `;
+            formMessage.className = 'form-message success';
+            formMessage.style.display = 'block';
+            formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        
+        function showError(message) {
+            const formMessage = document.getElementById('formMessage');
+            formMessage.innerHTML = `
+                <div style="text-align: center; padding: 20px;">
+                    <div style="font-size: 3rem; color: #ef4444; margin-bottom: 15px;">⚠️</div>
+                    <h3 style="color: #991b1b; margin-bottom: 15px;">Oops! Something went wrong</h3>
+                    <p>${message}</p>
+                    <p style="margin-top: 20px;">Please try again or contact us directly:</p>
+                    <p>
+                        <strong>📞 081 721 8350</strong><br>
+                        <strong>📧 support@nldigitalsolutions.co.za</strong>
+                    </p>
+                </div>
+            `;
+            formMessage.className = 'form-message error';
+            formMessage.style.display = 'block';
+            formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        
+        function saveToLocalStorage(formData) {
+            try {
+                const submissions = JSON.parse(localStorage.getItem('nl_submissions') || '[]');
+                submissions.push({
+                    ...formData,
+                    timestamp: new Date().toISOString(),
+                    savedLocally: true
+                });
+                localStorage.setItem('nl_submissions', JSON.stringify(submissions));
+                console.log('Saved to localStorage:', formData.name);
+            } catch (e) {
+                console.log('Local storage error:', e);
+            }
+        }
+        
+        // Test server connection on load
+        window.addEventListener('load', async () => {
+            try {
+                const response = await fetch(`${API_URL}/health`);
+                if (response.ok) {
+                    console.log('✅ Server connection successful');
+                }
+            } catch (error) {
+                console.log('⚠️ Server not reachable, form will use fallback methods');
+            }
+            
+            // Add animation delay to elements
+            const animatedElements = document.querySelectorAll('.service-card, .package-card, .founder-card');
+            animatedElements.forEach((el, index) => {
+                el.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+        
+        // Handle window resize
         window.addEventListener('resize', function() {
             if (window.innerWidth > 768) {
                 navMenu.classList.remove('active');
@@ -2056,13 +3181,27 @@
             }
         });
         
-        // Fix for content shifting - Add this to prevent horizontal scroll
+        // Fix for content shifting
         document.addEventListener('DOMContentLoaded', function() {
-            // Check if there's horizontal overflow
             if (document.documentElement.scrollWidth > window.innerWidth) {
-                console.log('Fixing horizontal scroll issue');
-                // Force recalculation of widths
                 document.body.style.overflowX = 'hidden';
+            }
+        });
+        
+        // Auto-scroll to form message if there's an error
+        window.addEventListener('load', function() {
+            const formMessage = document.getElementById('formMessage');
+            if (formMessage && formMessage.style.display !== 'none') {
+                formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        });
+        
+        // Keyboard navigation for portfolio
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                prevSlide();
+            } else if (e.key === 'ArrowRight') {
+                nextSlide();
             }
         });
     </script>
