@@ -5,174 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NL Digital Solutions | Complete Digital & Design Services</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
     <style>
-        /* ALL YOUR EXACT ORIGINAL CSS CODE - NO CHANGES TO DESIGN */
-        /* Reset and Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        :root {
-            --primary: #ec4899; /* Pink */
-            --primary-dark: #db2777;
-            --secondary: #8b5cf6; /* Purple */
-            --secondary-dark: #7c3aed;
-            --accent: #f472b6;
-            --light: #fdf2f8;
-            --dark: #1f2937;
-            --gray: #6b7280;
-            --gray-light: #f3f4f6;
-        }
-
-        body {
-            line-height: 1.6;
-            color: var(--dark);
-            background-color: white;
-            overflow-x: hidden;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        @keyframes gradientShift {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        .animate-fade-in {
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        .animate-float {
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .gradient-text {
-            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--primary));
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradientShift 3s ease-in-out infinite;
-        }
-
-        /* Header Styles */
-        header {
-            background-color: white;
-            box-shadow: 0 2px 15px rgba(139, 92, 246, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            animation: fadeInUp 0.5s ease-out;
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .logo img {
-            height: 70px;
-            width: auto;
-            transition: transform 0.3s;
-        }
-
-        .logo:hover img {
-            transform: scale(1.05);
-        }
-
-        .logo-text {
-            font-size: 1.4rem;
-            font-weight: 800;
-            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            transition: all 0.3s;
-        }
-
-        .logo:hover .logo-text {
-            transform: translateX(5px);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s;
-            padding: 5px 0;
-            position: relative;
-        }
-
-        nav a:hover {
-            color: var(--primary);
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
-            left: 0;
-            bottom: 0;
-            transition: width 0.3s;
-            border-radius: 2px;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--primary:#ec4899;--primary-dark:#db2777;--primary-light:#f9a8d4;--secondary:#8b5cf6;--secondary-dark:#7c3aed;--secondary-light:#c4b5fd;--accent:#f472b6;--light:#fdf8fa;--cream:#fefcfd;--dark:#1a1a2e;--gray:#6b7280;--gray-light:#f8fafc;--gradient-primary:linear-gradient(135deg,var(--primary) 0%,var(--secondary) 100%);--gradient-soft:linear-gradient(135deg,rgba(236,72,153,0.08) 0%,rgba(139,92,246,0.08) 100%);--shadow-soft:0 4px 20px rgba(139,92,246,0.08);--shadow-elevated:0 20px 60px rgba(139,92,246,0.15);--border-radius:16px;--border-radius-lg:24px;--transition:all 0.4s cubic-bezier(0.4,0,0.2,1)}
+        html{scroll-behavior:smooth}
+        body{font-family:'DM Sans',sans-serif;line-height:1.7;color:var(--dark);background-color:var(--cream);overflow-x:hidden;font-size:16px;-webkit-font-smoothing:antialiased}
+        h1,h2,h3,h4,h5,h6{font-family:'Playfair Display',serif;font-weight:600;line-height:1.2;letter-spacing:-0.02em}
+        .container{width:100%;max-width:1280px;margin:0 auto;padding:0 24px}
+        @keyframes fadeInUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+        @keyframes fadeInDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+        @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+        @keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+        .gradient-text{background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(139,92,246,0.08);transition:var(--transition)}
+        header.scrolled{background:rgba(255,255,255,0.95);box-shadow:var(--shadow-soft)}
+        .header-container{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
+        .logo{display:flex;align-items:center;gap:14px;text-decoration:none;transition:var(--transition)}
+        .logo:hover{transform:translateX(4px)}
+        .logo img{height:56px;width:auto}
+        .logo-text{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:600;background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        nav ul{display:flex;list-style:none;gap:8px}
+        nav a{text-decoration:none;color:var(--dark);font-weight:500;font-size:0.95rem;padding:10px 18px;border-radius:100px;transition:var(--transition)}
+        nav a:hover{color:var(--primary);background:var(--gradient-soft)}
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -186,3024 +43,380 @@
         .mobile-menu-btn:hover {
             transform: scale(1.1);
         }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-            padding: 100px 0;
-            text-align: center;
-            position: relative;
-            color: white;
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero h1 span {
-            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-            color: #f3f4f6;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            padding: 15px 35px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .cta-button:hover::before {
-            left: 100%;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
-        }
-
-        /* WhatsApp Float Button */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background: #25D366;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-            z-index: 100;
-            transition: all 0.3s;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-            animation: none;
-        }
-
-        /* Section Styles */
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .section-title h2 {
-            font-size: 2.2rem;
-            color: var(--dark);
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            width: 70px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 2px;
-            animation: gradientShift 3s ease-in-out infinite;
-        }
-
-        .section-title p {
-            color: var(--gray);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        section {
-            padding: 60px 0;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-
-        section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* About Section */
-        .about {
-            background-color: var(--light);
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .about-text h2 {
-            font-size: 2.2rem;
-            color: var(--dark);
-            margin-bottom: 20px;
-        }
-
-        .about-text p {
-            color: var(--gray);
-            margin-bottom: 20px;
-            font-size: 1.05rem;
-        }
-
-        /* UPDATED FOUNDERS SECTION - OVAL DESIGN */
-        .founders-section {
-            display: flex;
-            gap: 30px;
-            margin-top: 40px;
-            align-items: center;
-        }
-
-        .founder-left {
-            flex: 1;
-        }
-
-        .founder-right {
-            flex: 1;
-        }
-
-        .founder-card {
-            position: relative;
-            padding: 30px;
-            min-height: 300px;
-            display: flex;
-            align-items: center;
-        }
-
-        .founder-card.nhlanhla {
-            background: linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
-            border-radius: 50% 20px 20px 50%;
-            padding-left: 150px;
-        }
-
-        .founder-card.lerato {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
-            border-radius: 20px 50% 50% 20px;
-            padding-right: 150px;
-            justify-content: flex-end;
-        }
-
-        .founder-img-container {
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 5px solid white;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.5s ease;
-        }
-
-        .founder-img-container.nhlanhla {
-            left: -50px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .founder-img-container.lerato {
-            right: -50px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .founder-img-container:hover {
-            transform: translateY(-50%) scale(1.05);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-        }
-
-        .founder-img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .founder-img-container:hover img {
-            transform: scale(1.1);
-        }
-
-        .founder-info {
-            max-width: 400px;
-        }
-
-        .founder-name {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--dark);
-            margin-bottom: 5px;
-        }
-
-        .founder-title {
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 15px;
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .founder-title::before {
-            content: '';
-            width: 20px;
-            height: 3px;
-            background: var(--primary);
-        }
-
-        .founder-desc {
-            color: var(--gray);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* Packages Section */
-        .packages {
-            background-color: white;
-        }
-
-        .package-tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .tab-btn {
-            padding: 12px 25px;
-            background: white;
-            border: 2px solid #e5e7eb;
-            border-radius: 8px;
-            font-weight: 600;
-            color: var(--gray);
-            cursor: pointer;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .tab-btn::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: rgba(236, 72, 153, 0.1);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-
-        .tab-btn:hover::before {
-            width: 100px;
-            height: 100px;
-        }
-
-        .tab-btn:hover {
-            border-color: var(--accent);
-            color: var(--primary);
-        }
-
-        .tab-btn.active {
-            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            border-color: transparent;
-        }
-
-        .package-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 25px;
-        }
-
-        .package-card {
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s;
-            border-top: 5px solid transparent;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
-        .package-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
-            transform: scaleX(0);
-            transition: transform 0.3s;
-        }
-
-        .package-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .package-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-        }
-
-        .package-card.basic {
-            border-top-color: #9ca3af;
-        }
-
-        .package-card.standard {
-            border-top-color: var(--secondary);
-            transform: scale(1.05);
-            border: 2px solid var(--secondary);
-        }
-
-        .package-card.premium {
-            border-top-color: #f59e0b;
-        }
-
-        .package-badge {
-            position: absolute;
-            top: 0;
-            right: 0;
-            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            padding: 8px 20px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            border-bottom-left-radius: 8px;
-            animation: gradientShift 3s ease-in-out infinite;
-        }
-
-        .popular-badge {
-            position: absolute;
-            top: 15px;
-            left: -35px;
-            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            padding: 5px 40px;
-            font-weight: 700;
-            font-size: 0.8rem;
-            transform: rotate(-45deg);
-            width: 150px;
-            text-align: center;
-            animation: gradientShift 3s ease-in-out infinite;
-        }
-
-        .package-header {
-            margin-bottom: 20px;
-        }
-
-        .package-name {
-            font-size: 1.6rem;
-            color: var(--dark);
-            margin-bottom: 10px;
-        }
-
-        .package-price {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 5px;
-            animation: fadeInUp 0.5s ease-out;
-        }
-
-        .package-price span {
-            font-size: 0.9rem;
-            color: var(--gray);
-            font-weight: normal;
-        }
-
-        .package-desc {
-            color: var(--gray);
-            margin-bottom: 20px;
-            font-size: 0.95rem;
-        }
-
-        .package-features {
-            list-style: none;
-            margin-bottom: 25px;
-            flex-grow: 1;
-        }
-
-        .package-features li {
-            padding: 7px 0;
-            color: var(--dark);
-            display: flex;
-            align-items: flex-start;
-            font-size: 0.9rem;
-            transition: transform 0.3s;
-        }
-
-        .package-features li:hover {
-            transform: translateX(5px);
-        }
-
-        .package-features li i {
-            color: var(--primary);
-            margin-right: 10px;
-            margin-top: 3px;
-            flex-shrink: 0;
-            transition: transform 0.3s;
-        }
-
-        .package-features li:hover i {
-            transform: scale(1.2);
-        }
-
-        .package-timeline {
-            background-color: #f8fafc;
-            padding: 12px;
-            border-radius: 8px;
-            margin-top: 15px;
-            border-left: 4px solid var(--secondary);
-            margin-bottom: 20px;
-            transition: all 0.3s;
-        }
-
-        .package-timeline:hover {
-            transform: translateX(5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .package-timeline p {
-            color: var(--gray);
-            font-size: 0.85rem;
-            display: flex;
-            align-items: center;
-            margin: 0;
-        }
-
-        .package-timeline i {
-            color: var(--secondary);
-            margin-right: 8px;
-            animation: float 2s ease-in-out infinite;
-        }
-
-        .package-footer {
-            margin-top: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .package-button {
-            display: inline-block;
-            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            padding: 12px 0;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            text-align: center;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
-            width: 100%;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .package-button::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: rgba(255, 255, 255, 0.1);
-            transform: rotate(45deg);
-            transition: all 0.5s;
-            opacity: 0;
-        }
-
-        .package-button:hover::after {
-            opacity: 1;
-            transform: rotate(45deg) translate(50%, 50%);
-        }
-
-        .package-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
-        }
-
-        /* Services Section */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .service-card {
-            background: white;
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s;
-            border: 1px solid #f3f4f6;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
-            transform: scaleX(0);
-            transition: transform 0.3s;
-        }
-
-        .service-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px) scale(1.03);
-            box-shadow: 0 15px 35px rgba(139, 92, 246, 0.15);
-        }
-
-        .service-icon {
-            background: linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
-            width: 60px;
-            height: 60px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 15px;
-            transition: all 0.3s;
-        }
-
-        .service-card:hover .service-icon {
-            transform: rotate(10deg) scale(1.1);
-        }
-
-        .service-icon i {
-            font-size: 1.5rem;
-            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            transition: all 0.3s;
-        }
-
-        .service-card:hover .service-icon i {
-            transform: scale(1.2);
-        }
-
-        .service-card h3 {
-            font-size: 1.3rem;
-            color: var(--dark);
-            margin-bottom: 12px;
-            transition: color 0.3s;
-        }
-
-        .service-card:hover h3 {
-            color: var(--primary);
-        }
-
-        .service-price-range {
-            color: var(--primary);
-            font-weight: 700;
-            font-size: 1rem;
-            margin-bottom: 12px;
-            display: block;
-            animation: fadeInUp 0.5s ease-out;
-        }
-
-        .service-features {
-            list-style: none;
-            margin-top: 12px;
-        }
-
-        .service-features li {
-            padding: 4px 0;
-            color: var(--gray);
-            display: flex;
-            align-items: center;
-            font-size: 0.85rem;
-            transition: transform 0.3s;
-        }
-
-        .service-features li:hover {
-            transform: translateX(5px);
-            color: var(--dark);
-        }
-
-        .service-features li i {
-            color: var(--primary);
-            margin-right: 8px;
-            font-size: 0.7rem;
-            transition: transform 0.3s;
-        }
-
-        .service-features li:hover i {
-            transform: scale(1.3);
-        }
-
-        /* Contact Form Section */
-        .contact {
-            background-color: var(--light);
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-        }
-
-        .contact-info h2 {
-            font-size: 2.2rem;
-            color: var(--dark);
-            margin-bottom: 20px;
-        }
-
-        .contact-info p {
-            color: var(--gray);
-            margin-bottom: 30px;
-            font-size: 1.05rem;
-        }
-
-        .contact-details p {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            font-size: 1rem;
-            transition: transform 0.3s;
-        }
-
-        .contact-details p:hover {
-            transform: translateX(5px);
-        }
-
-        .contact-details i {
-            color: var(--primary);
-            margin-right: 12px;
-            width: 20px;
-            transition: transform 0.3s;
-        }
-
-        .contact-details p:hover i {
-            transform: scale(1.2);
-        }
-
-        .contact-form {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-form::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-            position: relative;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: var(--dark);
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #e5e7eb;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: all 0.3s;
-            background: transparent;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.1);
-        }
-
-        .form-group textarea {
-            height: 120px;
-            resize: vertical;
-        }
-
-        /* Enhanced Form Messages */
-        .form-message {
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            text-align: center;
-            display: none;
-            animation: slideIn 0.5s ease-out;
-            position: relative;
-            overflow: hidden;
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-20px) scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        .form-message.success {
-            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-            color: #065f46;
-            border: 2px solid #bbf7d0;
-            display: block;
-        }
-
-        .form-message.error {
-            background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
-            color: #991b1b;
-            border: 2px solid #fecaca;
-            display: block;
-        }
-
-        /* Loading Animation */
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-
-        .loading {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            border-top-color: #fff;
-            animation: spin 1s ease-in-out infinite;
-            margin-right: 10px;
-            vertical-align: middle;
-        }
-
-        .pulse {
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        /* UPDATED PORTFOLIO SECTION - SLIDESHOW */
-        .portfolio {
-            background-color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .portfolio-slideshow {
-            position: relative;
-            max-width: 900px;
-            margin: 0 auto;
-            height: 500px;
-            overflow: hidden;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-        }
-
-        .portfolio-slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 0.8s ease, transform 0.8s ease;
-            transform: scale(0.95);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 40px;
-            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(248,250,252,0.9) 100%);
-        }
-
-        .portfolio-slide.active {
-            opacity: 1;
-            transform: scale(1);
-            z-index: 1;
-        }
-
-        .portfolio-slide.prev {
-            transform: translateX(-100%) scale(0.9);
-            opacity: 0.5;
-        }
-
-        .portfolio-slide.next {
-            transform: translateX(100%) scale(0.9);
-            opacity: 0.5;
-        }
-
-        .portfolio-slide-img {
-            width: 100%;
-            height: 300px;
-            overflow: hidden;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .portfolio-slide-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.8s ease;
-        }
-
-        .portfolio-slide.active .portfolio-slide-img img {
-            transform: scale(1.05);
-        }
-
-        .portfolio-slide-info {
-            text-align: center;
-            max-width: 600px;
-        }
-
-        .portfolio-slide-info h3 {
-            font-size: 1.8rem;
-            color: var(--dark);
-            margin-bottom: 10px;
-        }
-
-        .portfolio-slide-info p {
-            color: var(--gray);
-            margin-bottom: 20px;
-            font-size: 1rem;
-        }
-
-        .portfolio-slide-link {
-            display: inline-block;
-            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            padding: 10px 25px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .portfolio-slide-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
-        }
-
-        .portfolio-thumbnails {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-
-        .portfolio-thumbnail {
-            width: 100px;
-            height: 70px;
-            border-radius: 8px;
-            overflow: hidden;
-            cursor: pointer;
-            opacity: 0.6;
-            transition: all 0.3s;
-            border: 3px solid transparent;
-        }
-
-        .portfolio-thumbnail:hover {
-            opacity: 1;
-            transform: translateY(-5px);
-        }
-
-        .portfolio-thumbnail.active {
-            opacity: 1;
-            border-color: var(--primary);
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(236, 72, 153, 0.3);
-        }
-
-        .portfolio-thumbnail img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .portfolio-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s;
-            z-index: 2;
-        }
-
-        .portfolio-nav:hover {
-            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .portfolio-nav.prev {
-            left: 20px;
-        }
-
-        .portfolio-nav.next {
-            right: 20px;
-        }
-
-        /* Costs Note - REDESIGNED */
-        .costs-note {
-            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-            padding: 30px;
-            border-radius: 12px;
-            margin-top: 40px;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s;
-        }
-
-        .costs-note:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        }
-
-        .costs-note::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--primary) 0%, var(--secondary) 100%);
-            animation: gradientShift 3s ease-in-out infinite;
-        }
-
-        .costs-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .costs-icon {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            color: white;
-            font-size: 1.3rem;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .costs-title {
-            font-size: 1.4rem;
-            color: var(--dark);
-            margin: 0;
-        }
-
-        .costs-subtitle {
-            color: var(--gray);
-            font-size: 0.95rem;
-            margin-bottom: 25px;
-            padding-left: 65px;
-        }
-
-        .costs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .cost-item {
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
-            display: flex;
-            align-items: center;
-            transition: all 0.3s;
-        }
-
-        .cost-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            border-color: var(--accent);
-        }
-
-        .cost-icon {
-            background: linear-gradient(135deg, rgba(236, 72, 153, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            color: var(--primary);
-            font-size: 1rem;
-            transition: all 0.3s;
-        }
-
-        .cost-item:hover .cost-icon {
-            transform: rotate(15deg) scale(1.1);
-        }
-
-        .cost-details h4 {
-            font-size: 0.95rem;
-            color: var(--dark);
-            margin-bottom: 5px;
-        }
-
-        .cost-details p {
-            font-size: 0.8rem;
-            color: var(--gray);
-            margin: 0;
-        }
-
-        .cost-note-footer {
-            margin-top: 25px;
-            padding-top: 20px;
-            border-top: 1px solid #e2e8f0;
-            color: var(--gray);
-            font-size: 0.85rem;
-            text-align: center;
-            font-style: italic;
-        }
-
-        /* NEW Q&A SECTION */
-        .faq-section {
-            background-color: var(--light);
-            padding: 60px 0;
-        }
-
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background: white;
-            border-radius: 12px;
-            margin-bottom: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s;
-        }
-
-        .faq-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .faq-question {
-            padding: 20px 30px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: white;
-            transition: all 0.3s;
-        }
-
-        .faq-question:hover {
-            background: linear-gradient(90deg, rgba(236, 72, 153, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
-        }
-
-        .faq-question h3 {
-            font-size: 1.1rem;
-            color: var(--dark);
-            margin: 0;
-            flex: 1;
-        }
-
-        .faq-icon {
-            color: var(--primary);
-            font-size: 1.2rem;
-            transition: transform 0.3s;
-        }
-
-        .faq-item.active .faq-icon {
-            transform: rotate(45deg);
-        }
-
-        .faq-answer {
-            padding: 0 30px;
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            background: white;
-        }
-
-        .faq-item.active .faq-answer {
-            padding: 20px 30px;
-            max-height: 1000px;
-            border-top: 1px solid #e5e7eb;
-        }
-
-        .faq-answer p {
-            color: var(--gray);
-            margin: 0;
-            line-height: 1.6;
-        }
-
-        .faq-answer ul {
-            margin: 15px 0;
-            padding-left: 20px;
-        }
-
-        .faq-answer li {
-            color: var(--gray);
-            margin-bottom: 8px;
-        }
-
-        /* Footer */
-        footer {
-            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
-            color: white;
-            padding: 50px 0 20px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-
-        .footer-logo {
-            font-size: 1.6rem;
-            font-weight: 800;
-            margin-bottom: 15px;
-            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: inline-block;
-        }
-
-        .footer-about p {
-            color: #d1d5db;
-            margin-bottom: 15px;
-            line-height: 1.6;
-            font-size: 0.9rem;
-        }
-
-        .footer-links h3, .footer-services h3, .footer-contact h3 {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-            color: white;
-            position: relative;
-            padding-bottom: 8px;
-        }
-
-        .footer-links h3::after, .footer-services h3::after, .footer-contact h3::after {
-            content: '';
-            position: absolute;
-            width: 35px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
-            bottom: 0;
-            left: 0;
-            border-radius: 2px;
-        }
-
-        .footer-links ul, .footer-services ul {
-            list-style: none;
-        }
-
-        .footer-links li, .footer-services li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links a, .footer-services a {
-            color: #d1d5db;
-            text-decoration: none;
-            transition: all 0.3s;
-            font-size: 0.9rem;
-        }
-
-        .footer-links a:hover, .footer-services a:hover {
-            color: var(--primary);
-            padding-left: 5px;
-        }
-
-        .footer-contact p {
-            color: #d1d5db;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            font-size: 0.9rem;
-        }
-
-        .footer-contact i {
-            margin-right: 10px;
-            color: var(--primary);
-            width: 16px;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 12px;
-            margin-top: 15px;
-        }
-
-        .social-icons a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-            background-color: #374151;
-            border-radius: 50%;
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-
-        .social-icons a:hover {
-            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
-            transform: translateY(-3px) rotate(5deg);
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #374151;
-            color: #9ca3af;
-            font-size: 0.85rem;
-        }
-
-        /* Scroll to Top Button */
-        .scroll-top {
-            position: fixed;
-            bottom: 100px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
-            z-index: 99;
-            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
-        }
-
-        .scroll-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .scroll-top:hover {
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.4);
-        }
-
-        /* =========================================== */
-        /* MOBILE RESPONSIVE FIXES ONLY - NO DESIGN CHANGES */
-        /* =========================================== */
-
-        /* Mobile Navigation Fix */
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: white;
-                flex-direction: column;
-                padding: 20px;
-                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-                text-align: center;
-                z-index: 999;
-                gap: 15px;
-            }
-            
-            nav ul.active {
-                display: flex;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            nav a {
-                padding: 12px 0;
-                font-size: 1.1rem;
-            }
-        }
-
-        /* Hero Section Mobile Fix */
-        @media (max-width: 768px) {
-            .hero {
-                padding: 80px 0;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-                line-height: 1.3;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-                padding: 0 15px;
-            }
-            
-            .cta-button {
-                padding: 14px 30px;
-                font-size: 1rem;
-            }
-        }
-
-        /* Founders Section Mobile Fix - Keep your oval design */
-        @media (max-width: 992px) {
-            .founders-section {
-                flex-direction: column;
-                gap: 40px;
-            }
-            
-            .founder-card.nhlanhla,
-            .founder-card.lerato {
-                padding: 30px;
-                border-radius: 20px;
-                min-height: auto;
-                justify-content: center;
-                padding-left: 30px;
-                padding-right: 30px;
-            }
-            
-            .founder-img-container.nhlanhla,
-            .founder-img-container.lerato {
-                position: relative;
-                left: 0;
-                right: 0;
-                top: 0;
-                transform: none;
-                margin: 0 auto 20px;
-            }
-            
-            .founder-info {
-                text-align: center;
-                max-width: 100%;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .founder-img-container {
-                width: 150px;
-                height: 150px;
-            }
-            
-            .founder-name {
-                font-size: 1.3rem;
-            }
-            
-            .founder-desc {
-                font-size: 0.9rem;
-            }
-        }
-
-        /* About Content Mobile Fix */
-        @media (max-width: 768px) {
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            
-            .about-text h2 {
-                font-size: 1.8rem;
-                text-align: center;
-            }
-            
-            .about-text p {
-                text-align: center;
-            }
-        }
-
-        /* Section Title Mobile Fix */
-        @media (max-width: 768px) {
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
-            
-            .section-title p {
-                font-size: 0.95rem;
-                padding: 0 10px;
-            }
-        }
-
-        /* Packages Mobile Fix */
-        @media (max-width: 768px) {
-            .package-tabs {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .tab-btn {
-                width: 100%;
-                max-width: 300px;
-            }
-            
-            .package-grid {
-                grid-template-columns: 1fr;
-                max-width: 500px;
-                margin: 0 auto;
-            }
-            
-            .package-card.standard {
-                transform: scale(1);
-            }
-            
-            .popular-badge {
-                font-size: 0.7rem;
-                padding: 4px 30px;
-                left: -30px;
-                width: 130px;
-            }
-            
-            .package-card {
-                padding: 25px;
-            }
-            
-            .package-name {
-                font-size: 1.4rem;
-            }
-            
-            .package-price {
-                font-size: 1.8rem;
-            }
-        }
-
-        /* Services Grid Mobile Fix */
-        @media (max-width: 992px) {
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .services-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .service-card {
-                padding: 20px;
-            }
-        }
-
-        /* Portfolio Slideshow Mobile Fix */
-        @media (max-width: 992px) {
-            .portfolio-slideshow {
-                height: 400px;
-            }
-            
-            .portfolio-slide-img {
-                height: 220px;
-            }
-            
-            .portfolio-slide-info h3 {
-                font-size: 1.5rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .portfolio-slideshow {
-                height: 350px;
-            }
-            
-            .portfolio-slide {
-                padding: 20px;
-            }
-            
-            .portfolio-slide-img {
-                height: 180px;
-            }
-            
-            .portfolio-slide-info h3 {
-                font-size: 1.3rem;
-            }
-            
-            .portfolio-slide-info p {
-                font-size: 0.9rem;
-            }
-            
-            .portfolio-nav {
-                width: 40px;
-                height: 40px;
-                font-size: 0.9rem;
-            }
-            
-            .portfolio-thumbnail {
-                width: 80px;
-                height: 60px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .portfolio-slideshow {
-                height: 300px;
-            }
-            
-            .portfolio-slide-img {
-                height: 150px;
-            }
-            
-            .portfolio-thumbnail {
-                width: 70px;
-                height: 50px;
-            }
-        }
-
-        /* Contact Content Mobile Fix */
-        @media (max-width: 768px) {
-            .contact-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            
-            .contact-info h2 {
-                font-size: 1.8rem;
-                text-align: center;
-            }
-            
-            .contact-info p {
-                text-align: center;
-            }
-            
-            .contact-details p {
-                justify-content: center;
-            }
-            
-            .social-icons {
-                justify-content: center;
-            }
-            
-            .contact-form {
-                padding: 25px;
-            }
-        }
-
-        /* FAQ Mobile Fix */
-        @media (max-width: 768px) {
-            .faq-question {
-                padding: 15px 20px;
-            }
-            
-            .faq-question h3 {
-                font-size: 1rem;
-            }
-            
-            .faq-item.active .faq-answer {
-                padding: 15px 20px;
-            }
-            
-            .faq-answer p {
-                font-size: 0.9rem;
-            }
-            
-            .faq-answer li {
-                font-size: 0.9rem;
-            }
-        }
-
-        /* Footer Mobile Fix */
-        @media (max-width: 768px) {
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            
-            .footer-links h3::after, 
-            .footer-services h3::after, 
-            .footer-contact h3::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            
-            .social-icons {
-                justify-content: center;
-            }
-        }
-
-        /* Costs Note Mobile Fix */
-        @media (max-width: 768px) {
-            .costs-note {
-                padding: 25px;
-            }
-            
-            .costs-header {
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
-            }
-            
-            .costs-icon {
-                margin-right: 0;
-            }
-            
-            .costs-subtitle {
-                padding-left: 0;
-                text-align: center;
-            }
-            
-            .costs-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Logo Mobile Fix */
-        @media (max-width: 768px) {
-            .logo img {
-                height: 55px;
-            }
-            
-            .logo-text {
-                font-size: 1.2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .logo img {
-                height: 50px;
-            }
-            
-            .logo-text {
-                font-size: 1.1rem;
-            }
-        }
-
-        /* WhatsApp Button Mobile Fix */
-        @media (max-width: 768px) {
-            .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                font-size: 1.7rem;
-                bottom: 20px;
-                right: 20px;
-            }
-        }
-
-        /* Scroll Top Button Mobile Fix */
-        @media (max-width: 768px) {
-            .scroll-top {
-                width: 45px;
-                height: 45px;
-                bottom: 80px;
-                right: 20px;
-            }
-        }
-
-        /* Very Small Screens */
-        @media (max-width: 360px) {
-            .hero h1 {
-                font-size: 1.7rem;
-            }
-            
-            .section-title h2 {
-                font-size: 1.5rem;
-            }
-            
-            .package-card {
-                padding: 20px 15px;
-            }
-            
-            .whatsapp-float {
-                width: 45px;
-                height: 45px;
-                font-size: 1.5rem;
-                bottom: 15px;
-                right: 15px;
-            }
-            
-            .scroll-top {
-                width: 40px;
-                height: 40px;
-                bottom: 70px;
-                right: 15px;
-            }
-        }
-
-        /* Fix for horizontal scroll on mobile */
-        @media (max-width: 768px) {
-            body {
-                overflow-x: hidden;
-            }
-            
-            .container {
-                width: 95%;
-                padding: 0 15px;
-            }
-            
-            section {
-                padding: 50px 0;
-            }
-        }
+        
+        /* HERO WITH BACKGROUND IMAGE */
+        .hero{min-height:70vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:120px 0 80px;background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');background-size:cover;background-position:center;background-attachment:fixed}
+        .hero-content{position:relative;z-index:2;text-align:center;max-width:900px;margin:0 auto}
+        .hero h1{font-size:clamp(2.5rem,6vw,4.5rem);color:white;margin-bottom:24px;animation:fadeInUp 0.8s ease-out;line-height:1.1}
+        .hero h1 span{display:block;background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .hero p{font-size:1.2rem;max-width:640px;margin:0 auto 40px;color:rgba(255,255,255,0.9);animation:fadeInUp 0.8s ease-out 0.1s backwards;line-height:1.8}
+        .hero-buttons{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;animation:fadeInUp 0.8s ease-out 0.2s backwards}
+        .cta-button{display:inline-flex;align-items:center;gap:10px;background:var(--gradient-primary);color:white;padding:18px 36px;border-radius:100px;text-decoration:none;font-weight:600;font-size:1rem;transition:var(--transition);border:none;cursor:pointer;box-shadow:0 8px 30px rgba(236,72,153,0.3);position:relative;overflow:hidden}
+        .cta-button::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent);transition:left 0.6s ease}
+        .cta-button:hover::before{left:100%}
+        .cta-button:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(236,72,153,0.4)}
+        .cta-button-secondary{background:rgba(255,255,255,0.15);backdrop-filter:blur(10px);color:white;box-shadow:none;border:2px solid rgba(255,255,255,0.3)}
+        .cta-button-secondary:hover{background:white;color:var(--dark);border-color:white}
+        
+        .whatsapp-float{position:fixed;bottom:32px;right:32px;width:64px;height:64px;background:linear-gradient(135deg,#25D366 0%,#128C7E 100%);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.75rem;text-decoration:none;box-shadow:0 8px 30px rgba(37,211,102,0.4);z-index:100;transition:var(--transition);animation:float 4s ease-in-out infinite}
+        .whatsapp-float:hover{transform:scale(1.1) translateY(-4px);animation:none}
+        .scroll-top{position:fixed;bottom:110px;right:32px;width:52px;height:52px;background:white;color:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;visibility:hidden;transition:var(--transition);z-index:99;box-shadow:var(--shadow-elevated);border:2px solid var(--primary-light)}
+        .scroll-top.visible{opacity:1;visibility:visible}
+        .scroll-top:hover{background:var(--gradient-primary);color:white;transform:translateY(-4px);border-color:transparent}
+        section{padding:100px 0;position:relative;opacity:0;transform:translateY(30px);transition:opacity 0.8s ease-out,transform 0.8s ease-out}
+        section.visible{opacity:1;transform:translateY(0)}
+        .section-header{text-align:center;margin-bottom:60px}
+        .section-label{display:inline-flex;align-items:center;gap:8px;font-size:0.875rem;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px}
+        .section-label::before,.section-label::after{content:'';width:24px;height:2px;background:var(--gradient-primary);border-radius:2px}
+        .section-title{font-size:clamp(2rem,4vw,3rem);color:var(--dark);margin-bottom:16px}
+        .section-subtitle{font-size:1.1rem;color:var(--gray);max-width:600px;margin:0 auto}
+        .about{background:var(--light);position:relative;overflow:hidden}
+        .about::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--primary-light),transparent)}
+        .about-content{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+        .about-text h2{font-size:clamp(1.75rem,3vw,2.5rem);color:var(--dark);margin-bottom:24px;line-height:1.2}
+        .about-text p{color:var(--gray);margin-bottom:20px;font-size:1.05rem;line-height:1.8}
+        .about-features{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:32px}
+        .about-feature{display:flex;align-items:flex-start;gap:12px}
+        .about-feature-icon{width:40px;height:40px;border-radius:10px;background:var(--gradient-soft);display:flex;align-items:center;justify-content:center;color:var(--primary);flex-shrink:0}
+        .about-feature-text{font-size:0.95rem;color:var(--dark);font-weight:500}
+        .founders-section{display:flex;flex-direction:column;gap:24px}
+        .founder-card{background:white;border-radius:var(--border-radius-lg);padding:32px;display:flex;align-items:center;gap:28px;box-shadow:var(--shadow-soft);transition:var(--transition);position:relative;overflow:hidden}
+        .founder-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--gradient-primary);opacity:0;transition:var(--transition)}
+        .founder-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-elevated)}
+        .founder-card:hover::before{opacity:1}
+        .founder-img-container{width:120px;height:120px;border-radius:50%;overflow:hidden;flex-shrink:0;border:4px solid var(--light);box-shadow:0 8px 24px rgba(0,0,0,0.1);transition:var(--transition)}
+        .founder-card:hover .founder-img-container{border-color:var(--primary-light);transform:scale(1.05)}
+        .founder-img-container img{width:100%;height:100%;object-fit:cover}
+        .founder-info{flex:1}
+        .founder-name{font-size:1.35rem;font-weight:600;color:var(--dark);margin-bottom:4px}
+        .founder-title{color:var(--primary);font-weight:600;font-size:0.9rem;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+        .founder-title::before{content:'';width:16px;height:2px;background:var(--gradient-primary);border-radius:2px}
+        .founder-desc{color:var(--gray);font-size:0.95rem;line-height:1.7}
+        .packages{background:white}
+        .package-tabs{display:flex;justify-content:center;margin-bottom:48px;gap:12px;flex-wrap:wrap}
+        .tab-btn{padding:14px 32px;background:var(--light);border:2px solid transparent;border-radius:100px;font-weight:600;font-size:0.95rem;color:var(--gray);cursor:pointer;transition:var(--transition);font-family:inherit}
+        .tab-btn:hover{border-color:var(--primary-light);color:var(--primary);background:white}
+        .tab-btn.active{background:var(--gradient-primary);color:white;border-color:transparent;box-shadow:0 8px 24px rgba(236,72,153,0.3)}
+        .package-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:1100px;margin:0 auto}
+        .package-card{background:white;border-radius:var(--border-radius-lg);padding:40px 32px;border:2px solid var(--gray-light);transition:var(--transition);position:relative;display:flex;flex-direction:column;height:100%}
+        .package-card:hover{transform:translateY(-12px);box-shadow:var(--shadow-elevated)}
+        .package-card.standard{border-color:var(--primary);background:linear-gradient(180deg,white 0%,rgba(236,72,153,0.02) 100%)}
+        
+        /* Remove hover color change for standard */
+        .package-card.standard:hover{border-color:var(--primary)}
+        .package-badge{position:absolute;top:-14px;right:24px;background:var(--gradient-primary);color:white;padding:8px 20px;font-weight:600;font-size:0.8rem;border-radius:100px;box-shadow:0 4px 16px rgba(236,72,153,0.3)}
+        .popular-badge{position:absolute;top:24px;left:-8px;background:var(--gradient-primary);color:white;padding:6px 24px 6px 16px;font-weight:700;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em;clip-path:polygon(0 0,100% 0,92% 100%,0% 100%)}
+        .package-icon{width:56px;height:56px;border-radius:14px;background:var(--gradient-soft);display:flex;align-items:center;justify-content:center;margin-bottom:24px}
+        .package-icon i{font-size:1.5rem;background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .package-name{font-size:1.5rem;color:var(--dark);margin-bottom:8px}
+        .package-price{font-size:2.5rem;font-weight:700;background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px;font-family:'DM Sans',sans-serif}
+        .package-price span{font-size:0.9rem;color:var(--gray);font-weight:400;-webkit-text-fill-color:var(--gray)}
+        .package-desc{color:var(--gray);margin-bottom:24px;font-size:0.95rem;line-height:1.6}
+        .package-features{list-style:none;margin-bottom:24px;flex-grow:1}
+        .package-features li{padding:10px 0;color:var(--dark);display:flex;align-items:flex-start;font-size:0.9rem;border-bottom:1px solid var(--gray-light);transition:var(--transition)}
+        .package-features li:last-child{border-bottom:none}
+        .package-features li:hover{padding-left:8px;border-color:var(--primary-light)}
+        .package-features li i{color:var(--primary);margin-right:12px;margin-top:4px;flex-shrink:0;font-size:0.8rem}
+        .package-features li strong{color:var(--primary)}
+        .package-timeline{background:var(--gradient-soft);padding:16px;border-radius:12px;margin-bottom:24px;display:flex;align-items:center;gap:12px}
+        .package-timeline i{color:var(--secondary);font-size:1.1rem}
+        .package-timeline p{color:var(--dark);font-size:0.9rem;font-weight:500;margin:0}
+        .package-footer{margin-top:auto}
+        .package-button{display:block;width:100%;background:var(--gradient-primary);color:white;padding:16px 24px;border-radius:12px;text-decoration:none;font-weight:600;font-size:1rem;text-align:center;transition:var(--transition);border:none;cursor:pointer;box-shadow:0 4px 16px rgba(236,72,153,0.2)}
+        .package-button:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(236,72,153,0.35)}
+        .costs-note{background:white;padding:40px;border-radius:var(--border-radius-lg);margin-top:60px;border:2px solid var(--gray-light);position:relative;overflow:hidden}
+        .costs-note::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--gradient-primary)}
+        .costs-header{display:flex;align-items:center;gap:16px;margin-bottom:12px}
+        .costs-icon{width:52px;height:52px;border-radius:14px;background:var(--gradient-primary);display:flex;align-items:center;justify-content:center;color:white;font-size:1.25rem}
+        .costs-title{font-size:1.35rem;color:var(--dark)}
+        .costs-subtitle{color:var(--gray);font-size:0.95rem;margin-bottom:32px}
+        .costs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+        .cost-item{background:var(--light);padding:20px;border-radius:14px;display:flex;align-items:center;gap:16px;transition:var(--transition);border:2px solid transparent}
+        .cost-item:hover{background:white;border-color:var(--primary-light);transform:translateY(-4px);box-shadow:var(--shadow-soft)}
+        .cost-icon{width:44px;height:44px;border-radius:10px;background:white;display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:1.1rem;flex-shrink:0;box-shadow:var(--shadow-soft)}
+        .cost-details h4{font-size:0.95rem;font-weight:600;color:var(--dark);margin-bottom:2px;font-family:'DM Sans',sans-serif}
+        .cost-details p{font-size:0.85rem;color:var(--gray);margin:0}
+        .cost-note-footer{margin-top:28px;padding-top:24px;border-top:1px solid var(--gray-light);color:var(--gray);font-size:0.9rem;text-align:center;font-style:italic}
+        #services{background:var(--light)}
+        .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+        .service-card{background:white;border-radius:var(--border-radius);padding:32px 24px;transition:var(--transition);border:2px solid transparent;position:relative;overflow:hidden}
+        .service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gradient-primary);transform:scaleX(0);transition:var(--transition)}
+        .service-card:hover{border-color:var(--primary-light);transform:translateY(-10px);box-shadow:var(--shadow-elevated)}
+        .service-card:hover::before{transform:scaleX(1)}
+        .service-icon{width:64px;height:64px;border-radius:16px;background:var(--gradient-soft);display:flex;align-items:center;justify-content:center;margin-bottom:20px;transition:var(--transition)}
+        .service-card:hover .service-icon{background:var(--gradient-primary)}
+        .service-icon i{font-size:1.5rem;background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;transition:var(--transition)}
+        .service-card:hover .service-icon i{-webkit-text-fill-color:white;background:none}
+        .service-card h3{font-size:1.25rem;color:var(--dark);margin-bottom:8px}
+        .service-price-range{color:var(--primary);font-weight:700;font-size:1rem;margin-bottom:16px;display:block}
+        .service-features{list-style:none}
+        .service-features li{padding:8px 0;color:var(--gray);display:flex;align-items:center;font-size:0.9rem;border-bottom:1px solid var(--gray-light);transition:var(--transition)}
+        .service-features li:last-child{border-bottom:none}
+        .service-features li:hover{color:var(--dark);padding-left:8px}
+        .service-features li i{color:var(--primary);margin-right:10px;font-size:0.6rem}
+        .portfolio{background:white}
+        .portfolio-slideshow{position:relative;max-width:1000px;margin:0 auto;height:520px;overflow:hidden;border-radius:var(--border-radius-lg);box-shadow:var(--shadow-elevated);background:var(--light)}
+        .portfolio-slide{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;transition:all 0.6s cubic-bezier(0.4,0,0.2,1);transform:scale(0.95);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:48px;background:white}
+        .portfolio-slide.active{opacity:1;transform:scale(1);z-index:1}
+        .portfolio-slide-img{width:100%;height:320px;overflow:hidden;border-radius:var(--border-radius);margin-bottom:28px;box-shadow:var(--shadow-soft)}
+        .portfolio-slide-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.8s ease}
+        .portfolio-slide.active .portfolio-slide-img img{transform:scale(1.02)}
+        .portfolio-slide-info{text-align:center}
+        .portfolio-slide-info h3{font-size:1.75rem;color:var(--dark);margin-bottom:8px}
+        .portfolio-slide-info p{color:var(--gray);margin-bottom:20px;font-size:1rem}
+        .portfolio-slide-link{display:inline-flex;align-items:center;gap:8px;background:var(--gradient-primary);color:white;padding:12px 28px;border-radius:100px;text-decoration:none;font-weight:600;transition:var(--transition)}
+        .portfolio-slide-link:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(236,72,153,0.3)}
+        .portfolio-thumbnails{display:flex;justify-content:center;gap:16px;margin-top:32px;flex-wrap:wrap}
+        .portfolio-thumbnail{width:100px;height:68px;border-radius:10px;overflow:hidden;cursor:pointer;opacity:0.5;transition:var(--transition);border:3px solid transparent}
+        .portfolio-thumbnail:hover{opacity:0.8;transform:translateY(-4px)}
+        .portfolio-thumbnail.active{opacity:1;border-color:var(--primary);box-shadow:0 6px 20px rgba(236,72,153,0.25)}
+        .portfolio-thumbnail img{width:100%;height:100%;object-fit:cover}
+        .portfolio-nav{position:absolute;top:50%;transform:translateY(-50%);background:white;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:var(--shadow-soft);transition:var(--transition);z-index:2;color:var(--dark)}
+        .portfolio-nav:hover{background:var(--gradient-primary);color:white;transform:translateY(-50%) scale(1.1);box-shadow:var(--shadow-elevated)}
+        .portfolio-nav.prev{left:24px}
+        .portfolio-nav.next{right:24px}
+        .faq-section{background:var(--light)}
+        .faq-container{max-width:800px;margin:0 auto}
+        .faq-item{background:white;border-radius:var(--border-radius);margin-bottom:16px;overflow:hidden;border:2px solid transparent;transition:var(--transition)}
+        .faq-item:hover{border-color:var(--primary-light)}
+        .faq-item.active{border-color:var(--primary);box-shadow:var(--shadow-soft)}
+        .faq-question{padding:24px 28px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:var(--transition)}
+        .faq-question:hover{background:var(--gradient-soft)}
+        .faq-question h3{font-size:1.05rem;font-weight:600;color:var(--dark);margin:0;flex:1;font-family:'DM Sans',sans-serif}
+        .faq-icon{width:32px;height:32px;border-radius:50%;background:var(--gradient-soft);display:flex;align-items:center;justify-content:center;color:var(--primary);transition:var(--transition);flex-shrink:0;margin-left:16px}
+        .faq-item.active .faq-icon{background:var(--gradient-primary);color:white;transform:rotate(45deg)}
+        .faq-answer{padding:0 28px;max-height:0;overflow:hidden;transition:all 0.4s ease}
+        .faq-item.active .faq-answer{padding:0 28px 24px;max-height:500px}
+        .faq-answer p{color:var(--gray);margin:0;line-height:1.7}
+        .faq-answer ul{margin:12px 0;padding-left:20px}
+        .faq-answer li{color:var(--gray);margin-bottom:8px;line-height:1.6}
+        .faq-answer strong{color:var(--dark)}
+        .contact{background:white;position:relative;overflow:hidden}
+        .contact::before{content:'';position:absolute;top:0;right:0;width:50%;height:100%;background:var(--gradient-soft);clip-path:polygon(20% 0,100% 0,100% 100%,0% 100%)}
+        .contact-content{display:grid;grid-template-columns:1fr 1fr;gap:60px;position:relative;z-index:1}
+        .contact-info h2{font-size:clamp(1.75rem,3vw,2.25rem);color:var(--dark);margin-bottom:20px;line-height:1.2}
+        .contact-info>p{color:var(--gray);margin-bottom:32px;font-size:1.05rem;line-height:1.7}
+        .contact-details{margin-bottom:32px}
+        .contact-details a{margin-bottom:16px;display:flex;align-items:center;font-size:1rem;color:var(--dark);transition:var(--transition);text-decoration:none}
+        .contact-details a:hover{color:var(--primary);transform:translateX(8px)}
+        .contact-details span{margin-bottom:16px;display:flex;align-items:center;font-size:1rem;color:var(--dark)}
+        .contact-details i{width:44px;height:44px;border-radius:12px;background:var(--gradient-soft);display:flex;align-items:center;justify-content:center;color:var(--primary);margin-right:16px;flex-shrink:0;transition:var(--transition)}
+        .contact-details a:hover i{background:var(--gradient-primary);color:white}
+        .social-icons{display:flex;gap:12px}
+        .social-icons a{width:48px;height:48px;background:var(--gradient-soft);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--primary);text-decoration:none;transition:var(--transition)}
+        .social-icons a:hover{background:var(--gradient-primary);color:white;transform:translateY(-4px);box-shadow:0 8px 24px rgba(236,72,153,0.3)}
+        .contact-form{background:white;padding:40px;border-radius:var(--border-radius-lg);box-shadow:var(--shadow-elevated);border:2px solid var(--gray-light)}
+        .form-message{padding:20px;border-radius:12px;margin-bottom:24px;text-align:center;display:none;animation:fadeInUp 0.5s ease-out}
+        .form-message.success{background:linear-gradient(135deg,#f0fdf4 0%,#dcfce7 100%);color:#065f46;border:2px solid #bbf7d0;display:block}
+        .form-message.error{background:linear-gradient(135deg,#fef2f2 0%,#fee2e2 100%);color:#991b1b;border:2px solid #fecaca;display:block}
+        .form-group{margin-bottom:24px}
+        .form-group label{display:block;margin-bottom:8px;color:var(--dark);font-weight:600;font-size:0.9rem}
+        .form-group input,.form-group select,.form-group textarea{width:100%;padding:16px 20px;border:2px solid var(--gray-light);border-radius:12px;font-size:1rem;font-family:inherit;transition:var(--transition);background:var(--light)}
+        .form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--primary);background:white;box-shadow:0 0 0 4px rgba(236,72,153,0.1)}
+        .form-group textarea{height:140px;resize:vertical}
+        .form-group select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7280' d='M6 8L1 3h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
+        .loading{display:inline-block;width:20px;height:20px;border:3px solid rgba(255,255,255,0.3);border-radius:50%;border-top-color:#fff;animation:spin 1s ease-in-out infinite;margin-right:10px;vertical-align:middle}
+        footer{background:var(--dark);color:white;padding:80px 0 24px;position:relative}
+        footer::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--gradient-primary)}
+        .footer-content{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:48px;margin-bottom:48px}
+        .footer-logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:600;background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:20px;display:inline-block}
+        .footer-about p{color:rgba(255,255,255,0.7);line-height:1.7;font-size:0.95rem;margin-bottom:24px}
+        .footer-about .social-icons a{background:rgba(255,255,255,0.1);color:white}
+        .footer-about .social-icons a:hover{background:var(--gradient-primary)}
+        .footer-links h3,.footer-services h3,.footer-contact h3{font-size:1.1rem;font-weight:600;margin-bottom:24px;color:white;font-family:'DM Sans',sans-serif;position:relative;padding-bottom:12px}
+        .footer-links h3::after,.footer-services h3::after,.footer-contact h3::after{content:'';position:absolute;width:32px;height:3px;background:var(--gradient-primary);bottom:0;left:0;border-radius:2px}
+        .footer-links ul,.footer-services ul{list-style:none}
+        .footer-links li,.footer-services li{margin-bottom:12px}
+        .footer-links a,.footer-services a{color:rgba(255,255,255,0.7);text-decoration:none;transition:var(--transition);font-size:0.95rem;display:inline-flex;align-items:center;gap:8px}
+        .footer-links a:hover,.footer-services a:hover{color:var(--primary);transform:translateX(4px)}
+        .footer-contact a,.footer-contact span{color:rgba(255,255,255,0.7);margin-bottom:16px;display:flex;align-items:center;font-size:0.95rem;text-decoration:none;transition:var(--transition)}
+        .footer-contact a:hover{color:var(--primary)}
+        .footer-contact i{width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;margin-right:12px;color:var(--primary);flex-shrink:0}
+        .copyright{text-align:center;padding-top:32px;border-top:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.5);font-size:0.9rem}
+        @media(max-width:1024px){.package-grid{grid-template-columns:repeat(2,1fr)}.services-grid{grid-template-columns:repeat(2,1fr)}.about-content{grid-template-columns:1fr;gap:48px}.footer-content{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:768px){body{font-size:15px}.container{padding:0 20px}section{padding:80px 0}nav ul{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:white;flex-direction:column;padding:100px 32px 32px;z-index:998;gap:8px}nav ul.active{display:flex}nav a{padding:16px 20px;font-size:1.1rem;border-radius:12px}.mobile-menu-btn{display:flex;z-index:999}.logo img{height:48px}.logo-text{font-size:1.15rem}.hero{padding:100px 0 60px;min-height:60vh;background-attachment:scroll}.hero h1{font-size:2.25rem}.hero p{font-size:1.05rem}.hero-buttons{flex-direction:column;align-items:center}.cta-button{width:100%;justify-content:center;padding:16px 32px}.about-features{grid-template-columns:1fr}.founder-card{flex-direction:column;text-align:center;padding:32px 24px}.founder-title{justify-content:center}.founder-title::before{display:none}.package-grid{grid-template-columns:1fr;max-width:400px;margin:0 auto}.package-card.standard{order:-1}.popular-badge{left:-4px;font-size:0.7rem}.tab-btn{width:100%;text-align:center}.services-grid{grid-template-columns:1fr}.portfolio-slideshow{height:420px}.portfolio-slide{padding:24px}.portfolio-slide-img{height:220px}.portfolio-slide-info h3{font-size:1.35rem}.portfolio-nav{width:44px;height:44px}.portfolio-nav.prev{left:12px}.portfolio-nav.next{right:12px}.portfolio-thumbnail{width:72px;height:52px}.contact::before{display:none}.contact-content{grid-template-columns:1fr;gap:40px}.contact-info{text-align:center}.contact-details a,.contact-details span{justify-content:center}.contact-details a:hover{transform:none}.social-icons{justify-content:center}.contact-form{padding:28px 24px}.footer-content{grid-template-columns:1fr;text-align:center;gap:40px}.footer-links h3::after,.footer-services h3::after,.footer-contact h3::after{left:50%;transform:translateX(-50%)}.footer-contact a,.footer-contact span{justify-content:center}.footer-about .social-icons{justify-content:center}.whatsapp-float{width:56px;height:56px;font-size:1.5rem;bottom:24px;right:24px}.scroll-top{width:46px;height:46px;bottom:92px;right:24px}.costs-note{padding:28px 24px}.costs-header{flex-direction:column;text-align:center}.costs-grid{grid-template-columns:1fr}.faq-question{padding:20px 24px}.faq-question h3{font-size:0.95rem}.faq-item.active .faq-answer{padding:0 24px 20px}}
+        @media(max-width:480px){.hero h1{font-size:1.85rem}.hero{min-height:50vh}.section-title{font-size:1.75rem}.portfolio-slideshow{height:380px}.portfolio-slide-img{height:180px}.portfolio-thumbnail{width:60px;height:44px}.package-price{font-size:2rem}.founder-img-container{width:100px;height:100px}}
     </style>
 </head>
 <body>
-    <!-- Your exact HTML content remains the same -->
-    <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/27817218350" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- Scroll to Top Button -->
-    <div class="scroll-top" id="scrollTop">
-        <i class="fas fa-chevron-up"></i>
-    </div>
-
-    <!-- Header -->
-    <header>
+    <a href="https://wa.me/27817218350" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <div class="scroll-top" id="scrollTop"><i class="fas fa-chevron-up"></i></div>
+    <header id="header">
         <div class="container header-container">
-            <div class="logo">
-                <img src="./images/logo.png" alt="NL Digital Solutions Logo">
-                <div class="logo-text">NL Digital Solutions</div>
-            </div>
-            
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <nav>
-                <ul id="navMenu">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#packages">Packages</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Our Work</a></li>
-                    <li><a href="#faq">Q&A</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+            <a href="#home" class="logo"><img src="./images/logo.png" alt="NL Digital Solutions Logo"><div class="logo-text">NL Digital Solutions</div></a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+            <nav><ul id="navMenu"><li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#packages">Packages</a></li><li><a href="#services">Services</a></li><li><a href="#portfolio">Portfolio</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li></ul></nav>
         </div>
     </header>
-
-    <!-- Your exact HTML continues... -->
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
-            <div class="hero-content animate-fade-in">
-                <h1>Complete Digital Solutions <span>From R1,500</span></h1>
-                <p>Professional websites, mobile apps, business services, and branding solutions tailored to your needs. We transform your vision into a powerful digital presence with transparent pricing and clear timelines.</p>
-                <a href="#contact" class="cta-button animate-float">Start Your Project Today</a>
+            <div class="hero-content">
+                <h1>Complete Digital Solutions <span>Starting From R1,500</span></h1>
+                <p>Professional websites, mobile apps, business services, and branding solutions tailored to your needs. Transform your vision into a powerful digital presence with transparent pricing and clear timelines.</p>
+                <div class="hero-buttons"><a href="#contact" class="cta-button">Start Your Project <i class="fas fa-arrow-right"></i></a><a href="#packages" class="cta-button cta-button-secondary">View Packages</a></div>
             </div>
         </div>
     </section>
-
-    <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
-            <div class="section-title">
-                <h2 class="gradient-text">About NL Digital Solutions</h2>
-                <p>Meet the passionate team behind your digital success</p>
+            <div class="section-header">
+                <div class="section-label">About Us</div>
+                <p class="section-subtitle">Meet the passionate team behind your digital success. We combine technical expertise with creative vision to deliver exceptional digital solutions.</p>
             </div>
-            
             <div class="about-content">
                 <div class="about-text">
                     <h2>Transforming Visions into Digital Reality</h2>
                     <p>At NL Digital Solutions, we combine technical expertise with creative vision to deliver exceptional digital solutions for businesses of all sizes. Our passion for innovation and commitment to quality ensures every project receives the attention it deserves to thrive in today's competitive market.</p>
                     <p>We empower entrepreneurs and businesses with professional digital tools that drive growth and enhance online presence. Through transparent pricing, clear communication, and results that exceed expectations, we build lasting partnerships that transform visions into powerful digital realities.</p>
+                    <div class="about-features"><div class="about-feature"><div class="about-feature-icon"><i class="fas fa-check"></i></div><div class="about-feature-text">Transparent Pricing</div></div><div class="about-feature"><div class="about-feature-icon"><i class="fas fa-check"></i></div><div class="about-feature-text">Fast Turnaround</div></div><div class="about-feature"><div class="about-feature-icon"><i class="fas fa-check"></i></div><div class="about-feature-text">Mobile-First Design</div></div><div class="about-feature"><div class="about-feature-icon"><i class="fas fa-check"></i></div><div class="about-feature-text">Ongoing Support</div></div></div>
                 </div>
-                
                 <div class="founders-section">
-                    <div class="founder-left">
-                        <div class="founder-card nhlanhla">
-                            <div class="founder-img-container nhlanhla">
-                                <img src="./images/nhlanhla.png" alt="Nhlanhla Msomi">
-                            </div>
-                            <div class="founder-info">
-                                <h3 class="founder-name">Nhlanhla Msomi</h3>
-                                <p class="founder-title">Co-Founder & Creative Director</p>
-                                <p class="founder-desc">Nhlanhla brings the creative vision to our projects. With a background in design and user experience, she ensures every website and app we create is not only functional but visually stunning and user-friendly.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="founder-right">
-                        <div class="founder-card lerato">
-                            <div class="founder-img-container lerato">
-                                <img src="./images/lerato.jpg" alt="Lerato Nama">
-                            </div>
-                            <div class="founder-info">
-                                <h3 class="founder-name">Lerato Nama</h3>
-                                <p class="founder-title">Co-Founder & Business Strategist</p>
-                                <p class="founder-desc">Lerato focuses on the business strategy and technical architecture of our solutions. Her expertise ensures that every project is built on solid foundations that support business growth and scalability.</p>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="founder-card"><div class="founder-img-container"><img src="./images/nhlanhls.png" alt="Nhlanhla Msomi"></div><div class="founder-info"><h3 class="founder-name">Nhlanhla Msomi</h3><p class="founder-title">Co-Founder & Creative Director</p><p class="founder-desc">Nhlanhla brings the creative vision to our projects. With a background in design and user experience, she ensures every website and app we create is not only functional but visually stunning and user-friendly.</p></div></div>
+                    <div class="founder-card"><div class="founder-img-container"><img src="./images/lerato.jpg" alt="Lerato Nama"></div><div class="founder-info"><h3 class="founder-name">Lerato Nama</h3><p class="founder-title">Co-Founder & Business Strategist</p><p class="founder-desc">Lerato focuses on the business strategy and technical architecture of our solutions. Her expertise ensures that every project is built on solid foundations that support business growth and scalability.</p></div></div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Packages Section -->
     <section class="packages" id="packages">
         <div class="container">
-            <div class="section-title">
-                <h2 class="gradient-text">Our Packages</h2>
-                <p>Choose the perfect package for your business with clear pricing and timelines</p>
-            </div>
-            
-            <div class="package-tabs">
-                <button class="tab-btn active" data-tab="website">Website Packages</button>
-                <button class="tab-btn" data-tab="app">App Packages</button>
-            </div>
-            
+            <div class="section-header"><div class="section-label">Pricing</div><h2 class="section-title">Choose Your Perfect Package</h2><p class="section-subtitle">Clear pricing and timelines for every business need</p></div>
+            <div class="package-tabs"><button class="tab-btn active" data-tab="website">Website Packages</button><button class="tab-btn" data-tab="app">App Packages</button></div>
             <div class="package-grid" id="website-packages">
-                <!-- Basic Website Package -->
-                <div class="package-card basic">
-                    <div class="package-header">
-                        <h3 class="package-name">Basic Website</h3>
-                        <div class="package-price">R1,500 <span>once off</span></div>
-                        <p class="package-desc">Perfect for businesses that need a simple but professional online presence.</p>
-                    </div>
-                    <ul class="package-features">
-                        <li><i class="fas fa-check"></i> Single-page website with scrolling sections</li>
-                        <li><i class="fas fa-check"></i> Sections: Home, About, Services, Contact</li>
-                        <li><i class="fas fa-check"></i> Clean modern design</li>
-                        <li><i class="fas fa-check"></i> Mobile-friendly responsive layout</li>
-                        <li><i class="fas fa-check"></i> WhatsApp contact button</li>
-                        <li><i class="fas fa-check"></i> Basic SEO structure</li>
-                        <li><i class="fas fa-check"></i> 1 revision cycle</li>
-                    </ul>
-                    <div class="package-timeline">
-                        <p><i class="fas fa-clock"></i> 5-7 working days after approval</p>
-                    </div>
-                    <div class="package-footer">
-                        <a href="#contact" class="package-button">Choose This Package</a>
-                    </div>
-                </div>
-                
-                <!-- Standard Website Package -->
-                <div class="package-card standard">
-                    <div class="popular-badge">MOST WANTED</div>
-                    <div class="package-badge">Best Value</div>
-                    <div class="package-header">
-                        <h3 class="package-name">Standard Website</h3>
-                        <div class="package-price">R3,500 <span>once off</span></div>
-                        <p class="package-desc">Ideal for businesses that need a complete, multi-page website with added credibility features.</p>
-                    </div>
-                    <ul class="package-features">
-                        <li><i class="fas fa-check"></i> <strong>Everything in Basic PLUS:</strong></li>
-                        <li><i class="fas fa-check"></i> Multi-page website (5+ pages)</li>
-                        <li><i class="fas fa-check"></i> Testimonials & FAQ pages</li>
-                        <li><i class="fas fa-check"></i> Image & video gallery</li>
-                        <li><i class="fas fa-check"></i> Improved design + visual branding</li>
-                        <li><i class="fas fa-check"></i> Upgraded SEO setup</li>
-                        <li><i class="fas fa-check"></i> 3 revision cycles</li>
-                        <li><i class="fas fa-check"></i> Optional Blog/Resources Page</li>
-                    </ul>
-                    <div class="package-timeline">
-                        <p><i class="fas fa-clock"></i> 7-10 working days after approval</p>
-                    </div>
-                    <div class="package-footer">
-                        <a href="#contact" class="package-button">Choose This Package</a>
-                    </div>
-                </div>
-                
-                <!-- Premium Website Package -->
-                <div class="package-card premium">
-                    <div class="package-header">
-                        <h3 class="package-name">Premium Website</h3>
-                        <div class="package-price">R5,500 <span>once off</span></div>
-                        <p class="package-desc">Designed for businesses that want automation and advanced client features.</p>
-                    </div>
-                    <ul class="package-features">
-                        <li><i class="fas fa-check"></i> <strong>Everything in Standard PLUS:</strong></li>
-                        <li><i class="fas fa-check"></i> Online booking system</li>
-                        <li><i class="fas fa-check"></i> Payment integration (PayFast, Yoco, etc.)</li>
-                        <li><i class="fas fa-check"></i> Basic customer dashboard</li>
-                        <li><i class="fas fa-check"></i> Custom icons & visual branding</li>
-                        <li><i class="fas fa-check"></i> Advanced SEO</li>
-                        <li><i class="fas fa-check"></i> 5 revision cycles</li>
-                        <li><i class="fas fa-check"></i> Priority support during development</li>
-                    </ul>
-                    <div class="package-timeline">
-                        <p><i class="fas fa-clock"></i> 10-15 working days after approval</p>
-                    </div>
-                    <div class="package-footer">
-                        <a href="#contact" class="package-button">Choose This Package</a>
-                    </div>
-                </div>
+                <div class="package-card basic"><div class="package-icon"><i class="fas fa-seedling"></i></div><h3 class="package-name">Basic Website</h3><div class="package-price">R1,500 <span>once off</span></div><p class="package-desc">Perfect for businesses that need a simple but professional online presence.</p><ul class="package-features"><li><i class="fas fa-check"></i> Single-page website with scrolling sections</li><li><i class="fas fa-check"></i> Sections: Home, About, Services, Contact</li><li><i class="fas fa-check"></i> Clean modern design</li><li><i class="fas fa-check"></i> Mobile-friendly responsive layout</li><li><i class="fas fa-check"></i> WhatsApp contact button</li><li><i class="fas fa-check"></i> Basic SEO structure</li><li><i class="fas fa-check"></i> 1 revision cycle</li></ul><div class="package-timeline"><i class="fas fa-clock"></i><p>5-7 working days after approval</p></div><div class="package-footer"><a href="#contact" class="package-button">Choose This Package</a></div></div>
+                <div class="package-card standard"><div class="popular-badge">MOST WANTED</div><div class="package-badge">Best Value</div><div class="package-icon"><i class="fas fa-rocket"></i></div><h3 class="package-name">Standard Website</h3><div class="package-price">R3,500 <span>once off</span></div><p class="package-desc">Ideal for businesses that need a complete, multi-page website with added credibility features.</p><ul class="package-features"><li><i class="fas fa-check"></i> <strong>Everything in Basic PLUS:</strong></li><li><i class="fas fa-check"></i> Multi-page website (5+ pages)</li><li><i class="fas fa-check"></i> Testimonials & FAQ pages</li><li><i class="fas fa-check"></i> Image & video gallery</li><li><i class="fas fa-check"></i> Improved design + visual branding</li><li><i class="fas fa-check"></i> Upgraded SEO setup</li><li><i class="fas fa-check"></i> 3 revision cycles</li><li><i class="fas fa-check"></i> Optional Blog/Resources Page</li></ul><div class="package-timeline"><i class="fas fa-clock"></i><p>7-10 working days after approval</p></div><div class="package-footer"><a href="#contact" class="package-button">Choose This Package</a></div></div>
+                <div class="package-card premium"><div class="package-icon"><i class="fas fa-crown"></i></div><h3 class="package-name">Premium Website</h3><div class="package-price">R5,500 <span>once off</span></div><p class="package-desc">Designed for businesses that want automation and advanced client features.</p><ul class="package-features"><li><i class="fas fa-check"></i> <strong>Everything in Standard PLUS:</strong></li><li><i class="fas fa-check"></i> Online booking system</li><li><i class="fas fa-check"></i> Payment integration (PayFast, Yoco, etc.)</li><li><i class="fas fa-check"></i> Basic customer dashboard</li><li><i class="fas fa-check"></i> Custom icons & visual branding</li><li><i class="fas fa-check"></i> Advanced SEO</li><li><i class="fas fa-check"></i> 5 revision cycles</li><li><i class="fas fa-check"></i> Priority support during development</li></ul><div class="package-timeline"><i class="fas fa-clock"></i><p>10-15 working days after approval</p></div><div class="package-footer"><a href="#contact" class="package-button">Choose This Package</a></div></div>
             </div>
-            
-            <!-- App Packages (Hidden by default) -->
-            <div class="package-grid" id="app-packages" style="display: none;">
-                <!-- Starter App Package -->
-                <div class="package-card basic">
-                    <div class="package-header">
-                        <h3 class="package-name">Starter App</h3>
-                        <div class="package-price">R6,500 <span>once off</span></div>
-                        <p class="package-desc">Perfect for small businesses needing a simple, functional mobile app.</p>
-                    </div>
-                    <ul class="package-features">
-                        <li><i class="fas fa-check"></i> Basic 3–4 screen app</li>
-                        <li><i class="fas fa-check"></i> Clean modern UI</li>
-                        <li><i class="fas fa-check"></i> Business info + images</li>
-                        <li><i class="fas fa-check"></i> WhatsApp or call button</li>
-                        <li><i class="fas fa-check"></i> Push notification setup</li>
-                        <li><i class="fas fa-check"></i> Mobile-friendly layout</li>
-                        <li><i class="fas fa-check"></i> 1 revision cycle</li>
-                    </ul>
-                    <div class="package-timeline">
-                        <p><i class="fas fa-clock"></i> Development timeline: 2-3 weeks</p>
-                    </div>
-                    <div class="package-footer">
-                        <a href="#contact" class="package-button">Choose This Package</a>
-                    </div>
-                </div>
-                
-                <!-- Standard App Package -->
-                <div class="package-card standard">
-                    <div class="package-badge">Most Popular</div>
-                    <div class="package-header">
-                        <h3 class="package-name">Standard App</h3>
-                        <div class="package-price">R12,500 <span>once off</span></div>
-                        <p class="package-desc">Ideal for businesses that want more interactivity and customer engagement.</p>
-                    </div>
-                    <ul class="package-features">
-                        <li><i class="fas fa-check"></i> <strong>Everything in Starter PLUS:</strong></li>
-                        <li><i class="fas fa-check"></i> 5–8 screens with custom UI</li>
-                        <li><i class="fas fa-check"></i> User login (email or Google)</li>
-                        <li><i class="fas fa-check"></i> Booking system (appointments, classes)</li>
-                        <li><i class="fas fa-check"></i> Basic admin panel</li>
-                        <li><i class="fas fa-check"></i> Push notifications</li>
-                        <li><i class="fas fa-check"></i> App store publishing (Google Play)</li>
-                        <li><i class="fas fa-check"></i> 3 revision cycles</li>
-                    </ul>
-                    <div class="package-timeline">
-                        <p><i class="fas fa-clock"></i> Development timeline: 3-4 weeks</p>
-                    </div>
-                    <div class="package-footer">
-                        <a href="#contact" class="package-button">Choose This Package</a>
-                    </div>
-                </div>
-                
-                <!-- Premium App Package -->
-                <div class="package-card premium">
-                    <div class="package-header">
-                        <h3 class="package-name">Premium App</h3>
-                        <div class="package-price">R20,000 <span>once off</span></div>
-                        <p class="package-desc">For businesses that need automation, payments, and advanced functionality.</p>
-                    </div>
-                    <ul class="package-features">
-                        <li><i class="fas fa-check"></i> <strong>Everything in Standard PLUS:</strong></li>
-                        <li><i class="fas fa-check"></i> Full online booking with availability</li>
-                        <li><i class="fas fa-check"></i> Payment integration (PayFast, Yoco, Stripe)</li>
-                        <li><i class="fas fa-check"></i> Advanced admin dashboard</li>
-                        <li><i class="fas fa-check"></i> Customer profiles</li>
-                        <li><i class="fas fa-check"></i> Live chat integration</li>
-                        <li><i class="fas fa-check"></i> Loyalty points or rewards system</li>
-                        <li><i class="fas fa-check"></i> Publishing on Google Play & Apple App Store</li>
-                        <li><i class="fas fa-check"></i> 5 revision cycles + Priority support</li>
-                    </ul>
-                    <div class="package-timeline">
-                        <p><i class="fas fa-clock"></i> Development timeline: 4-6 weeks</p>
-                    </div>
-                    <div class="package-footer">
-                        <a href="#contact" class="package-button">Choose This Package</a>
-                    </div>
-                </div>
+            <div class="package-grid" id="app-packages" style="display:none;">
+                <div class="package-card basic"><div class="package-icon"><i class="fas fa-mobile-alt"></i></div><h3 class="package-name">Starter App</h3><div class="package-price">R6,500 <span>once off</span></div><p class="package-desc">Perfect for small businesses needing a simple, functional mobile app.</p><ul class="package-features"><li><i class="fas fa-check"></i> Basic 3–4 screen app</li><li><i class="fas fa-check"></i> Clean modern UI</li><li><i class="fas fa-check"></i> Business info + images</li><li><i class="fas fa-check"></i> WhatsApp or call button</li><li><i class="fas fa-check"></i> Push notification setup</li><li><i class="fas fa-check"></i> Mobile-friendly layout</li><li><i class="fas fa-check"></i> 1 revision cycle</li></ul><div class="package-timeline"><i class="fas fa-clock"></i><p>Development timeline: 2-3 weeks</p></div><div class="package-footer"><a href="#contact" class="package-button">Choose This Package</a></div></div>
+                <div class="package-card standard"><div class="package-badge">Most Popular</div><div class="package-icon"><i class="fas fa-tablet-alt"></i></div><h3 class="package-name">Standard App</h3><div class="package-price">R12,500 <span>once off</span></div><p class="package-desc">Ideal for businesses that want more interactivity and customer engagement.</p><ul class="package-features"><li><i class="fas fa-check"></i> <strong>Everything in Starter PLUS:</strong></li><li><i class="fas fa-check"></i> 5–8 screens with custom UI</li><li><i class="fas fa-check"></i> User login (email or Google)</li><li><i class="fas fa-check"></i> Booking system (appointments, classes)</li><li><i class="fas fa-check"></i> Basic admin panel</li><li><i class="fas fa-check"></i> Push notifications</li><li><i class="fas fa-check"></i> App store publishing (Google Play)</li><li><i class="fas fa-check"></i> 3 revision cycles</li></ul><div class="package-timeline"><i class="fas fa-clock"></i><p>Development timeline: 3-4 weeks</p></div><div class="package-footer"><a href="#contact" class="package-button">Choose This Package</a></div></div>
+                <div class="package-card premium"><div class="package-icon"><i class="fas fa-layer-group"></i></div><h3 class="package-name">Premium App</h3><div class="package-price">R20,000 <span>once off</span></div><p class="package-desc">For businesses that need automation, payments, and advanced functionality.</p><ul class="package-features"><li><i class="fas fa-check"></i> <strong>Everything in Standard PLUS:</strong></li><li><i class="fas fa-check"></i> Full online booking with availability</li><li><i class="fas fa-check"></i> Payment integration (PayFast, Yoco, Stripe)</li><li><i class="fas fa-check"></i> Advanced admin dashboard</li><li><i class="fas fa-check"></i> Customer profiles</li><li><i class="fas fa-check"></i> Live chat integration</li><li><i class="fas fa-check"></i> Loyalty points or rewards system</li><li><i class="fas fa-check"></i> Publishing on Google Play & Apple App Store</li><li><i class="fas fa-check"></i> 5 revision cycles + Priority support</li></ul><div class="package-timeline"><i class="fas fa-clock"></i><p>Development timeline: 4-6 weeks</p></div><div class="package-footer"><a href="#contact" class="package-button">Choose This Package</a></div></div>
             </div>
-            
-            <!-- Additional Costs Note - REDESIGNED -->
-            <div class="costs-note">
-                <div class="costs-header">
-                    <div class="costs-icon">
-                        <i class="fas fa-info-circle"></i>
-                    </div>
-                    <h3 class="costs-title">Additional Costs Not Included In Packages</h3>
-                </div>
-                
-                <p class="costs-subtitle">(Paid directly to external providers)</p>
-                
-                <div class="costs-grid">
-                    <div class="cost-item">
-                        <div class="cost-icon">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <div class="cost-details">
-                            <h4>Domain Name</h4>
-                            <p>.co.za or .com domains (annual fee)</p>
-                        </div>
-                    </div>
-                    
-                    <div class="cost-item">
-                        <div class="cost-icon">
-                            <i class="fas fa-server"></i>
-                        </div>
-                        <div class="cost-details">
-                            <h4>Website Hosting</h4>
-                            <p>Monthly or yearly hosting fees</p>
-                        </div>
-                    </div>
-                    
-                    <div class="cost-item">
-                        <div class="cost-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="cost-details">
-                            <h4>Business Email Setup</h4>
-                            <p>Professional email accounts</p>
-                        </div>
-                    </div>
-                    
-                    <div class="cost-item">
-                        <div class="cost-icon">
-                            <i class="fas fa-credit-card"></i>
-                        </div>
-                        <div class="cost-details">
-                            <h4>Payment Gateway Fees</h4>
-                            <p>Transaction fees for payment processing</p>
-                        </div>
-                    </div>
-                    
-                    <div class="cost-item">
-                        <div class="cost-icon">
-                            <i class="fas fa-plug"></i>
-                        </div>
-                        <div class="cost-details">
-                            <h4>Premium Plugins</h4>
-                            <p>Third-party software or plugins</p>
-                        </div>
-                    </div>
-                    
-                    <div class="cost-item">
-                        <div class="cost-icon">
-                            <i class="fab fa-apple"></i>
-                        </div>
-                        <div class="cost-details">
-                            <h4>Apple Developer Account</h4>
-                            <p>$99/year for App Store publishing</p>
-                        </div>
-                    </div>
-                    
-                    <div class="cost-item">
-                        <div class="cost-icon">
-                            <i class="fab fa-google-play"></i>
-                        </div>
-                        <div class="cost-details">
-                            <h4>Google Play Account</h4>
-                            <p>$25 one-time fee for Google Play</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="cost-note-footer">
-                    Note: These costs vary by provider and are paid directly to the service providers, not to NL Digital Solutions.
-                </div>
-            </div>
+            <div class="costs-note"><div class="costs-header"><div class="costs-icon"><i class="fas fa-info-circle"></i></div><h3 class="costs-title">Additional Costs Not Included In Packages</h3></div><p class="costs-subtitle">These are paid directly to external providers, not to NL Digital Solutions</p><div class="costs-grid"><div class="cost-item"><div class="cost-icon"><i class="fas fa-globe"></i></div><div class="cost-details"><h4>Domain Name</h4><p>.co.za or .com domains (annual fee)</p></div></div><div class="cost-item"><div class="cost-icon"><i class="fas fa-server"></i></div><div class="cost-details"><h4>Website Hosting</h4><p>Monthly or yearly hosting fees</p></div></div><div class="cost-item"><div class="cost-icon"><i class="fas fa-envelope"></i></div><div class="cost-details"><h4>Business Email Setup</h4><p>Professional email accounts</p></div></div><div class="cost-item"><div class="cost-icon"><i class="fas fa-credit-card"></i></div><div class="cost-details"><h4>Payment Gateway Fees</h4><p>Transaction fees for payment processing</p></div></div><div class="cost-item"><div class="cost-icon"><i class="fas fa-plug"></i></div><div class="cost-details"><h4>Premium Plugins</h4><p>Third-party software or plugins</p></div></div><div class="cost-item"><div class="cost-icon"><i class="fab fa-apple"></i></div><div class="cost-details"><h4>Apple Developer Account</h4><p>$99/year for App Store publishing</p></div></div><div class="cost-item"><div class="cost-icon"><i class="fab fa-google-play"></i></div><div class="cost-details"><h4>Google Play Account</h4><p>$25 one-time fee for Google Play</p></div></div></div><div class="cost-note-footer">Note: These costs vary by provider and are paid directly to the service providers, not to NL Digital Solutions.</div></div>
         </div>
     </section>
-
-    <!-- Other Services Section -->
     <section id="services">
         <div class="container">
-            <div class="section-title">
-                <h2 class="gradient-text">Additional Services</h2>
-                <p>Comprehensive business, design, and branding solutions</p>
-            </div>
-            
+            <div class="section-header"><div class="section-label">What We Offer</div><h2 class="section-title">Additional Services</h2><p class="section-subtitle">Comprehensive business, design, and branding solutions</p></div>
             <div class="services-grid">
-                <!-- Business Services -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-file-contract"></i>
-                    </div>
-                    <h3>Business Services</h3>
-                    <span class="service-price-range">R50 - R1,500</span>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Business Plans — R300 to R1,200</li>
-                        <li><i class="fas fa-check"></i> Resumes (CVs) — R80 to R250</li>
-                        <li><i class="fas fa-check"></i> Cover Letters — R50 to R120</li>
-                        <li><i class="fas fa-check"></i> Invoices (Templates) — R60 to R150</li>
-                        <li><i class="fas fa-check"></i> Company Profiles — R300 to R1,500</li>
-                    </ul>
-                </div>
-                
-                <!-- Graphic Design -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
-                    <h3>Graphic Design</h3>
-                    <span class="service-price-range">R50 - R1,000+</span>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Business Cards — R50 to R150</li>
-                        <li><i class="fas fa-check"></i> Flyers — R80 to R200</li>
-                        <li><i class="fas fa-check"></i> Brochures — R150 to R400</li>
-                        <li><i class="fas fa-check"></i> Menus — R150 to R350</li>
-                        <li><i class="fas fa-check"></i> Catalogs — R300 to R1,000+</li>
-                    </ul>
-                </div>
-                
-                <!-- Branding Services -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3>Branding Services</h3>
-                    <span class="service-price-range">R150 - R1,000</span>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Logos — R150 to R500</li>
-                        <li><i class="fas fa-check"></i> Brand Kits — R300 to R1,000</li>
-                        <li><i class="fas fa-check"></i> Brand Guidelines</li>
-                        <li><i class="fas fa-check"></i> Visual Identity Systems</li>
-                    </ul>
-                </div>
-                
-                <!-- Additional Services -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-plus-circle"></i>
-                    </div>
-                    <h3>Additional Services</h3>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Website Maintenance — R250/month</li>
-                        <li><i class="fas fa-check"></i> Content Writing — R200 per page</li>
-                        <li><i class="fas fa-check"></i> App Maintenance — R350/month</li>
-                        <li><i class="fas fa-check"></i> Custom UI/UX Design — R1,500+</li>
-                        <li><i class="fas fa-check"></i> Push Notifications — R200/campaign</li>
-                    </ul>
-                </div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-file-contract"></i></div><h3>Business Services</h3><span class="service-price-range">R50 - R1,500</span><ul class="service-features"><li><i class="fas fa-circle"></i> Business Plans — R300 to R1,200</li><li><i class="fas fa-circle"></i> Resumes (CVs) — R80 to R250</li><li><i class="fas fa-circle"></i> Cover Letters — R50 to R120</li><li><i class="fas fa-circle"></i> Invoices (Templates) — R60 to R150</li><li><i class="fas fa-circle"></i> Company Profiles — R300 to R1,500</li></ul></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-paint-brush"></i></div><h3>Graphic Design</h3><span class="service-price-range">R50 - R1,000+</span><ul class="service-features"><li><i class="fas fa-circle"></i> Business Cards — R50 to R150</li><li><i class="fas fa-circle"></i> Flyers — R80 to R200</li><li><i class="fas fa-circle"></i> Brochures — R150 to R400</li><li><i class="fas fa-circle"></i> Menus — R150 to R350</li><li><i class="fas fa-circle"></i> Catalogs — R300 to R1,000+</li></ul></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-palette"></i></div><h3>Branding Services</h3><span class="service-price-range">R150 - R1,000</span><ul class="service-features"><li><i class="fas fa-circle"></i> Logos — R150 to R500</li><li><i class="fas fa-circle"></i> Brand Kits — R300 to R1,000</li><li><i class="fas fa-circle"></i> Brand Guidelines</li><li><i class="fas fa-circle"></i> Visual Identity Systems</li></ul></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-plus-circle"></i></div><h3>Additional Services</h3><ul class="service-features"><li><i class="fas fa-circle"></i> Website Maintenance — R250/month</li><li><i class="fas fa-circle"></i> Content Writing — R200 per page</li><li><i class="fas fa-circle"></i> App Maintenance — R350/month</li><li><i class="fas fa-circle"></i> Custom UI/UX Design — R1,500+</li><li><i class="fas fa-circle"></i> Push Notifications — R200/campaign</li></ul></div>
             </div>
         </div>
     </section>
-
-    <!-- Portfolio Section - UPDATED WITH SLIDESHOW -->
     <section class="portfolio" id="portfolio">
         <div class="container">
-            <div class="section-title">
-                <h2 class="gradient-text">Our Previous Work</h2>
-                <p>Browse through some of our recently completed projects</p>
-            </div>
-            
+            <div class="section-header"><div class="section-label">Our Work</div><h2 class="section-title">Recent Projects</h2><p class="section-subtitle">Browse through some of our recently completed projects</p></div>
             <div class="portfolio-slideshow">
-                <!-- Navigation Arrows -->
-                <div class="portfolio-nav prev">
-                    <i class="fas fa-chevron-left"></i>
-                </div>
-                <div class="portfolio-nav next">
-                    <i class="fas fa-chevron-right"></i>
-                </div>
-                
-                <!-- Slides -->
-                <div class="portfolio-slide active" data-index="0">
-                    <div class="portfolio-slide-img">
-                        <img src="./images/vuwa.png" alt="Vuwa Driving School Website">
-                    </div>
-                    <div class="portfolio-slide-info">
-                        <h3>Vuwa Driving School</h3>
-                        <p>Professional driving school website with contact information and service details.</p>
-                        <a href="https://vuwa-driving-schooldemo-u4yo.vercel.app/" target="_blank" class="portfolio-slide-link">View Live Site</a>
-                    </div>
-                </div>
-                
-                <div class="portfolio-slide" data-index="1">
-                    <div class="portfolio-slide-img">
-                        <img src="./images/znn.png" alt="ZZN Consulting Website">
-                    </div>
-                    <div class="portfolio-slide-info">
-                        <h3>ZZN Consulting</h3>
-                        <p>Specialist food safety and quality consultancy company with detailed service offerings.</p>
-                        <a href="https://zznconsulting.co.za/" target="_blank" class="portfolio-slide-link">View Live Site</a>
-                    </div>
-                </div>
-                
-                <div class="portfolio-slide" data-index="2">
-                    <div class="portfolio-slide-img">
-                        <img src="./images/house.png" alt="House Renomasters Website">
-                    </div>
-                    <div class="portfolio-slide-info">
-                        <h3>House Renomasters</h3>
-                        <p>Expert renovation and painting services company with portfolio showcase.</p>
-                        <a href="https://www.houserenomasters.co.za/" target="_blank" class="portfolio-slide-link">View Live Site</a>
-                    </div>
-                </div>
-                
-                <div class="portfolio-slide" data-index="3">
-                    <div class="portfolio-slide-img">
-                        <img src="./images/silunama.png" alt="Silunama Website">
-                    </div>
-                    <div class="portfolio-slide-info">
-                        <h3>Silunama Civils</h3>
-                        <p>Civil engineering and construction services company with project gallery.</p>
-                        <a href="https://www.silunama.co.za/#home" target="_blank" class="portfolio-slide-link">View Live Site</a>
-                    </div>
-                </div>
-                
-                <div class="portfolio-slide" data-index="4">
-                    <div class="portfolio-slide-img">
-                        <img src="./images/patmax.png" alt="Patmax Valet Website">
-                    </div>
-                    <div class="portfolio-slide-info">
-                        <h3>Patmax Valet</h3>
-                        <p>Professional car valet and detailing service with booking functionality.</p>
-                        <a href="https://www.patmaxvalet.co.za/" target="_blank" class="portfolio-slide-link">View Live Site</a>
-                    </div>
-                </div>
-                
-                <div class="portfolio-slide" data-index="5">
-                    <div class="portfolio-slide-img">
-                        <img src="./images/lifespring.png" alt="Life Springs Website">
-                    </div>
-                    <div class="portfolio-slide-info">
-                        <h3>Life Springs Spa</h3>
-                        <p>Wellness and spa services for relaxation and rejuvenation with online booking.</p>
-                        <a href="https://life-springs-demo-xr23.vercel.app/" target="_blank" class="portfolio-slide-link">View Live Site</a>
-                    </div>
-                </div>
+                <div class="portfolio-nav prev"><i class="fas fa-chevron-left"></i></div>
+                <div class="portfolio-nav next"><i class="fas fa-chevron-right"></i></div>
+                <div class="portfolio-slide active" data-index="0"><div class="portfolio-slide-img"><img src="./images/vuwa.png" alt="Vuwa Driving School"></div><div class="portfolio-slide-info"><h3>Vuwa Driving School</h3><p>Professional driving school website with contact information and service details.</p><a href="https://vuwa-driving-schooldemo-u4yo.vercel.app/" target="_blank" class="portfolio-slide-link">View Live Site <i class="fas fa-external-link-alt"></i></a></div></div>
+                <div class="portfolio-slide" data-index="1"><div class="portfolio-slide-img"><img src="./images/znn.png" alt="ZZN Consulting"></div><div class="portfolio-slide-info"><h3>ZZN Consulting</h3><p>Specialist food safety and quality consultancy company with detailed service offerings.</p><a href="https://zznconsulting.co.za/" target="_blank" class="portfolio-slide-link">View Live Site <i class="fas fa-external-link-alt"></i></a></div></div>
+                <div class="portfolio-slide" data-index="2"><div class="portfolio-slide-img"><img src="./images/house.png" alt="House Renomasters"></div><div class="portfolio-slide-info"><h3>House Renomasters</h3><p>Expert renovation and painting services company with portfolio showcase.</p><a href="https://www.houserenomasters.co.za/" target="_blank" class="portfolio-slide-link">View Live Site <i class="fas fa-external-link-alt"></i></a></div></div>
+                <div class="portfolio-slide" data-index="3"><div class="portfolio-slide-img"><img src="./images/silunama.png" alt="Silunama Civils"></div><div class="portfolio-slide-info"><h3>Silunama Civils</h3><p>Civil engineering and construction services company with project gallery.</p><a href="https://www.silunama.co.za/#home" target="_blank" class="portfolio-slide-link">View Live Site <i class="fas fa-external-link-alt"></i></a></div></div>
+                <div class="portfolio-slide" data-index="4"><div class="portfolio-slide-img"><img src="./images/patmax.png" alt="Patmax Valet"></div><div class="portfolio-slide-info"><h3>Patmax Valet</h3><p>Professional car valet and detailing service with booking functionality.</p><a href="https://www.patmaxvalet.co.za/" target="_blank" class="portfolio-slide-link">View Live Site <i class="fas fa-external-link-alt"></i></a></div></div>
+                <div class="portfolio-slide" data-index="5"><div class="portfolio-slide-img"><img src="./images/lifespring.png" alt="Life Springs Spa"></div><div class="portfolio-slide-info"><h3>Life Springs Spa</h3><p>Wellness and spa services for relaxation and rejuvenation with online booking.</p><a href="https://life-springs-demo-xr23.vercel.app/" target="_blank" class="portfolio-slide-link">View Live Site <i class="fas fa-external-link-alt"></i></a></div></div>
             </div>
-            
-            <!-- Thumbnails -->
-            <div class="portfolio-thumbnails">
-                <div class="portfolio-thumbnail active" data-index="0">
-                    <img src="./images/vuwa.png" alt="Vuwa Driving School">
-                </div>
-                <div class="portfolio-thumbnail" data-index="1">
-                    <img src="./images/znn.png" alt="ZZN Consulting">
-                </div>
-                <div class="portfolio-thumbnail" data-index="2">
-                    <img src="./images/house.png" alt="House Renomasters">
-                </div>
-                <div class="portfolio-thumbnail" data-index="3">
-                    <img src="./images/silunama.png" alt="Silunama">
-                </div>
-                <div class="portfolio-thumbnail" data-index="4">
-                    <img src="./images/patmax.png" alt="Patmax Valet">
-                </div>
-                <div class="portfolio-thumbnail" data-index="5">
-                    <img src="./images/lifespring.png" alt="Life Springs Spa">
-                </div>
-            </div>
+            <div class="portfolio-thumbnails"><div class="portfolio-thumbnail active" data-index="0"><img src="./images/vuwa.png" alt="Vuwa"></div><div class="portfolio-thumbnail" data-index="1"><img src="./images/znn.png" alt="ZZN"></div><div class="portfolio-thumbnail" data-index="2"><img src="./images/house.png" alt="House"></div><div class="portfolio-thumbnail" data-index="3"><img src="./images/silunama.png" alt="Silunama"></div><div class="portfolio-thumbnail" data-index="4"><img src="./images/patmax.png" alt="Patmax"></div><div class="portfolio-thumbnail" data-index="5"><img src="./images/lifespring.png" alt="Lifespring"></div></div>
         </div>
     </section>
-
-    <!-- NEW Q&A Section -->
     <section class="faq-section" id="faq">
         <div class="container">
-            <div class="section-title">
-                <h2 class="gradient-text">Frequently Asked Questions</h2>
-                <p>Find answers to common questions about our services</p>
-            </div>
-            
+            <div class="section-header"><div class="section-label">FAQ</div><h2 class="section-title">Frequently Asked Questions</h2><p class="section-subtitle">Find answers to common questions about our services</p></div>
             <div class="faq-container">
-                <div class="faq-item active">
-                    <div class="faq-question">
-                        <h3>How long does it take to build a website?</h3>
-                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Our development timeline depends on the package you choose:</p>
-                        <ul>
-                            <li><strong>Basic Website:</strong> 5-7 working days after approval</li>
-                            <li><strong>Standard Website:</strong> 7-10 working days after approval</li>
-                            <li><strong>Premium Website:</strong> 10-15 working days after approval</li>
-                            <li><strong>Mobile Apps:</strong> 2-6 weeks depending on complexity</li>
-                        </ul>
-                        <p>Timelines start after we receive all required content and final approval on designs.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>What do I need to provide before we start?</h3>
-                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>To ensure a smooth process, we recommend having:</p>
-                        <ul>
-                            <li>Company logo and branding materials</li>
-                            <li>High-quality images or access to stock photos</li>
-                            <li>Written content for your pages</li>
-                            <li>Contact information and social media links</li>
-                            <li>Examples of websites you like (for design inspiration)</li>
-                            <li>List of specific features or functionality you need</li>
-                        </ul>
-                        <p>Don't worry if you're missing some items - we can help source content and provide guidance!</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Do you offer website maintenance and hosting?</h3>
-                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes! We offer comprehensive maintenance and hosting services:</p>
-                        <ul>
-                            <li><strong>Website Maintenance:</strong> R250/month includes updates, security monitoring, and basic content changes</li>
-                            <li><strong>Hosting:</strong> We can set up hosting for you or guide you through choosing a provider</li>
-                            <li><strong>Domain Registration:</strong> We'll help you register and manage your domain name</li>
-                            <li><strong>Email Setup:</strong> Professional business email accounts can be configured</li>
-                        </ul>
-                        <p>These are additional services billed separately from the website development packages.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>What payment methods do you accept?</h3>
-                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We accept various payment methods for your convenience:</p>
-                        <ul>
-                            <li>Bank transfer (South African banks)</li>
-                            <li>Credit/Debit cards via secure payment gateways</li>
-                            <li>PayFast</li>
-                            <li>SnapScan</li>
-                            <li>Payment plans available for larger projects</li>
-                        </ul>
-                        <p>A 50% deposit is required to start work, with the balance due upon completion. All pricing excludes VAT unless otherwise stated.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Can you help with SEO and getting my website found on Google?</h3>
-                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Absolutely! All our websites include basic SEO setup. For more comprehensive SEO, we offer:</p>
-                        <ul>
-                            <li><strong>Basic SEO:</strong> Included with all packages - proper structure, meta tags, and mobile optimization</li>
-                            <li><strong>Advanced SEO:</strong> Available as an add-on - keyword research, content optimization, and technical SEO</li>
-                            <li><strong>Ongoing SEO:</strong> Monthly SEO management packages available</li>
-                            <li><strong>Google My Business:</strong> Setup and optimization included with Premium packages</li>
-                        </ul>
-                        <p>We build websites with search engines in mind from day one!</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>What happens after my website is live?</h3>
-                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Our relationship doesn't end when your website goes live:</p>
-                        <ul>
-                            <li><strong>Training:</strong> We provide training on how to update your website</li>
-                            <li><strong>Support:</strong> 30 days of free support included with all packages</li>
-                            <li><strong>Documentation:</strong> Complete documentation provided</li>
-                            <li><strong>Maintenance Plans:</strong> Available for ongoing support and updates</li>
-                            <li><strong>Future Updates:</strong> We're always available for future enhancements</li>
-                        </ul>
-                        <p>We consider our clients long-term partners and are always here to help your business grow!</p>
-                    </div>
-                </div>
+                <div class="faq-item active"><div class="faq-question"><h3>How long does it take to build a website?</h3><span class="faq-icon"><i class="fas fa-plus"></i></span></div><div class="faq-answer"><p>Our development timeline depends on the package you choose:</p><ul><li><strong>Basic Website:</strong> 5-7 working days after approval</li><li><strong>Standard Website:</strong> 7-10 working days after approval</li><li><strong>Premium Website:</strong> 10-15 working days after approval</li><li><strong>Mobile Apps:</strong> 2-6 weeks depending on complexity</li></ul><p>Timelines start after we receive all required content and final approval on designs.</p></div></div>
+                <div class="faq-item"><div class="faq-question"><h3>What do I need to provide before we start?</h3><span class="faq-icon"><i class="fas fa-plus"></i></span></div><div class="faq-answer"><p>To ensure a smooth process, we recommend having:</p><ul><li>Company logo and branding materials</li><li>High-quality images or access to stock photos</li><li>Written content for your pages</li><li>Contact information and social media links</li><li>Examples of websites you like (for design inspiration)</li><li>List of specific features or functionality you need</li></ul><p>Don't worry if you're missing some items - we can help source content and provide guidance!</p></div></div>
+                <div class="faq-item"><div class="faq-question"><h3>Do you offer website maintenance and hosting?</h3><span class="faq-icon"><i class="fas fa-plus"></i></span></div><div class="faq-answer"><p>Yes! We offer comprehensive maintenance and hosting services:</p><ul><li><strong>Website Maintenance:</strong> R250/month includes updates, security monitoring, and basic content changes</li><li><strong>Hosting:</strong> We can set up hosting for you or guide you through choosing a provider</li><li><strong>Domain Registration:</strong> We'll help you register and manage your domain name</li><li><strong>Email Setup:</strong> Professional business email accounts can be configured</li></ul><p>These are additional services billed separately from the website development packages.</p></div></div>
+                <div class="faq-item"><div class="faq-question"><h3>What payment methods do you accept?</h3><span class="faq-icon"><i class="fas fa-plus"></i></span></div><div class="faq-answer"><p>We accept various payment methods for your convenience:</p><ul><li>Bank transfer (South African banks)</li><li>Credit/Debit cards via secure payment gateways</li><li>PayFast</li><li>SnapScan</li><li>Payment plans available for larger projects</li></ul><p>A 50% deposit is required to start work, with the balance due upon completion. All pricing excludes VAT unless otherwise stated.</p></div></div>
+                <div class="faq-item"><div class="faq-question"><h3>Can you help with SEO and getting my website found on Google?</h3><span class="faq-icon"><i class="fas fa-plus"></i></span></div><div class="faq-answer"><p>Absolutely! All our websites include basic SEO setup. For more comprehensive SEO, we offer:</p><ul><li><strong>Basic SEO:</strong> Included with all packages - proper structure, meta tags, and mobile optimization</li><li><strong>Advanced SEO:</strong> Available as an add-on - keyword research, content optimization, and technical SEO</li><li><strong>Ongoing SEO:</strong> Monthly SEO management packages available</li><li><strong>Google My Business:</strong> Setup and optimization included with Premium packages</li></ul><p>We build websites with search engines in mind from day one!</p></div></div>
+                <div class="faq-item"><div class="faq-question"><h3>What happens after my website is live?</h3><span class="faq-icon"><i class="fas fa-plus"></i></span></div><div class="faq-answer"><p>Our relationship doesn't end when your website goes live:</p><ul><li><strong>Training:</strong> We provide training on how to update your website</li><li><strong>Support:</strong> 30 days of free support included with all packages</li><li><strong>Documentation:</strong> Complete documentation provided</li><li><strong>Maintenance Plans:</strong> Available for ongoing support and updates</li><li><strong>Future Updates:</strong> We're always available for future enhancements</li></ul><p>We consider our clients long-term partners and are always here to help your business grow!</p></div></div>
             </div>
         </div>
     </section>
-
-    <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
-            <div class="section-title">
-                <h2 class="gradient-text">Contact Us</h2>
-                <p>Get in touch to start your project or request a custom quote</p>
-            </div>
-            
+            <div class="section-header"><div class="section-label">Get In Touch</div><h2 class="section-title">Start Your Project Today</h2><p class="section-subtitle">Get in touch to start your project or request a custom quote</p></div>
             <div class="contact-content">
                 <div class="contact-info">
                     <h2>Let's Create Something Amazing Together</h2>
                     <p>Ready to transform your business with professional digital solutions? Contact us today for a free consultation. We'll discuss your project needs and provide a detailed quote.</p>
-                    
                     <div class="contact-details">
-                        <p><i class="fas fa-envelope"></i> support@nldigitalsolutions.co.za</p>
-                        <p><i class="fas fa-phone"></i> 081 721 8350</p>
-                        <p><i class="fas fa-phone"></i> 063 221 2342</p>
-                        <p><i class="fas fa-clock"></i> Mon-Fri: 8am-5pm | Sat: 9am-1pm</p>
-                        <p><i class="fas fa-map-marker-alt"></i> Serving clients across South Africa</p>
+                        <a href="mailto:support@nldigitalsolutions.co.za"><i class="fas fa-envelope"></i> support@nldigitalsolutions.co.za</a>
+                        <a href="tel:+27817218350"><i class="fas fa-phone"></i> 081 721 8350</a>
+                        <a href="tel:+27632212342"><i class="fas fa-phone"></i> 063 221 2342</a>
+                        <span><i class="fas fa-clock"></i> Mon-Fri: 8am-5pm | Sat: 9am-1pm</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Serving clients across South Africa</span>
                     </div>
-                    
-                    <div class="social-icons">
-                        <a href="https://wa.me/27817218350" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+                    <div class="social-icons"><a href="https://wa.me/27817218350" target="_blank"><i class="fab fa-whatsapp"></i></a><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
                 </div>
-                
                 <div class="contact-form">
-                    <!-- Success/Error Messages -->
-                    <div id="formMessage" class="form-message" style="display: none;"></div>
-                    
-                    <!-- NODE.JS BACKEND CONTACT FORM -->
+                    <div id="formMessage" class="form-message" style="display:none;"></div>
                     <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="service">Select Service *</label>
-                            <select id="service" name="service" required>
-                                <option value="">Choose a service</option>
-                                <option value="Website Development">Website Development</option>
-                                <option value="Mobile Application">Mobile Application</option>
-                                <option value="Business Services">Business Services</option>
-                                <option value="Graphic Design">Graphic Design</option>
-                                <option value="Branding">Branding</option>
-                                <option value="Other Services">Other Services</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Project Details *</label>
-                            <textarea id="message" name="message" placeholder="Tell us about your project, budget, and timeline..." required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="cta-button" style="width: 100%;">Send Message</button>
+                        <div class="form-group"><label for="name">Full Name *</label><input type="text" id="name" name="name" required placeholder="Your full name"></div>
+                        <div class="form-group"><label for="email">Email Address *</label><input type="email" id="email" name="email" required placeholder="your@email.com"></div>
+                        <div class="form-group"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone" placeholder="081 234 5678"></div>
+                        <div class="form-group"><label for="service">Select Service *</label><select id="service" name="service" required><option value="">Choose a service</option><option value="Website Development">Website Development</option><option value="Mobile Application">Mobile Application</option><option value="Business Services">Business Services</option><option value="Graphic Design">Graphic Design</option><option value="Branding">Branding</option><option value="Other Services">Other Services</option></select></div>
+                        <div class="form-group"><label for="message">Project Details *</label><textarea id="message" name="message" placeholder="Tell us about your project, budget, and timeline..." required></textarea></div>
+                        <button type="submit" class="cta-button" style="width:100%;justify-content:center;">Send Message <i class="fas fa-paper-plane"></i></button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-about">
-                    <div class="footer-logo">NL Digital Solutions</div>
-                    <p>Your complete digital partner for websites, mobile apps, business services, and branding. We provide transparent pricing, clear timelines, and professional results.</p>
-                    <div class="social-icons">
-                        <a href="https://wa.me/27817218350" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#packages">Packages</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Our Work</a></li>
-                        <li><a href="#faq">Q&A</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-services">
-                    <h3>Our Services</h3>
-                    <ul>
-                        <li><a href="#packages">Website Development</a></li>
-                        <li><a href="#packages">App Development</a></li>
-                        <li><a href="#services">Business Services</a></li>
-                        <li><a href="#services">Graphic Design</a></li>
-                        <li><a href="#services">Branding</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-contact">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-envelope"></i> support@nldigitalsolutions.co.za</p>
-                    <p><i class="fas fa-phone"></i> 081 721 8350</p>
-                    <p><i class="fas fa-phone"></i> 063 221 2342</p>
-                    <p><i class="fas fa-clock"></i> Mon-Fri: 8am-5pm | Sat: 9am-1pm</p>
-                </div>
+                <div class="footer-about"><div class="footer-logo">NL Digital Solutions</div><p>Your complete digital partner for websites, mobile apps, business services, and branding. We provide transparent pricing, clear timelines, and professional results.</p><div class="social-icons"><a href="https://wa.me/27817218350" target="_blank"><i class="fab fa-whatsapp"></i></a><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div></div>
+                <div class="footer-links"><h3>Quick Links</h3><ul><li><a href="#home">Home</a></li><li><a href="#about">About Us</a></li><li><a href="#packages">Packages</a></li><li><a href="#services">Services</a></li><li><a href="#portfolio">Portfolio</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+                <div class="footer-services"><h3>Our Services</h3><ul><li><a href="#packages">Website Development</a></li><li><a href="#packages">App Development</a></li><li><a href="#services">Business Services</a></li><li><a href="#services">Graphic Design</a></li><li><a href="#services">Branding</a></li></ul></div>
+                <div class="footer-contact"><h3>Contact Us</h3><a href="mailto:support@nldigitalsolutions.co.za"><i class="fas fa-envelope"></i> support@nldigitalsolutions.co.za</a><a href="tel:+27817218350"><i class="fas fa-phone"></i> 081 721 8350</a><a href="tel:+27632212342"><i class="fas fa-phone"></i> 063 221 2342</a><span><i class="fas fa-clock"></i> Mon-Fri: 8am-5pm | Sat: 9am-1pm</span></div>
             </div>
-            
-            <div class="copyright">
-                <p>&copy; <span id="currentYear"></span> NL Digital Solutions. All rights reserved. | Founded by Nhlanhla Msomi & Lerato Nama</p>
-            </div>
+            <div class="copyright"><p>&copy; <span id="currentYear"></span> NL Digital Solutions. All rights reserved. | Founded by Nhlanhla Msomi & Lerato Nama</p></div>
         </div>
     </footer>
-
-    <!-- Your exact JavaScript remains the same -->
     <script>
-        // ============================================
-        // ENHANCED WEBSITE WITH ALL NEW FEATURES
-        // ============================================
-        const API_URL = 'http://localhost:3000';
-        
-        // Intersection Observer for section animations
-        const sections = document.querySelectorAll('section');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-        
-        sections.forEach(section => observer.observe(section));
-        
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navMenu = document.getElementById('navMenu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-        });
-        
-        // Close mobile menu when clicking a link
-        const navLinks = document.querySelectorAll('nav a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            });
-        });
-        
-        // Package tabs functionality
-        const tabBtns = document.querySelectorAll('.tab-btn');
-        const websitePackages = document.getElementById('website-packages');
-        const appPackages = document.getElementById('app-packages');
-        
-        tabBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons
-                tabBtns.forEach(b => b.classList.remove('active'));
-                
-                // Add active class to clicked button
-                btn.classList.add('active');
-                
-                // Show corresponding packages
-                const tabType = btn.getAttribute('data-tab');
-                if (tabType === 'website') {
-                    websitePackages.style.display = 'grid';
-                    appPackages.style.display = 'none';
-                } else {
-                    websitePackages.style.display = 'none';
-                    appPackages.style.display = 'grid';
-                }
-            });
-        });
-        
-        // Update current year in footer
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                if(this.getAttribute('href') === '#') return;
-                
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // ============================================
-        // PORTFOLIO SLIDESHOW
-        // ============================================
-        const portfolioSlides = document.querySelectorAll('.portfolio-slide');
-        const portfolioThumbnails = document.querySelectorAll('.portfolio-thumbnail');
-        const prevBtn = document.querySelector('.portfolio-nav.prev');
-        const nextBtn = document.querySelector('.portfolio-nav.next');
-        let currentSlide = 0;
-        
-        function showSlide(index) {
-            // Hide all slides
-            portfolioSlides.forEach(slide => {
-                slide.classList.remove('active', 'prev', 'next');
-            });
-            
-            // Show current slide
-            portfolioSlides[index].classList.add('active');
-            
-            // Set previous and next slides for animation
-            let prevIndex = index - 1;
-            if (prevIndex < 0) prevIndex = portfolioSlides.length - 1;
-            
-            let nextIndex = index + 1;
-            if (nextIndex >= portfolioSlides.length) nextIndex = 0;
-            
-            portfolioSlides[prevIndex].classList.add('prev');
-            portfolioSlides[nextIndex].classList.add('next');
-            
-            // Update thumbnails
-            portfolioThumbnails.forEach(thumb => {
-                thumb.classList.remove('active');
-                if (parseInt(thumb.getAttribute('data-index')) === index) {
-                    thumb.classList.add('active');
-                }
-            });
-            
-            currentSlide = index;
-        }
-        
-        function nextSlide() {
-            let nextIndex = currentSlide + 1;
-            if (nextIndex >= portfolioSlides.length) nextIndex = 0;
-            showSlide(nextIndex);
-        }
-        
-        function prevSlide() {
-            let prevIndex = currentSlide - 1;
-            if (prevIndex < 0) prevIndex = portfolioSlides.length - 1;
-            showSlide(prevIndex);
-        }
-        
-        // Navigation buttons
-        prevBtn.addEventListener('click', prevSlide);
-        nextBtn.addEventListener('click', nextSlide);
-        
-        // Thumbnail clicks
-        portfolioThumbnails.forEach(thumb => {
-            thumb.addEventListener('click', () => {
-                const index = parseInt(thumb.getAttribute('data-index'));
-                showSlide(index);
-            });
-        });
-        
-        // Auto-advance slideshow every 5 seconds
-        let slideshowInterval = setInterval(nextSlide, 5000);
-        
-        // Pause on hover
-        const slideshowContainer = document.querySelector('.portfolio-slideshow');
-        slideshowContainer.addEventListener('mouseenter', () => {
-            clearInterval(slideshowInterval);
-        });
-        
-        slideshowContainer.addEventListener('mouseleave', () => {
-            slideshowInterval = setInterval(nextSlide, 5000);
-        });
-        
-        // ============================================
-        // Q&A SECTION
-        // ============================================
-        const faqItems = document.querySelectorAll('.faq-item');
-        
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            const icon = item.querySelector('.faq-icon i');
-            
-            question.addEventListener('click', () => {
-                // Close all other items
-                faqItems.forEach(otherItem => {
-                    if (otherItem !== item) {
-                        otherItem.classList.remove('active');
-                        otherItem.querySelector('.faq-icon i').className = 'fas fa-plus';
-                    }
-                });
-                
-                // Toggle current item
-                item.classList.toggle('active');
-                
-                // Change icon
-                if (item.classList.contains('active')) {
-                    icon.className = 'fas fa-minus';
-                } else {
-                    icon.className = 'fas fa-plus';
-                }
-            });
-        });
-        
-        // ============================================
-        // SCROLL TO TOP BUTTON
-        // ============================================
-        const scrollTopBtn = document.getElementById('scrollTop');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollTopBtn.classList.add('visible');
-            } else {
-                scrollTopBtn.classList.remove('visible');
-            }
-        });
-        
-        scrollTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-        
-        // ============================================
-        // SIMPLIFIED CONTACT FORM SUBMISSION
-        // ============================================
-        document.getElementById('contactForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const form = this;
-            const formMessage = document.getElementById('formMessage');
-            const submitButton = form.querySelector('button[type="submit"]');
-            
-            // Show loading
-            submitButton.innerHTML = '<span class="loading"></span> Sending...';
-            submitButton.disabled = true;
-            formMessage.style.display = 'none';
-            
-            // Get form data
-            const formData = {
-                name: document.getElementById('name').value.trim(),
-                email: document.getElementById('email').value.trim(),
-                phone: document.getElementById('phone').value.trim() || '',
-                service: document.getElementById('service').value,
-                message: document.getElementById('message').value.trim()
-            };
-            
-            console.log('Submitting form data:', formData);
-            
-            // Validate
-            if (!formData.name || !formData.email || !formData.service || !formData.message) {
-                showError('Please fill all required fields');
-                submitButton.textContent = 'Send Message';
-                submitButton.disabled = false;
-                return;
-            }
-            
-            try {
-                // Try main endpoint
-                const response = await fetch(`${API_URL}/send-with-reply`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify(formData)
-                });
-                
-                console.log('Response status:', response.status);
-                
-                if (!response.ok) {
-                    const errorText = await response.text();
-                    console.error('Response error:', errorText);
-                    throw new Error(`Server responded with ${response.status}: ${errorText}`);
-                }
-                
-                const result = await response.json();
-                console.log('Response result:', result);
-                
-                if (result.success) {
-                    // SUCCESS - SIMPLE MESSAGE
-                    showSimpleSuccess(formData, result.data?.reference || 'NL' + Date.now().toString().slice(-8));
-                    form.reset();
-                } else {
-                    // Server returned error
-                    throw new Error(result.error || 'Server error');
-                }
-                
-            } catch (error) {
-                console.error('Form submission error:', error);
-                
-                // Show error to user but still save
-                showError('There was an issue sending your message. We have saved your inquiry and will contact you.');
-                
-                // Try to save locally anyway
-                try {
-                    await fetch(`${API_URL}/save-submission`, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(formData)
-                    });
-                    console.log('Saved to server backup');
-                } catch (backupError) {
-                    console.log('Saving to local storage as fallback');
-                    saveToLocalStorage(formData);
-                }
-                
-            } finally {
-                submitButton.textContent = 'Send Message';
-                submitButton.disabled = false;
-            }
-        });
-        
-        function showSimpleSuccess(formData, reference) {
-            const formMessage = document.getElementById('formMessage');
-            formMessage.innerHTML = `
-                <div style="text-align: center; padding: 20px;">
-                    <div style="font-size: 3rem; color: #10b981; margin-bottom: 15px;">✅</div>
-                    <h3 style="color: #065f46; margin-bottom: 15px;">Thank You, ${formData.name}!</h3>
-                    <p style="margin-bottom: 20px;">We have received your inquiry about <strong>${formData.service}</strong>.</p>
-                    
-                    <div style="background: #f0fdf4; padding: 15px; border-radius: 8px; margin: 20px 0; border: 1px solid #bbf7d0;">
-                        <p><strong>What happens next:</strong></p>
-                        <p style="margin: 10px 0;">• Our team will review your requirements</p>
-                        <p style="margin: 10px 0;">• You'll receive a response from us within <strong>24-48 hours</strong></p>
-                        
-                    </div>
-                    
-                    <p style="margin: 20px 0;">
-                        <strong>Reference:</strong> ${reference}<br>
-                        <small>Keep this for your records</small>
-                    </p>
-                    
-                    <div style="margin: 25px 0;">
-                        <a href="https://wa.me/27817218350" 
-                           target="_blank"
-                           style="background: #25D366; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block; margin: 10px;">
-                           💬 Chat on WhatsApp for Fast Response
-                        </a>
-                    </div>
-                    
-                    <p style="color: #6b7280; font-size: 0.9rem; margin-top: 20px;">
-                        Need help? Call us: <strong>081 721 8350</strong><br>
-                        Or email: <strong>support@nldigitalsolutions.co.za</strong>
-                    </p>
-                </div>
-            `;
-            formMessage.className = 'form-message success';
-            formMessage.style.display = 'block';
-            formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-        
-        function showError(message) {
-            const formMessage = document.getElementById('formMessage');
-            formMessage.innerHTML = `
-                <div style="text-align: center; padding: 20px;">
-                    <div style="font-size: 3rem; color: #ef4444; margin-bottom: 15px;">⚠️</div>
-                    <h3 style="color: #991b1b; margin-bottom: 15px;">Oops! Something went wrong</h3>
-                    <p>${message}</p>
-                    <p style="margin-top: 20px;">Please try again or contact us directly:</p>
-                    <p>
-                        <strong>📞 081 721 8350</strong><br>
-                        <strong>📧 support@nldigitalsolutions.co.za</strong>
-                    </p>
-                </div>
-            `;
-            formMessage.className = 'form-message error';
-            formMessage.style.display = 'block';
-            formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-        
-        function saveToLocalStorage(formData) {
-            try {
-                const submissions = JSON.parse(localStorage.getItem('nl_submissions') || '[]');
-                submissions.push({
-                    ...formData,
-                    timestamp: new Date().toISOString(),
-                    savedLocally: true
-                });
-                localStorage.setItem('nl_submissions', JSON.stringify(submissions));
-                console.log('Saved to localStorage:', formData.name);
-            } catch (e) {
-                console.log('Local storage error:', e);
-            }
-        }
-        
-        // Test server connection on load
-        window.addEventListener('load', async () => {
-            try {
-                const response = await fetch(`${API_URL}/health`);
-                if (response.ok) {
-                    console.log('✅ Server connection successful');
-                }
-            } catch (error) {
-                console.log('⚠️ Server not reachable, form will use fallback methods');
-            }
-            
-            // Add animation delay to elements
-            const animatedElements = document.querySelectorAll('.service-card, .package-card, .founder-card');
-            animatedElements.forEach((el, index) => {
-                el.style.animationDelay = `${index * 0.1}s`;
-            });
-        });
-        
-        // Handle window resize
-        window.addEventListener('resize', function() {
-            if (window.innerWidth > 768) {
-                navMenu.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            }
-        });
-        
-        // Fix for content shifting
-        document.addEventListener('DOMContentLoaded', function() {
-            if (document.documentElement.scrollWidth > window.innerWidth) {
-                document.body.style.overflowX = 'hidden';
-            }
-        });
-        
-        // Auto-scroll to form message if there's an error
-        window.addEventListener('load', function() {
-            const formMessage = document.getElementById('formMessage');
-            if (formMessage && formMessage.style.display !== 'none') {
-                formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
-        });
-        
-        // Keyboard navigation for portfolio
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') {
-                prevSlide();
-            } else if (e.key === 'ArrowRight') {
-                nextSlide();
-            }
-        });
+        const API_URL='http://localhost:3000';
+        const header=document.getElementById('header');
+        window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>50)});
+        const sections=document.querySelectorAll('section');
+        const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible')})},{threshold:0.1});
+        sections.forEach(section=>observer.observe(section));
+        const mobileMenuBtn=document.getElementById('mobileMenuBtn');
+        const navMenu=document.getElementById('navMenu');
+        mobileMenuBtn.addEventListener('click',()=>{navMenu.classList.toggle('active');mobileMenuBtn.innerHTML=navMenu.classList.contains('active')?'<i class="fas fa-times"></i>':'<i class="fas fa-bars"></i>'});
+        document.querySelectorAll('nav a').forEach(link=>{link.addEventListener('click',()=>{navMenu.classList.remove('active');mobileMenuBtn.innerHTML='<i class="fas fa-bars"></i>'})});
+        const tabBtns=document.querySelectorAll('.tab-btn');
+        const websitePackages=document.getElementById('website-packages');
+        const appPackages=document.getElementById('app-packages');
+        tabBtns.forEach(btn=>{btn.addEventListener('click',()=>{tabBtns.forEach(b=>b.classList.remove('active'));btn.classList.add('active');const tabType=btn.getAttribute('data-tab');websitePackages.style.display=tabType==='website'?'grid':'none';appPackages.style.display=tabType==='app'?'grid':'none'})});
+        document.getElementById('currentYear').textContent=new Date().getFullYear();
+        document.querySelectorAll('a[href^="#"]').forEach(anchor=>{anchor.addEventListener('click',function(e){if(this.getAttribute('href')==='#')return;e.preventDefault();const targetElement=document.querySelector(this.getAttribute('href'));if(targetElement)window.scrollTo({top:targetElement.offsetTop-80,behavior:'smooth'})})});
+        const portfolioSlides=document.querySelectorAll('.portfolio-slide');
+        const portfolioThumbnails=document.querySelectorAll('.portfolio-thumbnail');
+        const prevBtn=document.querySelector('.portfolio-nav.prev');
+        const nextBtn=document.querySelector('.portfolio-nav.next');
+        let currentSlide=0;
+        function showSlide(index){portfolioSlides.forEach(slide=>slide.classList.remove('active'));portfolioSlides[index].classList.add('active');portfolioThumbnails.forEach(thumb=>{thumb.classList.remove('active');if(parseInt(thumb.getAttribute('data-index'))===index)thumb.classList.add('active')});currentSlide=index}
+        function nextSlide(){let nextIndex=currentSlide+1;if(nextIndex>=portfolioSlides.length)nextIndex=0;showSlide(nextIndex)}
+        function prevSlide(){let prevIndex=currentSlide-1;if(prevIndex<0)prevIndex=portfolioSlides.length-1;showSlide(prevIndex)}
+        prevBtn.addEventListener('click',prevSlide);
+        nextBtn.addEventListener('click',nextSlide);
+        portfolioThumbnails.forEach(thumb=>{thumb.addEventListener('click',()=>{showSlide(parseInt(thumb.getAttribute('data-index')))})});
+        let slideshowInterval=setInterval(nextSlide,5000);
+        document.querySelector('.portfolio-slideshow').addEventListener('mouseenter',()=>clearInterval(slideshowInterval));
+        document.querySelector('.portfolio-slideshow').addEventListener('mouseleave',()=>{slideshowInterval=setInterval(nextSlide,5000)});
+        const faqItems=document.querySelectorAll('.faq-item');
+        faqItems.forEach(item=>{const question=item.querySelector('.faq-question');const icon=item.querySelector('.faq-icon i');question.addEventListener('click',()=>{faqItems.forEach(otherItem=>{if(otherItem!==item){otherItem.classList.remove('active');otherItem.querySelector('.faq-icon i').className='fas fa-plus'}});item.classList.toggle('active');icon.className=item.classList.contains('active')?'fas fa-minus':'fas fa-plus'})});
+        const scrollTopBtn=document.getElementById('scrollTop');
+        window.addEventListener('scroll',()=>{scrollTopBtn.classList.toggle('visible',window.pageYOffset>300)});
+        scrollTopBtn.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'})});
+        document.getElementById('contactForm').addEventListener('submit',async function(e){e.preventDefault();const form=this;const formMessage=document.getElementById('formMessage');const submitButton=form.querySelector('button[type="submit"]');submitButton.innerHTML='<span class="loading"></span> Sending...';submitButton.disabled=true;formMessage.style.display='none';const formData={name:document.getElementById('name').value.trim(),email:document.getElementById('email').value.trim(),phone:document.getElementById('phone').value.trim()||'',service:document.getElementById('service').value,message:document.getElementById('message').value.trim()};if(!formData.name||!formData.email||!formData.service||!formData.message){showError('Please fill all required fields');submitButton.innerHTML='Send Message <i class="fas fa-paper-plane"></i>';submitButton.disabled=false;return}try{const response=await fetch(API_URL+'/send-with-reply',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(formData)});if(!response.ok)throw new Error('Server error');const result=await response.json();if(result.success){showSimpleSuccess(formData,result.data?.reference||'NL'+Date.now().toString().slice(-8));form.reset()}else throw new Error(result.error||'Error')}catch(error){showError('There was an issue sending your message. Please try again or contact us directly.');saveToLocalStorage(formData)}finally{submitButton.innerHTML='Send Message <i class="fas fa-paper-plane"></i>';submitButton.disabled=false}});
+        function showSimpleSuccess(formData,reference){const formMessage=document.getElementById('formMessage');formMessage.innerHTML='<div style="text-align:center;padding:20px;"><div style="font-size:3rem;color:#10b981;margin-bottom:15px;">✓</div><h3 style="color:#065f46;margin-bottom:15px;font-family:Playfair Display,serif;">Thank You, '+formData.name+'!</h3><p style="margin-bottom:20px;">We have received your inquiry about <strong>'+formData.service+'</strong>.</p><div style="background:#f0fdf4;padding:15px;border-radius:12px;margin:20px 0;border:1px solid #bbf7d0;"><p><strong>What happens next:</strong></p><p style="margin:10px 0;">• Our team will review your requirements</p><p style="margin:10px 0;">• You\'ll receive a response within <strong>24-48 hours</strong></p></div><p style="margin:20px 0;"><strong>Reference:</strong> '+reference+'</p><div style="margin:25px 0;"><a href="https://wa.me/27817218350" target="_blank" style="background:linear-gradient(135deg,#25D366 0%,#128C7E 100%);color:white;padding:12px 24px;border-radius:100px;text-decoration:none;font-weight:600;display:inline-block;"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a></div></div>';formMessage.className='form-message success';formMessage.style.display='block';formMessage.scrollIntoView({behavior:'smooth',block:'center'})}
+        function showError(message){const formMessage=document.getElementById('formMessage');formMessage.innerHTML='<div style="text-align:center;padding:20px;"><div style="font-size:3rem;color:#ef4444;margin-bottom:15px;">!</div><h3 style="color:#991b1b;margin-bottom:15px;font-family:Playfair Display,serif;">Oops! Something went wrong</h3><p>'+message+'</p><p style="margin-top:20px;">Contact us directly: <strong>081 721 8350</strong></p></div>';formMessage.className='form-message error';formMessage.style.display='block';formMessage.scrollIntoView({behavior:'smooth',block:'center'})}
+        function saveToLocalStorage(formData){try{const submissions=JSON.parse(localStorage.getItem('nl_submissions')||'[]');submissions.push({...formData,timestamp:new Date().toISOString()});localStorage.setItem('nl_submissions',JSON.stringify(submissions))}catch(e){console.log('Local storage error:',e)}}
+        document.addEventListener('keydown',(e)=>{if(e.key==='ArrowLeft')prevSlide();if(e.key==='ArrowRight')nextSlide()});
+        window.addEventListener('resize',function(){if(window.innerWidth>768){navMenu.classList.remove('active');mobileMenuBtn.innerHTML='<i class="fas fa-bars"></i>'}});
     </script>
 </body>
 </html>
