@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+Disallow: /cgi-bin/
+
+Sitemap: https://nldigitalsolutions.co.za/sitemap.xml
+Sitemap: https://www.nldigitalsolutions.co.za/sitemap.xml
