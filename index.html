@@ -185,6 +185,9 @@
     }
     </script>
 
+    <!-- EmailJS Script -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -207,16 +210,22 @@
         @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
         @keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
         .gradient-text{background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        
+        /* FIXED HEADER AND MOBILE MENU */
         header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(139,92,246,0.08);transition:var(--transition)}
         header.scrolled{background:rgba(255,255,255,0.95);box-shadow:var(--shadow-soft)}
-        .header-container{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
-        .logo{display:flex;align-items:center;gap:14px;text-decoration:none;transition:var(--transition)}
+        .header-container{display:flex;justify-content:space-between;align-items:center;padding:16px 0;position:relative}
+        .logo{display:flex;align-items:center;gap:14px;text-decoration:none;transition:var(--transition);z-index:1001}
         .logo:hover{transform:translateX(4px)}
         .logo img{height:56px;width:auto}
         .logo-text{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:600;background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        
+        /* Desktop Navigation */
         nav ul{display:flex;list-style:none;gap:8px}
         nav a{text-decoration:none;color:var(--dark);font-weight:500;font-size:0.95rem;padding:10px 18px;border-radius:100px;transition:var(--transition)}
         nav a:hover{color:var(--primary);background:var(--gradient-soft)}
+        
+        /* Mobile Menu Button */
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -225,10 +234,78 @@
             color: var(--dark);
             cursor: pointer;
             transition: transform 0.3s;
+            z-index: 1001;
+            padding: 8px;
         }
 
         .mobile-menu-btn:hover {
             transform: scale(1.1);
+        }
+        
+        /* Mobile Navigation */
+        @media (max-width: 768px) {
+            nav ul {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                padding: 100px 20px 40px;
+                z-index: 999;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                overflow-y: auto;
+                gap: 4px;
+            }
+            
+            nav ul.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            nav ul li {
+                width: 100%;
+            }
+            
+            nav a {
+                display: block;
+                padding: 18px 24px;
+                font-size: 1.1rem;
+                border-radius: 12px;
+                text-align: center;
+                margin-bottom: 8px;
+                border: 2px solid transparent;
+            }
+            
+            nav a:hover {
+                border-color: var(--primary-light);
+                background: var(--gradient-soft);
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .mobile-menu-btn .close-icon {
+                display: none;
+            }
+            
+            .mobile-menu-btn.active .bars-icon {
+                display: none;
+            }
+            
+            .mobile-menu-btn.active .close-icon {
+                display: block;
+            }
         }
         
         /* HERO WITH BACKGROUND IMAGE */
@@ -420,9 +497,131 @@
         .footer-contact a:hover{color:var(--primary)}
         .footer-contact i{width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;margin-right:12px;color:var(--primary);flex-shrink:0}
         .copyright{text-align:center;padding-top:32px;border-top:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.5);font-size:0.9rem}
-        @media(max-width:1024px){.package-grid{grid-template-columns:repeat(2,1fr)}.services-grid{grid-template-columns:repeat(2,1fr)}.about-content{grid-template-columns:1fr;gap:48px}.footer-content{grid-template-columns:repeat(2,1fr)}}
-        @media(max-width:768px){body{font-size:15px}.container{padding:0 20px}section{padding:80px 0}nav ul{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:white;flex-direction:column;padding:100px 32px 32px;z-index:998;gap:8px}nav ul.active{display:flex}nav a{padding:16px 20px;font-size:1.1rem;border-radius:12px}.mobile-menu-btn{display:flex;z-index:999}.logo img{height:48px}.logo-text{font-size:1.15rem}.hero{padding:100px 0 60px;min-height:60vh;background-attachment:scroll}.hero h1{font-size:2.25rem}.hero p{font-size:1.05rem}.hero-buttons{flex-direction:column;align-items:center}.cta-button{width:100%;justify-content:center;padding:16px 32px}.about-features{grid-template-columns:1fr}.founder-card{flex-direction:column;text-align:center;padding:32px 24px}.founder-title{justify-content:center}.founder-title::before{display:none}.package-grid{grid-template-columns:1fr;max-width:400px;margin:0 auto}.package-card.standard{order:-1}.popular-badge{left:-4px;font-size:0.7rem}.tab-btn{width:100%;text-align:center}.services-grid{grid-template-columns:1fr}.portfolio-slideshow{height:420px}.portfolio-slide{padding:24px}.portfolio-slide-img{height:220px}.portfolio-slide-info h3{font-size:1.35rem}.portfolio-nav{width:44px;height:44px}.portfolio-nav.prev{left:12px}.portfolio-nav.next{right:12px}.portfolio-thumbnail{width:72px;height:52px}.contact::before{display:none}.contact-content{grid-template-columns:1fr;gap:40px}.contact-info{text-align:center}.contact-details a,.contact-details span{justify-content:center}.contact-details a:hover{transform:none}.social-icons{justify-content:center}.contact-form{padding:28px 24px}.footer-content{grid-template-columns:1fr;text-align:center;gap:40px}.footer-links h3::after,.footer-services h3::after,.footer-contact h3::after{left:50%;transform:translateX(-50%)}.footer-contact a,.footer-contact span{justify-content:center}.footer-about .social-icons{justify-content:center}.whatsapp-float{width:56px;height:56px;font-size:1.5rem;bottom:24px;right:24px}.scroll-top{width:46px;height:46px;bottom:92px;right:24px}.costs-note{padding:28px 24px}.costs-header{flex-direction:column;text-align:center}.costs-grid{grid-template-columns:1fr}.faq-question{padding:20px 24px}.faq-question h3{font-size:0.95rem}.faq-item.active .faq-answer{padding:0 24px 20px}}
-        @media(max-width:480px){.hero h1{font-size:1.85rem}.hero{min-height:50vh}.section-title{font-size:1.75rem}.portfolio-slideshow{height:380px}.portfolio-slide-img{height:180px}.portfolio-thumbnail{width:60px;height:44px}.package-price{font-size:2rem}.founder-img-container{width:100px;height:100px}}
+        
+        /* RESPONSIVE BREAKPOINTS */
+        @media(max-width:1024px){
+            .package-grid{grid-template-columns:repeat(2,1fr)}
+            .services-grid{grid-template-columns:repeat(2,1fr)}
+            .about-content{grid-template-columns:1fr;gap:48px}
+            .footer-content{grid-template-columns:repeat(2,1fr)}
+            .portfolio-slideshow{height:460px}
+            .portfolio-slide-img{height:280px}
+        }
+        
+        @media(max-width:768px){
+            body{font-size:15px}
+            .container{padding:0 20px}
+            section{padding:80px 0}
+            
+            /* Fixed mobile menu styles */
+            nav ul {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                padding: 100px 20px 40px;
+                z-index: 999;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                overflow-y: auto;
+                gap: 4px;
+            }
+            
+            nav ul.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            nav ul li {
+                width: 100%;
+            }
+            
+            nav a {
+                display: block;
+                padding: 18px 24px;
+                font-size: 1.1rem;
+                border-radius: 12px;
+                text-align: center;
+                margin-bottom: 8px;
+                border: 2px solid transparent;
+            }
+            
+            nav a:hover {
+                border-color: var(--primary-light);
+                background: var(--gradient-soft);
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .logo img{height:48px}
+            .logo-text{font-size:1.15rem}
+            .hero{padding:100px 0 60px;min-height:60vh;background-attachment:scroll}
+            .hero h1{font-size:2.25rem}
+            .hero p{font-size:1.05rem}
+            .hero-buttons{flex-direction:column;align-items:center}
+            .cta-button{width:100%;justify-content:center;padding:16px 32px}
+            .about-features{grid-template-columns:1fr}
+            .founder-card{flex-direction:column;text-align:center;padding:32px 24px}
+            .founder-title{justify-content:center}
+            .founder-title::before{display:none}
+            .package-grid{grid-template-columns:1fr;max-width:400px;margin:0 auto}
+            .package-card.standard{order:-1}
+            .popular-badge{left:-4px;font-size:0.7rem}
+            .tab-btn{width:100%;text-align:center}
+            .services-grid{grid-template-columns:1fr}
+            .portfolio-slideshow{height:420px}
+            .portfolio-slide{padding:24px}
+            .portfolio-slide-img{height:220px}
+            .portfolio-slide-info h3{font-size:1.35rem}
+            .portfolio-nav{width:44px;height:44px}
+            .portfolio-nav.prev{left:12px}
+            .portfolio-nav.next{right:12px}
+            .portfolio-thumbnail{width:72px;height:52px}
+            .contact::before{display:none}
+            .contact-content{grid-template-columns:1fr;gap:40px}
+            .contact-info{text-align:center}
+            .contact-details a,.contact-details span{justify-content:center}
+            .contact-details a:hover{transform:none}
+            .social-icons{justify-content:center}
+            .contact-form{padding:28px 24px}
+            .footer-content{grid-template-columns:1fr;text-align:center;gap:40px}
+            .footer-links h3::after,.footer-services h3::after,.footer-contact h3::after{left:50%;transform:translateX(-50%)}
+            .footer-contact a,.footer-contact span{justify-content:center}
+            .footer-about .social-icons{justify-content:center}
+            .whatsapp-float{width:56px;height:56px;font-size:1.5rem;bottom:24px;right:24px}
+            .scroll-top{width:46px;height:46px;bottom:92px;right:24px}
+            .costs-note{padding:28px 24px}
+            .costs-header{flex-direction:column;text-align:center}
+            .costs-grid{grid-template-columns:1fr}
+            .faq-question{padding:20px 24px}
+            .faq-question h3{font-size:0.95rem}
+            .faq-item.active .faq-answer{padding:0 24px 20px}
+        }
+        
+        @media(max-width:480px){
+            .hero h1{font-size:1.85rem}
+            .hero{min-height:50vh}
+            .section-title{font-size:1.75rem}
+            .portfolio-slideshow{height:380px}
+            .portfolio-slide-img{height:180px}
+            .portfolio-thumbnail{width:60px;height:44px}
+            .package-price{font-size:2rem}
+            .founder-img-container{width:100px;height:100px}
+            .contact-form{padding:20px 16px}
+            .form-group input, .form-group select, .form-group textarea{padding:14px 16px}
+        }
     </style>
 </head>
 <body>
@@ -431,8 +630,21 @@
     <header id="header">
         <div class="container header-container">
             <a href="#home" class="logo"><img src="./images/logo.png" alt="NL Digital Solutions Logo"><div class="logo-text">NL Digital Solutions</div></a>
-            <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
-            <nav><ul id="navMenu"><li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#packages">Packages</a></li><li><a href="#services">Services</a></li><li><a href="#portfolio">Portfolio</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span class="bars-icon"><i class="fas fa-bars"></i></span>
+                <span class="close-icon"><i class="fas fa-times"></i></span>
+            </button>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#packages">Packages</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
     <section class="hero" id="home">
@@ -545,7 +757,7 @@
                         <div class="form-group"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone" placeholder="081 234 5678"></div>
                         <div class="form-group"><label for="service">Select Service *</label><select id="service" name="service" required><option value="">Choose a service</option><option value="Website Development">Website Development</option><option value="Mobile Application">Mobile Application</option><option value="Business Services">Business Services</option><option value="Graphic Design">Graphic Design</option><option value="Branding">Branding</option><option value="Other Services">Other Services</option></select></div>
                         <div class="form-group"><label for="message">Project Details *</label><textarea id="message" name="message" placeholder="Tell us about your project, budget, and timeline..." required></textarea></div>
-                        <button type="submit" class="cta-button" style="width:100%;justify-content:center;">Send Message <i class="fas fa-paper-plane"></i></button>
+                        <button type="submit" class="cta-button" style="width:100%;justify-content:center;" id="submitButton">Send Message <i class="fas fa-paper-plane"></i></button>
                     </form>
                 </div>
             </div>
@@ -563,47 +775,281 @@
         </div>
     </footer>
     <script>
-        const API_URL='http://localhost:3000';
-        const header=document.getElementById('header');
-        window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>50)});
-        const sections=document.querySelectorAll('section');
-        const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible')})},{threshold:0.1});
-        sections.forEach(section=>observer.observe(section));
-        const mobileMenuBtn=document.getElementById('mobileMenuBtn');
-        const navMenu=document.getElementById('navMenu');
-        mobileMenuBtn.addEventListener('click',()=>{navMenu.classList.toggle('active');mobileMenuBtn.innerHTML=navMenu.classList.contains('active')?'<i class="fas fa-times"></i>':'<i class="fas fa-bars"></i>'});
-        document.querySelectorAll('nav a').forEach(link=>{link.addEventListener('click',()=>{navMenu.classList.remove('active');mobileMenuBtn.innerHTML='<i class="fas fa-bars"></i>'})});
-        const tabBtns=document.querySelectorAll('.tab-btn');
-        const websitePackages=document.getElementById('website-packages');
-        const appPackages=document.getElementById('app-packages');
-        tabBtns.forEach(btn=>{btn.addEventListener('click',()=>{tabBtns.forEach(b=>b.classList.remove('active'));btn.classList.add('active');const tabType=btn.getAttribute('data-tab');websitePackages.style.display=tabType==='website'?'grid':'none';appPackages.style.display=tabType==='app'?'grid':'none'})});
-        document.getElementById('currentYear').textContent=new Date().getFullYear();
-        document.querySelectorAll('a[href^="#"]').forEach(anchor=>{anchor.addEventListener('click',function(e){if(this.getAttribute('href')==='#')return;e.preventDefault();const targetElement=document.querySelector(this.getAttribute('href'));if(targetElement)window.scrollTo({top:targetElement.offsetTop-80,behavior:'smooth'})})});
-        const portfolioSlides=document.querySelectorAll('.portfolio-slide');
-        const portfolioThumbnails=document.querySelectorAll('.portfolio-thumbnail');
-        const prevBtn=document.querySelector('.portfolio-nav.prev');
-        const nextBtn=document.querySelector('.portfolio-nav.next');
-        let currentSlide=0;
-        function showSlide(index){portfolioSlides.forEach(slide=>slide.classList.remove('active'));portfolioSlides[index].classList.add('active');portfolioThumbnails.forEach(thumb=>{thumb.classList.remove('active');if(parseInt(thumb.getAttribute('data-index'))===index)thumb.classList.add('active')});currentSlide=index}
-        function nextSlide(){let nextIndex=currentSlide+1;if(nextIndex>=portfolioSlides.length)nextIndex=0;showSlide(nextIndex)}
-        function prevSlide(){let prevIndex=currentSlide-1;if(prevIndex<0)prevIndex=portfolioSlides.length-1;showSlide(prevIndex)}
-        prevBtn.addEventListener('click',prevSlide);
-        nextBtn.addEventListener('click',nextSlide);
-        portfolioThumbnails.forEach(thumb=>{thumb.addEventListener('click',()=>{showSlide(parseInt(thumb.getAttribute('data-index')))})});
-        let slideshowInterval=setInterval(nextSlide,5000);
-        document.querySelector('.portfolio-slideshow').addEventListener('mouseenter',()=>clearInterval(slideshowInterval));
-        document.querySelector('.portfolio-slideshow').addEventListener('mouseleave',()=>{slideshowInterval=setInterval(nextSlide,5000)});
-        const faqItems=document.querySelectorAll('.faq-item');
-        faqItems.forEach(item=>{const question=item.querySelector('.faq-question');const icon=item.querySelector('.faq-icon i');question.addEventListener('click',()=>{faqItems.forEach(otherItem=>{if(otherItem!==item){otherItem.classList.remove('active');otherItem.querySelector('.faq-icon i').className='fas fa-plus'}});item.classList.toggle('active');icon.className=item.classList.contains('active')?'fas fa-minus':'fas fa-plus'})});
-        const scrollTopBtn=document.getElementById('scrollTop');
-        window.addEventListener('scroll',()=>{scrollTopBtn.classList.toggle('visible',window.pageYOffset>300)});
-        scrollTopBtn.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'})});
-        document.getElementById('contactForm').addEventListener('submit',async function(e){e.preventDefault();const form=this;const formMessage=document.getElementById('formMessage');const submitButton=form.querySelector('button[type="submit"]');submitButton.innerHTML='<span class="loading"></span> Sending...';submitButton.disabled=true;formMessage.style.display='none';const formData={name:document.getElementById('name').value.trim(),email:document.getElementById('email').value.trim(),phone:document.getElementById('phone').value.trim()||'',service:document.getElementById('service').value,message:document.getElementById('message').value.trim()};if(!formData.name||!formData.email||!formData.service||!formData.message){showError('Please fill all required fields');submitButton.innerHTML='Send Message <i class="fas fa-paper-plane"></i>';submitButton.disabled=false;return}try{const response=await fetch(API_URL+'/send-with-reply',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(formData)});if(!response.ok)throw new Error('Server error');const result=await response.json();if(result.success){showSimpleSuccess(formData,result.data?.reference||'NL'+Date.now().toString().slice(-8));form.reset()}else throw new Error(result.error||'Error')}catch(error){showError('There was an issue sending your message. Please try again or contact us directly.');saveToLocalStorage(formData)}finally{submitButton.innerHTML='Send Message <i class="fas fa-paper-plane"></i>';submitButton.disabled=false}});
-        function showSimpleSuccess(formData,reference){const formMessage=document.getElementById('formMessage');formMessage.innerHTML='<div style="text-align:center;padding:20px;"><div style="font-size:3rem;color:#10b981;margin-bottom:15px;">✓</div><h3 style="color:#065f46;margin-bottom:15px;font-family:Playfair Display,serif;">Thank You, '+formData.name+'!</h3><p style="margin-bottom:20px;">We have received your inquiry about <strong>'+formData.service+'</strong>.</p><div style="background:#f0fdf4;padding:15px;border-radius:12px;margin:20px 0;border:1px solid #bbf7d0;"><p><strong>What happens next:</strong></p><p style="margin:10px 0;">• Our team will review your requirements</p><p style="margin:10px 0;">• You\'ll receive a response within <strong>24-48 hours</strong></p></div><p style="margin:20px 0;"><strong>Reference:</strong> '+reference+'</p><div style="margin:25px 0;"><a href="https://wa.me/27817218350" target="_blank" style="background:linear-gradient(135deg,#25D366 0%,#128C7E 100%);color:white;padding:12px 24px;border-radius:100px;text-decoration:none;font-weight:600;display:inline-block;"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a></div></div>';formMessage.className='form-message success';formMessage.style.display='block';formMessage.scrollIntoView({behavior:'smooth',block:'center'})}
-        function showError(message){const formMessage=document.getElementById('formMessage');formMessage.innerHTML='<div style="text-align:center;padding:20px;"><div style="font-size:3rem;color:#ef4444;margin-bottom:15px;">!</div><h3 style="color:#991b1b;margin-bottom:15px;font-family:Playfair Display,serif;">Oops! Something went wrong</h3><p>'+message+'</p><p style="margin-top:20px;">Contact us directly: <strong>081 721 8350</strong></p></div>';formMessage.className='form-message error';formMessage.style.display='block';formMessage.scrollIntoView({behavior:'smooth',block:'center'})}
-        function saveToLocalStorage(formData){try{const submissions=JSON.parse(localStorage.getItem('nl_submissions')||'[]');submissions.push({...formData,timestamp:new Date().toISOString()});localStorage.setItem('nl_submissions',JSON.stringify(submissions))}catch(e){console.log('Local storage error:',e)}}
-        document.addEventListener('keydown',(e)=>{if(e.key==='ArrowLeft')prevSlide();if(e.key==='ArrowRight')nextSlide()});
-        window.addEventListener('resize',function(){if(window.innerWidth>768){navMenu.classList.remove('active');mobileMenuBtn.innerHTML='<i class="fas fa-bars"></i>'}});
+        // Initialize EmailJS with your public key
+        (function() {
+            // Replace with your actual EmailJS public key
+            emailjs.init("7v9VU-YBteNTK4NYx");
+        })();
+        
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+        
+        // Intersection Observer for section animations
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+        sections.forEach(section => observer.observe(section));
+        
+        // Mobile Menu Functionality - FIXED
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
+        });
+        
+        // Close mobile menu when clicking on links
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+        
+        // Package tabs
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const websitePackages = document.getElementById('website-packages');
+        const appPackages = document.getElementById('app-packages');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                tabBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const tabType = btn.getAttribute('data-tab');
+                websitePackages.style.display = tabType === 'website' ? 'grid' : 'none';
+                appPackages.style.display = tabType === 'app' ? 'grid' : 'none';
+            });
+        });
+        
+        // Current year for copyright
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href') === '#') return;
+                e.preventDefault();
+                const targetElement = document.querySelector(this.getAttribute('href'));
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Portfolio slideshow
+        const portfolioSlides = document.querySelectorAll('.portfolio-slide');
+        const portfolioThumbnails = document.querySelectorAll('.portfolio-thumbnail');
+        const prevBtn = document.querySelector('.portfolio-nav.prev');
+        const nextBtn = document.querySelector('.portfolio-nav.next');
+        let currentSlide = 0;
+        
+        function showSlide(index) {
+            portfolioSlides.forEach(slide => slide.classList.remove('active'));
+            portfolioSlides[index].classList.add('active');
+            portfolioThumbnails.forEach(thumb => {
+                thumb.classList.remove('active');
+                if (parseInt(thumb.getAttribute('data-index')) === index) thumb.classList.add('active');
+            });
+            currentSlide = index;
+        }
+        
+        function nextSlide() {
+            let nextIndex = currentSlide + 1;
+            if (nextIndex >= portfolioSlides.length) nextIndex = 0;
+            showSlide(nextIndex);
+        }
+        
+        function prevSlide() {
+            let prevIndex = currentSlide - 1;
+            if (prevIndex < 0) prevIndex = portfolioSlides.length - 1;
+            showSlide(prevIndex);
+        }
+        
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
+        
+        portfolioThumbnails.forEach(thumb => {
+            thumb.addEventListener('click', () => {
+                showSlide(parseInt(thumb.getAttribute('data-index')));
+            });
+        });
+        
+        // Auto-advance slideshow
+        let slideshowInterval = setInterval(nextSlide, 5000);
+        document.querySelector('.portfolio-slideshow').addEventListener('mouseenter', () => clearInterval(slideshowInterval));
+        document.querySelector('.portfolio-slideshow').addEventListener('mouseleave', () => {
+            slideshowInterval = setInterval(nextSlide, 5000);
+        });
+        
+        // FAQ accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const icon = item.querySelector('.faq-icon i');
+            question.addEventListener('click', () => {
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-icon i').className = 'fas fa-plus';
+                    }
+                });
+                item.classList.toggle('active');
+                icon.className = item.classList.contains('active') ? 'fas fa-minus' : 'fas fa-plus';
+            });
+        });
+        
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => {
+            scrollTopBtn.classList.toggle('visible', window.pageYOffset > 300);
+        });
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // EmailJS Contact Form
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = this;
+            const formMessage = document.getElementById('formMessage');
+            const submitButton = document.getElementById('submitButton');
+            const originalButtonText = submitButton.innerHTML;
+            
+            // Show loading state
+            submitButton.innerHTML = '<span class="loading"></span> Sending...';
+            submitButton.disabled = true;
+            formMessage.style.display = 'none';
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                phone: document.getElementById('phone').value.trim() || '',
+                service: document.getElementById('service').value,
+                message: document.getElementById('message').value.trim(),
+                date: new Date().toLocaleString('en-ZA', { timeZone: 'Africa/Johannesburg' })
+            };
+            
+            // Validate required fields
+            if (!formData.name || !formData.email || !formData.service || !formData.message) {
+                showError('Please fill all required fields');
+                submitButton.innerHTML = originalButtonText;
+                submitButton.disabled = false;
+                return;
+            }
+            
+            // Send email using EmailJS
+            emailjs.send(
+                'service_12t4u9b', // Replace with your EmailJS service ID
+                'template_vma107c', // Replace with your EmailJS template ID
+                formData
+            )
+            .then(function(response) {
+                console.log('Email sent successfully:', response.status, response.text);
+                showSuccess(formData);
+                form.reset();
+            }, function(error) {
+                console.error('Email send failed:', error);
+                showError('There was an issue sending your message. Please try again or contact us directly.');
+                // Save to localStorage as fallback
+                saveToLocalStorage(formData);
+            })
+            .finally(() => {
+                submitButton.innerHTML = originalButtonText;
+                submitButton.disabled = false;
+            });
+        });
+        
+        function showSuccess(formData) {
+            const formMessage = document.getElementById('formMessage');
+            const reference = 'NL' + Date.now().toString().slice(-8);
+            
+            formMessage.innerHTML = `
+                <div style="text-align:center;padding:20px;">
+                    <div style="font-size:3rem;color:#10b981;margin-bottom:15px;">✓</div>
+                    <h3 style="color:#065f46;margin-bottom:15px;font-family:Playfair Display,serif;">Thank You, ${formData.name}!</h3>
+                    <p style="margin-bottom:20px;">We have received your inquiry about <strong>${formData.service}</strong>.</p>
+                    <div style="background:#f0fdf4;padding:15px;border-radius:12px;margin:20px 0;border:1px solid #bbf7d0;">
+                        <p><strong>What happens next:</strong></p>
+                        <p style="margin:10px 0;">• Our team will review your requirements</p>
+                        <p style="margin:10px 0;">• You'll receive a response within <strong>24-48 hours</strong></p>
+                    </div>
+                    <p style="margin:20px 0;"><strong>Reference:</strong> ${reference}</p>
+                    <div style="margin:25px 0;">
+                        <a href="https://wa.me/27817218350" target="_blank" style="background:linear-gradient(135deg,#25D366 0%,#128C7E 100%);color:white;padding:12px 24px;border-radius:100px;text-decoration:none;font-weight:600;display:inline-block;">
+                            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            `;
+            formMessage.className = 'form-message success';
+            formMessage.style.display = 'block';
+            formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        
+        function showError(message) {
+            const formMessage = document.getElementById('formMessage');
+            formMessage.innerHTML = `
+                <div style="text-align:center;padding:20px;">
+                    <div style="font-size:3rem;color:#ef4444;margin-bottom:15px;">!</div>
+                    <h3 style="color:#991b1b;margin-bottom:15px;font-family:Playfair Display,serif;">Oops! Something went wrong</h3>
+                    <p>${message}</p>
+                    <p style="margin-top:20px;">Contact us directly: <strong>081 721 8350</strong></p>
+                </div>
+            `;
+            formMessage.className = 'form-message error';
+            formMessage.style.display = 'block';
+            formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        
+        function saveToLocalStorage(formData) {
+            try {
+                const submissions = JSON.parse(localStorage.getItem('nl_submissions') || '[]');
+                submissions.push({ ...formData, timestamp: new Date().toISOString() });
+                localStorage.setItem('nl_submissions', JSON.stringify(submissions));
+            } catch (e) {
+                console.log('Local storage error:', e);
+            }
+        }
+        
+        // Keyboard navigation for portfolio
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') prevSlide();
+            if (e.key === 'ArrowRight') nextSlide();
+        });
+        
+        // Close mobile menu on window resize above 768px
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (navMenu.classList.contains('active') && 
+                !navMenu.contains(e.target) && 
+                !mobileMenuBtn.contains(e.target)) {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
     </script>
 </body>
 </html>
